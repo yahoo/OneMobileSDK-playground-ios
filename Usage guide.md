@@ -31,7 +31,7 @@ provider.context.extra = ["site-section": "cars"]
 
 let sdk = provider.getSDK()
 ```
-Note: Contents of extra field is `JSON` aka `[String: Any]` 
+Note: Contents of `extra` field is `JSON` aka `[String: Any]` 
 so you need provide something that can be eaten up by `JSONSerialization` object.
 
 ### OneSDK.Context
@@ -68,5 +68,6 @@ Migration note
 -----
 
 If you porting code from 1.x version of an SDK:
+
 1. `WithCallback` is dropped from SDK in a favor of `Future` and `Result` primitives.
 2. `OneSDK` initializers is limited to configuration options. 
