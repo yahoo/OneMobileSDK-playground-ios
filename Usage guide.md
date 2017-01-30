@@ -51,12 +51,15 @@ Content of this dictionary will be treated by web service in app specific way.
 While preferred way to construct an `OneSDK` is a provider, `OneSDK` contains initializer with `Configuration` object. 
 You can use it when you want to alter recommended settings. For example:
 ```swift
-let sdk = provider.getConfiguration().map { config in 
+func patch(config: OneSDK.Configuration) -> OneSDK.Configuration {
   var config = config
   config.features.isHLSEnabled = false
-  
-  return OneSDK(configuration: config)
+  return config
 }
+
+let sdk = provider.getConfiguration()
+  .map(patch)
+  .map(OneSDK.init)
 ```
 
 ### Note
