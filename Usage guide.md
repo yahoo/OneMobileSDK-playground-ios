@@ -37,7 +37,7 @@ so you need provide something that can be eaten up by `JSONSerialization` object
 ### OneSDK.Context
 
 Each `OneSDK.Provider` instance contains `context` field which is used to match application and settings on web service.
-In `default` provider we use current aplication context: `OneSDK.Context.current`.
+In `default` provider we use current application context: `OneSDK.Context.current`.
 
 This context is completed with values available in your application plist, device information, etc.
 
