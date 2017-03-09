@@ -1,4 +1,4 @@
-# How to start using OneMobileSDK
+# How to start using OneMobileSDK v2.x
 
 ## Integrate SDK with your project
 
