@@ -2,8 +2,6 @@ platform :ios, 8.0
 
 source "https://github.com/vidible/OneMobileSDK-releases.git"
 
-use_frameworks!
-
 target "Simple" do
   pod 'OneMobileSDK-Swift3'
 end

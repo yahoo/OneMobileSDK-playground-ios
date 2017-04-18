@@ -1,15 +1,12 @@
 PODS:
-  - OneMobileSDK-Swift3 (2.1.1212):
-    - PlayerControls (= 1.0)
-  - PlayerControls (1.0)
+  - OneMobileSDK-Swift3 (2.4.1311)
 
 DEPENDENCIES:
   - OneMobileSDK-Swift3
 
 SPEC CHECKSUMS:
-  OneMobileSDK-Swift3: b9d30416b05522527943e7c55df0cf2b77403f6e
-  PlayerControls: f30e28ca9f873eed170498dbf7f218ce3be85612
+  OneMobileSDK-Swift3: 9a4a509a9754ef3d03c9076ce26286fb17633027
 
-PODFILE CHECKSUM: d3c04fcbc2f9e018f7a985f6f5aa44b17c6cd06f
+PODFILE CHECKSUM: fa6e4ac4aec18fc37b4e6c25010e29b38964db6e
 
 COCOAPODS: 1.2.0
