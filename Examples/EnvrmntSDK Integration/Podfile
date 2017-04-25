@@ -1,0 +1,17 @@
+platform :ios, 9.0
+use_frameworks!
+
+source "https://github.com/vidible/OneMobileSDK-releases.git"
+
+target "EnvrmntSDK Integration" do
+  pod 'OneMobileSDK-Beta-Swift3'
+  pod 'EnvrmntRenderer'
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['ENABLE_BITCODE'] = 'NO'
+        end
+    end
+end
