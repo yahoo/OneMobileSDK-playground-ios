@@ -1,0 +1,22 @@
+PODS:
+  - EnvrmntRenderer (1.0):
+    - EnvrmntSDK (= 77.0)
+    - VideoRenderer (= 1.0)
+  - EnvrmntSDK (77.0)
+  - OneMobileSDK-Beta-Swift3 (2.5.1320):
+    - VideoRenderer (= 1.0)
+  - VideoRenderer (1.0)
+
+DEPENDENCIES:
+  - EnvrmntRenderer
+  - OneMobileSDK-Beta-Swift3
+
+SPEC CHECKSUMS:
+  EnvrmntRenderer: 628e05b29e72a1c13d15e79c8dfb0ebac7b3f7ef
+  EnvrmntSDK: 675dc488b5fa445769958a6e742b07b6190d97d9
+  OneMobileSDK-Beta-Swift3: 1fca0e7febace37a70900b8c3fa2830d03c4f6f7
+  VideoRenderer: ba7e9f4bea9b7626bfcc5901f83274053f396803
+
+PODFILE CHECKSUM: 6b88ebd887c6ba902b191d69733cf49e29a6d871
+
+COCOAPODS: 1.2.0
