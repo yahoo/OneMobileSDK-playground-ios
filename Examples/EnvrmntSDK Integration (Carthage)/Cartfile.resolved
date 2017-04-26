@@ -1,0 +1,4 @@
+github "aol-public/OneMobileSDK-envrmnt-renderer-ios" "1.0"
+github "aol-public/OneMobileSDK-envrmnt-sdk-ios" "77.0"
+github "aol-public/OneMobileSDK-videorenderer-ios" "1.0"
+github "vidible/OneMobileSDK-releases" "2.5"
