@@ -24,6 +24,7 @@ class ViewController: UIViewController {
                 let playerViewController = PlayerViewController()
                 playerViewController.contentControlsViewController = DefaultControlsViewController()
                 playerViewController.player = player
+                playerViewController.edgesForExtendedLayout = []
                 self.navigationController?.pushViewController(playerViewController, animated: true)
             }
             .onError { error in
