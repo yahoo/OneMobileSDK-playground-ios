@@ -10,14 +10,13 @@ import VRSDK
 class ViewController: UIViewController {
 
     @IBAction func playVideoTouched(_ sender: Any) {
-        VRSettings.sharedSettings.autoplay = false
         Renderer.Repository.shared.register(renderer: RendererViewController.renderer)
 
         let oneSdk = OneSDK.Provider.default.getSDK()
         
         oneSdk
             .then {
-                $0.getPlayer(playlistID: "58f0bcd6955a317b117831d8", autoplay: false)
+                $0.getPlayer(playlistID: "58f0bcd6955a317b117831d8")
             }
             .dispatch(on: .main)
             .onSuccess { player in

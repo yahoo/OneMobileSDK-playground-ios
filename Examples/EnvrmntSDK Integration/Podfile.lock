@@ -2,7 +2,7 @@ PODS:
   - EnvrmntRenderer (1.2):
     - EnvrmntSDK
     - VideoRenderer (= 1.0)
-  - EnvrmntSDK (78.16)
+  - EnvrmntSDK (78.36)
   - OneMobileSDK-Swift3 (2.5.1326):
     - VideoRenderer (= 1.0)
   - VideoRenderer (1.0)
@@ -13,7 +13,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   EnvrmntRenderer: a0acc19c923e2e6f5d8586ce719c34e941842f06
-  EnvrmntSDK: 8f80158c8dd0edb3d936de66b3cadef8e5c87757
+  EnvrmntSDK: f1a0128d03ec6b4fdf18a1d38f73d337c0e4bf2f
   OneMobileSDK-Swift3: 8d6c4ee84bb7c414f4db2b58f909f99ef28eaccb
   VideoRenderer: ba7e9f4bea9b7626bfcc5901f83274053f396803
 
