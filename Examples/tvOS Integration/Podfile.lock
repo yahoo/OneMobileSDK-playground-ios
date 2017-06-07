@@ -1,0 +1,15 @@
+PODS:
+  - OneMobileSDK-Swift3 (2.6.1375):
+    - VideoRenderer (= 1.1)
+  - VideoRenderer (1.1)
+
+DEPENDENCIES:
+  - OneMobileSDK-Swift3
+
+SPEC CHECKSUMS:
+  OneMobileSDK-Swift3: 51ccd5837880798ecaacd5081fd71885ff42ce36
+  VideoRenderer: 7bbd817e18f8d49be3b531edf362cc0286e262ff
+
+PODFILE CHECKSUM: d602b558face55de4bf9afd7ec4447393495945d
+
+COCOAPODS: 1.2.1
