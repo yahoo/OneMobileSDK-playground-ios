@@ -6,10 +6,8 @@ import PlayerControls
 
 class ViewController: UIViewController {
     @IBAction func playVideoTouched(_ sender: Any) {
-        var provider = OneSDK.Provider.default
-        provider.context.sdk.environment = "stage"
-        provider.getSDK()
-            .then { $0.getPlayer(videoID: "577d09391313230df40d1893") }
+        OneSDK.Provider.default.getSDK()
+            .then { $0.getPlayer(videoID: "577cc23d50954952cc56bc47") }
             .dispatch(on: .main)
             .onSuccess { player in
                 let playerViewController = PlayerViewController()
