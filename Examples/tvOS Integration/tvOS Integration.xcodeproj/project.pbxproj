@@ -329,7 +329,7 @@
 				DEVELOPMENT_TEAM = 7V23547MMU;
 				INFOPLIST_FILE = "tvOS Integration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aol.mobile.one.tvOS-Integration";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -344,7 +344,7 @@
 				DEVELOPMENT_TEAM = 7V23547MMU;
 				INFOPLIST_FILE = "tvOS Integration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aol.mobile.one.tvOS-Integration";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -369,6 +369,7 @@
 				FE1C0EB31EE830BA00C95B24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
