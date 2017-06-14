@@ -1,0 +1,15 @@
+PODS:
+  - OneMobileSDK-Beta-Swift3 (2.7.1394):
+    - VideoRenderer (= 1.1)
+  - VideoRenderer (1.1)
+
+DEPENDENCIES:
+  - OneMobileSDK-Beta-Swift3
+
+SPEC CHECKSUMS:
+  OneMobileSDK-Beta-Swift3: 1be16311007da066c4222667ac490e03945cf635
+  VideoRenderer: 7bbd817e18f8d49be3b531edf362cc0286e262ff
+
+PODFILE CHECKSUM: d4b432b312119a0fffa30911ef854d6e15aaf6f1
+
+COCOAPODS: 1.2.1

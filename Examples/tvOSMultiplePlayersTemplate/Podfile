@@ -1,0 +1,7 @@
+ platform :tvos, '9.0'
+
+source "https://github.com/vidible/OneMobileSDK-releases.git"
+
+target 'tvOSMultiplePlayersTemplate' do
+  pod 'OneMobileSDK-Beta-Swift3'
+end
