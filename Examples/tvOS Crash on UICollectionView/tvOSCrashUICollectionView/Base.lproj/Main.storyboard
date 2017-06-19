@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="21k-Yz-Ybd">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Collection View Controller-->
+        <scene sceneID="XOC-3c-Y8n">
+            <objects>
+                <collectionViewController id="21k-Yz-Ybd" customClass="CollectionViewController" customModule="tvOSCrashUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="mmf-Fz-ces">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="100" minimumInteritemSpacing="100" id="BtU-pO-MWt">
+                            <size key="itemSize" width="1800" height="768"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="60" minY="0.0" maxX="60" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <view key="backgroundView" contentMode="scaleToFill" id="hto-Q1-AKb">
+                            <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cc2-lr-Co5">
+                                    <rect key="frame" x="750" y="955" width="421" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                    <state key="normal" title="Call first item reload"/>
+                                    <connections>
+                                        <action selector="firstItemReloadAction:" destination="21k-Yz-Ybd" eventType="primaryActionTriggered" id="Elz-tt-zFN"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <cells>
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="3n8-zu-G0u">
+                                <rect key="frame" x="60" y="156" width="1800" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="1800" height="768"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="21k-Yz-Ybd" id="4VR-DB-uYK"/>
+                            <outlet property="delegate" destination="21k-Yz-Ybd" id="mnY-G7-Mfr"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <outlet property="reloadButton" destination="Cc2-lr-Co5" id="kLo-aP-5n8"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhk-3d-kdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="-533"/>
+        </scene>
+    </scenes>
+</document>
