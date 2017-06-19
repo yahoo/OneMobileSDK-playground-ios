@@ -1,0 +1,299 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE3565CA1EF7EA5F00BCF323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3565C91EF7EA5F00BCF323 /* AppDelegate.swift */; };
+		FE3565CF1EF7EA5F00BCF323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3565CD1EF7EA5F00BCF323 /* Main.storyboard */; };
+		FE3565D11EF7EA5F00BCF323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE3565D01EF7EA5F00BCF323 /* Assets.xcassets */; };
+		FE9BD18D1EF7EC930073F85C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BD18C1EF7EC930073F85C /* CollectionViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FE3565C61EF7EA5F00BCF323 /* tvOSCrashUICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvOSCrashUICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE3565C91EF7EA5F00BCF323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE3565CE1EF7EA5F00BCF323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE3565D01EF7EA5F00BCF323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE3565D21EF7EA5F00BCF323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE9BD18C1EF7EC930073F85C /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE3565C31EF7EA5F00BCF323 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE3565BD1EF7EA5F00BCF323 = {
+			isa = PBXGroup;
+			children = (
+				FE3565C81EF7EA5F00BCF323 /* tvOSCrashUICollectionView */,
+				FE3565C71EF7EA5F00BCF323 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE3565C71EF7EA5F00BCF323 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE3565C61EF7EA5F00BCF323 /* tvOSCrashUICollectionView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE3565C81EF7EA5F00BCF323 /* tvOSCrashUICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				FE9BD18C1EF7EC930073F85C /* CollectionViewController.swift */,
+				FE3565C91EF7EA5F00BCF323 /* AppDelegate.swift */,
+				FE3565CD1EF7EA5F00BCF323 /* Main.storyboard */,
+				FE3565D01EF7EA5F00BCF323 /* Assets.xcassets */,
+				FE3565D21EF7EA5F00BCF323 /* Info.plist */,
+			);
+			path = tvOSCrashUICollectionView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE3565C51EF7EA5F00BCF323 /* tvOSCrashUICollectionView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE3565D51EF7EA5F00BCF323 /* Build configuration list for PBXNativeTarget "tvOSCrashUICollectionView" */;
+			buildPhases = (
+				FE3565C21EF7EA5F00BCF323 /* Sources */,
+				FE3565C31EF7EA5F00BCF323 /* Frameworks */,
+				FE3565C41EF7EA5F00BCF323 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tvOSCrashUICollectionView;
+			productName = tvOSCrashUICollectionView;
+			productReference = FE3565C61EF7EA5F00BCF323 /* tvOSCrashUICollectionView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE3565BE1EF7EA5F00BCF323 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				TargetAttributes = {
+					FE3565C51EF7EA5F00BCF323 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7V23547MMU;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FE3565C11EF7EA5F00BCF323 /* Build configuration list for PBXProject "tvOSCrashUICollectionView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE3565BD1EF7EA5F00BCF323;
+			productRefGroup = FE3565C71EF7EA5F00BCF323 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE3565C51EF7EA5F00BCF323 /* tvOSCrashUICollectionView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE3565C41EF7EA5F00BCF323 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE3565D11EF7EA5F00BCF323 /* Assets.xcassets in Resources */,
+				FE3565CF1EF7EA5F00BCF323 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE3565C21EF7EA5F00BCF323 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE9BD18D1EF7EC930073F85C /* CollectionViewController.swift in Sources */,
+				FE3565CA1EF7EA5F00BCF323 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FE3565CD1EF7EA5F00BCF323 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE3565CE1EF7EA5F00BCF323 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE3565D31EF7EA5F00BCF323 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		FE3565D41EF7EA5F00BCF323 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE3565D61EF7EA5F00BCF323 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 7V23547MMU;
+				INFOPLIST_FILE = tvOSCrashUICollectionView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.tvOSCrashUICollectionView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FE3565D71EF7EA5F00BCF323 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 7V23547MMU;
+				INFOPLIST_FILE = tvOSCrashUICollectionView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.tvOSCrashUICollectionView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE3565C11EF7EA5F00BCF323 /* Build configuration list for PBXProject "tvOSCrashUICollectionView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE3565D31EF7EA5F00BCF323 /* Debug */,
+				FE3565D41EF7EA5F00BCF323 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE3565D51EF7EA5F00BCF323 /* Build configuration list for PBXNativeTarget "tvOSCrashUICollectionView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE3565D61EF7EA5F00BCF323 /* Debug */,
+				FE3565D71EF7EA5F00BCF323 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE3565BE1EF7EA5F00BCF323 /* Project object */;
+}
