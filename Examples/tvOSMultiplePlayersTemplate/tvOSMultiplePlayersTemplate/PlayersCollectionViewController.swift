@@ -3,138 +3,105 @@
 
 import UIKit
 import OneMobileSDK
-import AVFoundation
-import AVKit
 
-class PlayersCollectionViewController: UICollectionViewController {
+final class PlayersCollectionViewController: UICollectionViewController {
+    var models = [] as [Model]
     
-    var dataSource: PlayersCollectionDTO?
-    var provider = OneSDK.Provider.default
+    let sdk: Future<Result<OneSDK>> = {
+        var provider = OneSDK.Provider.default
+        provider.context.extra = ["noAds" : true]
+        return provider.getSDK()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let dataSource = self.dataSource else { return }
-        
-        for playerData in dataSource.playersData {
-            self.provider.context.extra = ["noAds": true]
-            self.provider.getSDK()
-                .then { $0.videoProvider.getVideosBy(videoIDs: [playerData.videoId]) }
+        for model in models {
+            sdk.then { $0.videoProvider.getVideosBy(videoIDs: [model.videoId]) }
+                .and(sdk)
                 .dispatch(on: .main)
                 .onComplete(callback: handle)
         }
     }
     
-    func handle(result: Result<VideoProvider.Response>) {
-        
+    func handle(result: (Result<VideoProvider.Response>, Result<OneSDK>)) {
         switch result {
-        case .value(let response):
+        case (.value(let response), .value(let sdk)):
+            func byIndex(of response: VideoProvider.Response.VideoResponse) -> Int? {
+                guard case .video(let video) = response else { return nil }
+                return models.index { $0.videoId == video.id }
+            }            
+            guard let index = response.videos.flatMap(byIndex).first else { return }
             
-            self.provider.getSDK()
-                .map{ return $0.makePlayer(videoResponse: response, autoplay: false) }
-                .dispatch(on: .main)
-                .onSuccess(call: { (player) in
-                    
-                    let systemPlayerViewController = SystemPlayerViewController()
-                    systemPlayerViewController.player = player
-                    
-                    guard let videoId = response.videos.flatMap({ (videoResponse) -> String? in
-                        switch(videoResponse) {
-                        case .video(let video):
-                            return video.id
-                        default: return nil
-                        }
-                    }).first, let index = self.dataSource?.insert(playerVC: systemPlayerViewController, toVideoWithId: videoId) else {
-                        return
-                    }
-                    
-                    _ = player.addObserver({ (props) in
-                        if let isPlaybackReady = props.playbackItem?.content.isPlaybackReady {
-                            print("isPlaybackReady = ", isPlaybackReady)
-                        }
-                    })
-                    
-                    let indexPath = IndexPath(row: index, section: 0)
-                    let playerCell = self.collectionView?.cellForItem(at: indexPath) as? PlayersCollectionViewCell
-                    playerCell?.removePlayerVCProperly()
-                    self.collectionView?.reloadItems(at: [indexPath])
-                })
-        case .error(let error):
+            let player = sdk.makePlayer(videoResponse: response, autoplay: false)
+            
+            let systemPVC = SystemPlayerViewController()
+            systemPVC.player = player
+            models[index].systemPlayerViewController = systemPVC
+            
+            collectionView?.reloadItems(at: [IndexPath(row: index, section: 0)])
+        case (.error(let error), _), (_, .error(let error)):
             let alert = UIAlertController(title: "Error",
                                           message: "\(error)",
                 preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK",
                                           style: .default,
                                           handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
+        default: break
         }
     }
     
-    // MARK: UICollectionViewDataSource
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.dataSource?.playersData.count ?? 0
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayersCollectionCellId", for: indexPath)
-        
-        if let playerCell = cell as? PlayersCollectionViewCell,
-            let dataSource = self.dataSource, indexPath.row < dataSource.playersData.count,
-            let systemPlayerViewController = dataSource.playersData[indexPath.row].playerVC {
-            playerCell.removePlayerVCProperly()
-            
-            systemPlayerViewController.view.frame = CGRect(x: 0, y: 0, width: playerCell.contentView.frame.size.width, height: playerCell.contentView.frame.size.height)
-            playerCell.systemPlayerViewController = systemPlayerViewController
-            
-            systemPlayerViewController.willMove(toParentViewController: self)
-            self.addChildViewController(systemPlayerViewController)
-            playerCell.contentView.addSubview(systemPlayerViewController.view)
-            systemPlayerViewController.didMove(toParentViewController: self)
-        }
-        
-        return cell
+    override func collectionView(_ collectionView: UICollectionView,
+                                 numberOfItemsInSection section: Int) -> Int {
+        return models.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayersCollectionCellId",
+            
+                                                      for: indexPath)
+        guard
+            let controller = models[indexPath.row].systemPlayerViewController,
+            let playerCell = cell as? PlayersCollectionViewCell else { return cell }
+        
+        addChildViewController(controller)
+        controller.view.frame = CGRect(x: 0,
+                                       y: 0,
+                                       width: cell.contentView.frame.width,
+                                       height: cell.contentView.frame.height)
+        cell.contentView.addSubview(controller.view)
+        controller.didMove(toParentViewController: self)
+        
+        playerCell.removePlayerViewController = {
+            controller.willMove(toParentViewController: nil)
+            controller.view.removeFromSuperview()
+            controller.removeFromParentViewController()
+        }
+        
+        return playerCell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                                 canFocusItemAt indexPath: IndexPath) -> Bool {
         return false
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                                 didEndDisplaying cell: UICollectionViewCell,
+                                 forItemAt indexPath: IndexPath) {
+        (cell as? PlayersCollectionViewCell)?.removePlayerViewController?()
     }
 }
 
-struct PlayersCollectionDTO {
-    
-    struct PlayerCellDTO {
+extension PlayersCollectionViewController {
+    struct Model {
         let videoId: String
-        var playerVC: SystemPlayerViewController?
-        
-        init(videoId: String) {
-            self.videoId = videoId
-            self.playerVC = nil
-        }
+        var systemPlayerViewController: SystemPlayerViewController?
     }
-    
-    mutating func insert(playerVC: SystemPlayerViewController, toVideoWithId id: String) -> Int? {
-        
-        let index = self.playersData.index { (playerDTO) -> Bool in
-            return playerDTO.videoId == id
-        }
-        
-        if let index = index {
-            self.playersData[index].playerVC = playerVC
-        }
-        
-        return index
-    }
-    
-    var playersData: [PlayerCellDTO]
 }
 
 class PlayersCollectionViewCell: UICollectionViewCell {
-    var systemPlayerViewController: SystemPlayerViewController?
-    
-    func removePlayerVCProperly() {
-        self.systemPlayerViewController?.willMove(toParentViewController: nil)
-        self.systemPlayerViewController?.removeFromParentViewController()
-        self.systemPlayerViewController?.view.removeFromSuperview()
-        self.systemPlayerViewController = nil
-    }
+    var removePlayerViewController: Optional<(Void) -> Void>
 }
