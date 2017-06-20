@@ -19,7 +19,7 @@
 		427C4C04084F3E41D3AACA8F /* Pods-tvOSMultiplePlayersTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOSMultiplePlayersTemplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOSMultiplePlayersTemplate/Pods-tvOSMultiplePlayersTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		49B913A845A6123C7EBABF06 /* libPods-tvOSMultiplePlayersTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tvOSMultiplePlayersTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAF6B06205319A1A0552AC3 /* Pods-tvOSMultiplePlayersTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOSMultiplePlayersTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOSMultiplePlayersTemplate/Pods-tvOSMultiplePlayersTemplate.release.xcconfig"; sourceTree = "<group>"; };
-		FEAE27431EEFDEA600EF0D6D /* tvOSMultiplePlayersTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvOSMultiplePlayersTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEAE27431EEFDEA600EF0D6D /* tvOS Players CollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Players CollectionView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAE27461EEFDEA600EF0D6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEAE27481EEFDEA600EF0D6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FEAE274B1EEFDEA600EF0D6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		FEAE273A1EEFDEA600EF0D6D = {
 			isa = PBXGroup;
 			children = (
-				FEAE27451EEFDEA600EF0D6D /* tvOSMultiplePlayersTemplate */,
+				FEAE27451EEFDEA600EF0D6D /* tvOS Players CollectionView */,
 				FEAE27441EEFDEA600EF0D6D /* Products */,
 				62694FCF0D4FE36C720D8F84 /* Pods */,
 				71C42B5AC94D238D80665886 /* Frameworks */,
@@ -70,12 +70,12 @@
 		FEAE27441EEFDEA600EF0D6D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEAE27431EEFDEA600EF0D6D /* tvOSMultiplePlayersTemplate.app */,
+				FEAE27431EEFDEA600EF0D6D /* tvOS Players CollectionView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FEAE27451EEFDEA600EF0D6D /* tvOSMultiplePlayersTemplate */ = {
+		FEAE27451EEFDEA600EF0D6D /* tvOS Players CollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				FEAE27461EEFDEA600EF0D6D /* AppDelegate.swift */,
@@ -85,15 +85,15 @@
 				FEAE274F1EEFDEA600EF0D6D /* Info.plist */,
 				FEAE27551EEFE11800EF0D6D /* PlayersCollectionViewController.swift */,
 			);
-			path = tvOSMultiplePlayersTemplate;
+			path = "tvOS Players CollectionView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEAE27421EEFDEA600EF0D6D /* tvOSMultiplePlayersTemplate */ = {
+		FEAE27421EEFDEA600EF0D6D /* tvOS Players CollectionView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEAE27521EEFDEA600EF0D6D /* Build configuration list for PBXNativeTarget "tvOSMultiplePlayersTemplate" */;
+			buildConfigurationList = FEAE27521EEFDEA600EF0D6D /* Build configuration list for PBXNativeTarget "tvOS Players CollectionView" */;
 			buildPhases = (
 				676D30933D29B54CC1534BE8 /* [CP] Check Pods Manifest.lock */,
 				FEAE273F1EEFDEA600EF0D6D /* Sources */,
@@ -106,9 +106,9 @@
 			);
 			dependencies = (
 			);
-			name = tvOSMultiplePlayersTemplate;
+			name = "tvOS Players CollectionView";
 			productName = tvOSMultiplePlayersTemplate;
-			productReference = FEAE27431EEFDEA600EF0D6D /* tvOSMultiplePlayersTemplate.app */;
+			productReference = FEAE27431EEFDEA600EF0D6D /* tvOS Players CollectionView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +127,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FEAE273E1EEFDEA600EF0D6D /* Build configuration list for PBXProject "tvOSMultiplePlayersTemplate" */;
+			buildConfigurationList = FEAE273E1EEFDEA600EF0D6D /* Build configuration list for PBXProject "tvOS Players CollectionView" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -140,7 +140,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEAE27421EEFDEA600EF0D6D /* tvOSMultiplePlayersTemplate */,
+				FEAE27421EEFDEA600EF0D6D /* tvOS Players CollectionView */,
 			);
 		};
 /* End PBXProject section */
@@ -200,7 +200,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -330,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 7V23547MMU;
-				INFOPLIST_FILE = tvOSMultiplePlayersTemplate/Info.plist;
+				INFOPLIST_FILE = "tvOS Players CollectionView/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -345,7 +345,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 7V23547MMU;
-				INFOPLIST_FILE = tvOSMultiplePlayersTemplate/Info.plist;
+				INFOPLIST_FILE = "tvOS Players CollectionView/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -356,7 +356,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FEAE273E1EEFDEA600EF0D6D /* Build configuration list for PBXProject "tvOSMultiplePlayersTemplate" */ = {
+		FEAE273E1EEFDEA600EF0D6D /* Build configuration list for PBXProject "tvOS Players CollectionView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEAE27501EEFDEA600EF0D6D /* Debug */,
@@ -365,7 +365,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEAE27521EEFDEA600EF0D6D /* Build configuration list for PBXNativeTarget "tvOSMultiplePlayersTemplate" */ = {
+		FEAE27521EEFDEA600EF0D6D /* Build configuration list for PBXNativeTarget "tvOS Players CollectionView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEAE27531EEFDEA600EF0D6D /* Debug */,
