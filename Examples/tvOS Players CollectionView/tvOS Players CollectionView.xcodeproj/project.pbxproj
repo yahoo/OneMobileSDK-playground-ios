@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A20A293346965FD4B135C3B7 /* libPods-tvOSMultiplePlayersTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B913A845A6123C7EBABF06 /* libPods-tvOSMultiplePlayersTemplate.a */; };
+		D8D30F9501E458C50A5A2A13 /* libPods-tvOS Players CollectionView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC77098D444CBC035D3524D /* libPods-tvOS Players CollectionView.a */; };
 		FEAE27471EEFDEA600EF0D6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAE27461EEFDEA600EF0D6D /* AppDelegate.swift */; };
 		FEAE27491EEFDEA600EF0D6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAE27481EEFDEA600EF0D6D /* ViewController.swift */; };
 		FEAE274C1EEFDEA600EF0D6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAE274A1EEFDEA600EF0D6D /* Main.storyboard */; };
@@ -16,9 +16,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		427C4C04084F3E41D3AACA8F /* Pods-tvOSMultiplePlayersTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOSMultiplePlayersTemplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOSMultiplePlayersTemplate/Pods-tvOSMultiplePlayersTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		49B913A845A6123C7EBABF06 /* libPods-tvOSMultiplePlayersTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tvOSMultiplePlayersTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FCAF6B06205319A1A0552AC3 /* Pods-tvOSMultiplePlayersTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOSMultiplePlayersTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOSMultiplePlayersTemplate/Pods-tvOSMultiplePlayersTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		4B40746348442EA88ED6F241 /* Pods-tvOS Players CollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS Players CollectionView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS Players CollectionView/Pods-tvOS Players CollectionView.debug.xcconfig"; sourceTree = "<group>"; };
+		6DC77098D444CBC035D3524D /* libPods-tvOS Players CollectionView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tvOS Players CollectionView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F73DF98CAE8E259B2625093A /* Pods-tvOS Players CollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS Players CollectionView.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS Players CollectionView/Pods-tvOS Players CollectionView.release.xcconfig"; sourceTree = "<group>"; };
 		FEAE27431EEFDEA600EF0D6D /* tvOS Players CollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Players CollectionView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAE27461EEFDEA600EF0D6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEAE27481EEFDEA600EF0D6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A20A293346965FD4B135C3B7 /* libPods-tvOSMultiplePlayersTemplate.a in Frameworks */,
+				D8D30F9501E458C50A5A2A13 /* libPods-tvOS Players CollectionView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,8 +44,8 @@
 		62694FCF0D4FE36C720D8F84 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				427C4C04084F3E41D3AACA8F /* Pods-tvOSMultiplePlayersTemplate.debug.xcconfig */,
-				FCAF6B06205319A1A0552AC3 /* Pods-tvOSMultiplePlayersTemplate.release.xcconfig */,
+				4B40746348442EA88ED6F241 /* Pods-tvOS Players CollectionView.debug.xcconfig */,
+				F73DF98CAE8E259B2625093A /* Pods-tvOS Players CollectionView.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -53,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				49B913A845A6123C7EBABF06 /* libPods-tvOSMultiplePlayersTemplate.a */,
+				6DC77098D444CBC035D3524D /* libPods-tvOS Players CollectionView.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,7 +172,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOSMultiplePlayersTemplate/Pods-tvOSMultiplePlayersTemplate-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS Players CollectionView/Pods-tvOS Players CollectionView-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5B808726A4883C56D893BF0A /* [CP] Embed Pods Frameworks */ = {
@@ -185,7 +187,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOSMultiplePlayersTemplate/Pods-tvOSMultiplePlayersTemplate-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS Players CollectionView/Pods-tvOS Players CollectionView-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		676D30933D29B54CC1534BE8 /* [CP] Check Pods Manifest.lock */ = {
@@ -200,7 +202,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -325,7 +327,7 @@
 		};
 		FEAE27531EEFDEA600EF0D6D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 427C4C04084F3E41D3AACA8F /* Pods-tvOSMultiplePlayersTemplate.debug.xcconfig */;
+			baseConfigurationReference = 4B40746348442EA88ED6F241 /* Pods-tvOS Players CollectionView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -335,12 +337,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
 		FEAE27541EEFDEA600EF0D6D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCAF6B06205319A1A0552AC3 /* Pods-tvOSMultiplePlayersTemplate.release.xcconfig */;
+			baseConfigurationReference = F73DF98CAE8E259B2625093A /* Pods-tvOS Players CollectionView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -350,6 +353,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
