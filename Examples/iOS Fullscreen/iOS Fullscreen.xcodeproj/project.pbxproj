@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		504EC4CE1F1E0BA500FB565A /* Animators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504EC4CD1F1E0BA500FB565A /* Animators.swift */; };
+		504EC4D51F1E2AFF00FB565A /* FullscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504EC4D41F1E2AFF00FB565A /* FullscreenViewController.swift */; };
 		506C59E31F17BE4F00AAA662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C59E21F17BE4F00AAA662 /* AppDelegate.swift */; };
 		506C59E51F17BE4F00AAA662 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C59E41F17BE4F00AAA662 /* ViewController.swift */; };
 		506C59E81F17BE4F00AAA662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506C59E61F17BE4F00AAA662 /* Main.storyboard */; };
@@ -17,10 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		504EC4CD1F1E0BA500FB565A /* Animators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animators.swift; sourceTree = "<group>"; };
+		504EC4CD1F1E0BA500FB565A /* Animators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animators.swift; path = sources/Animators.swift; sourceTree = "<group>"; };
+		504EC4D41F1E2AFF00FB565A /* FullscreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FullscreenViewController.swift; path = sources/FullscreenViewController.swift; sourceTree = "<group>"; };
 		506C59DF1F17BE4F00AAA662 /* iOS Fullscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Fullscreen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		506C59E21F17BE4F00AAA662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		506C59E41F17BE4F00AAA662 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		506C59E21F17BE4F00AAA662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = sources/AppDelegate.swift; sourceTree = "<group>"; };
+		506C59E41F17BE4F00AAA662 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = sources/ViewController.swift; sourceTree = "<group>"; };
 		506C59E71F17BE4F00AAA662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		506C59E91F17BE4F00AAA662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		506C59EC1F17BE4F00AAA662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +61,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		504EC4DB1F1FBEFB00FB565A /* sources */ = {
+			isa = PBXGroup;
+			children = (
+				506C59E21F17BE4F00AAA662 /* AppDelegate.swift */,
+				506C59E41F17BE4F00AAA662 /* ViewController.swift */,
+				504EC4CD1F1E0BA500FB565A /* Animators.swift */,
+				504EC4D41F1E2AFF00FB565A /* FullscreenViewController.swift */,
+			);
+			name = sources;
+			sourceTree = "<group>";
+		};
 		506C59D61F17BE4F00AAA662 = {
 			isa = PBXGroup;
 			children = (
@@ -80,9 +93,7 @@
 		506C59E11F17BE4F00AAA662 /* iOS Fullscreen */ = {
 			isa = PBXGroup;
 			children = (
-				506C59E21F17BE4F00AAA662 /* AppDelegate.swift */,
-				506C59E41F17BE4F00AAA662 /* ViewController.swift */,
-				504EC4CD1F1E0BA500FB565A /* Animators.swift */,
+				504EC4DB1F1FBEFB00FB565A /* sources */,
 				506C59E61F17BE4F00AAA662 /* Main.storyboard */,
 				506C59E91F17BE4F00AAA662 /* Assets.xcassets */,
 				506C59EB1F17BE4F00AAA662 /* LaunchScreen.storyboard */,
@@ -218,6 +229,7 @@
 				504EC4CE1F1E0BA500FB565A /* Animators.swift in Sources */,
 				506C59E51F17BE4F00AAA662 /* ViewController.swift in Sources */,
 				506C59E31F17BE4F00AAA662 /* AppDelegate.swift in Sources */,
+				504EC4D51F1E2AFF00FB565A /* FullscreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
