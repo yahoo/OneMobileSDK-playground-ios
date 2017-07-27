@@ -25,9 +25,9 @@ class ViewController: UIViewController {
             highlighted: #imageLiteral(resourceName: "icon-fullscreen-active"))
         
         let minimizeIcons = SideBarView.ButtonProps.Icons(
-            normal: #imageLiteral(resourceName: "icon-minimize"), 
+            normal: #imageLiteral(resourceName: "icon-fullscreen-out"),
             selected: nil,
-            highlighted: nil)
+            highlighted: #imageLiteral(resourceName: "icon-fullscreen-out-active"))
         
         let fullscreen = SideBarView.ButtonProps(
             isEnabled: true,
