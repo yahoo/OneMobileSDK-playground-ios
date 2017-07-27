@@ -82,7 +82,6 @@ class FullscreenViewController: UIViewController, UIViewControllerTransitioningD
             state = .normal(present: { [weak self] in self?.presentFullScreen() })
             fallthrough
         case .normal, .fullscreen:
-            print(#function)
             childViewController?.beginAppearanceTransition(true, animated: animated)
         default: break
         }
@@ -91,7 +90,6 @@ class FullscreenViewController: UIViewController, UIViewControllerTransitioningD
     override func viewDidAppear(_ animated: Bool) {
         switch state {
         case .normal, .fullscreen:
-            print(#function)
             childViewController?.endAppearanceTransition()
         case .disappearing:
             state = .normal(present: { [weak self] in self?.presentFullScreen() })
@@ -102,7 +100,6 @@ class FullscreenViewController: UIViewController, UIViewControllerTransitioningD
     override func viewWillDisappear(_ animated: Bool) {
         switch state {
         case .normal, .fullscreen:
-            print(#function)
             childViewController?.beginAppearanceTransition(false, animated: animated)
         default: break
         }
@@ -111,7 +108,6 @@ class FullscreenViewController: UIViewController, UIViewControllerTransitioningD
     override func viewDidDisappear(_ animated: Bool) {
         switch state {
         case .normal, .fullscreen:
-            print(#function)
             childViewController?.endAppearanceTransition()
         default: break
         }
