@@ -3,5 +3,5 @@ platform :ios, '8.0'
 source "https://github.com/vidible/OneMobileSDK-releases.git"
 
 target 'Xcode9 Integration' do
-  pod 'OneMobileSDK-Xcode9beta5'
+  pod 'OneMobileSDK-Xcode9beta6'
 end
