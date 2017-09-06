@@ -1,12 +1,12 @@
 PODS:
-  - OneMobileSDK-Xcode9beta6 (2.10.1600)
+  - OneMobileSDK-Xcode9beta6 (2.11.1689)
 
 DEPENDENCIES:
   - OneMobileSDK-Xcode9beta6
 
 SPEC CHECKSUMS:
-  OneMobileSDK-Xcode9beta6: df8cad0c18326ce727e8c7c18920bbf43eb0f8d7
+  OneMobileSDK-Xcode9beta6: 96af474c5e61ef737911be54ef38e10b4d90bb3d
 
 PODFILE CHECKSUM: b6c7d10db77ac5cf8c02ca59d317e8946de264e7
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.3.1
