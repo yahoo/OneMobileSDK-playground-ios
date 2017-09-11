@@ -26,7 +26,7 @@ class ViewController: UIViewController {
             guard case .playable(let content) = controls.item else { return props }
             
             var newContent = content
-            // this code postions seekbar at bottom
+            // this code positions seekbar at bottom
             newContent.settings = .hidden
             newContent.title = ""
             newContent.pictureInPictureControl = .unsupported
