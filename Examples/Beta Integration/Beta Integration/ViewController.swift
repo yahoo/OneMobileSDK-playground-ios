@@ -31,6 +31,9 @@ class ViewController: UIViewController {
             newContent.title = ""
             newContent.pictureInPictureControl = .unsupported
             
+            // change color of live dot
+            newContent.live.dotColor = .red
+            
             return .player(.init {
                 $0.playlist = controls.playlist
                 $0.item = .playable(newContent)
