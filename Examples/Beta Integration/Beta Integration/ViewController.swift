@@ -21,12 +21,27 @@ class ViewController: UIViewController {
     private func render(player: Player) {
         let playerViewController = PlayerViewController()
         playerViewController.contentControlsViewController = DefaultControlsViewController()
+        playerViewController.customizeContentControlsProps = { props in
+            guard case .player(let controls) = props else { return props }
+            guard case .playable(let content) = controls.item else { return props }
+            
+            var newContent = content
+            // this code postions seekbar at bottom
+            newContent.settings = .hidden
+            newContent.title = ""
+            newContent.pictureInPictureControl = .unsupported
+            
+            return .player(.init {
+                $0.playlist = controls.playlist
+                $0.item = .playable(newContent)
+                })
+        }
         playerViewController.player = player
         navigationController?.pushViewController(playerViewController, animated: true)
     }
     
     private func observe(player: Player) {
-        _ = player.addUIObserver { props in
+        _ = player.addObserver { props in
             /* There are 2 types of player item's -
             available for playback and unavailable. */ do {
                 switch props.item {
