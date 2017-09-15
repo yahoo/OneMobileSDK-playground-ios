@@ -183,12 +183,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Xcode9 Integration/Pods-Xcode9 Integration-frameworks.sh",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9beta6/Carthage/Build/iOS/OneMobileSDK.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9beta6/Carthage/Build/iOS/OneMobileSDK.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9beta6/Carthage/Build/iOS/PlayerControls.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9beta6/Carthage/Build/iOS/PlayerControls.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9beta6/Carthage/Build/iOS/VideoRenderer.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9beta6/Carthage/Build/iOS/VideoRenderer.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9GM/Carthage/Build/iOS/OneMobileSDK.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9GM/Carthage/Build/iOS/OneMobileSDK.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9GM/Carthage/Build/iOS/PlayerControls.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9GM/Carthage/Build/iOS/PlayerControls.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9GM/Carthage/Build/iOS/VideoRenderer.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9GM/Carthage/Build/iOS/VideoRenderer.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
