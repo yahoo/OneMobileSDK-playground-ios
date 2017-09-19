@@ -204,8 +204,8 @@
 				"${PODS_ROOT}/OneMobileSDK-Beta-Swift3/Carthage/Build/iOS/OneMobileSDK.framework.dSYM",
 				"${PODS_ROOT}/OneMobileSDK-Beta-Swift3/Carthage/Build/iOS/PlayerControls.framework",
 				"${PODS_ROOT}/OneMobileSDK-Beta-Swift3/Carthage/Build/iOS/PlayerControls.framework.dSYM",
-				"${PODS_ROOT}/VideoRenderer/Carthage/Build/iOS/VideoRenderer.framework",
-				"${PODS_ROOT}/VideoRenderer/Carthage/Build/iOS/VideoRenderer.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Beta-Swift3/Carthage/Build/iOS/VideoRenderer.framework",
+				"${PODS_ROOT}/OneMobileSDK-Beta-Swift3/Carthage/Build/iOS/VideoRenderer.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

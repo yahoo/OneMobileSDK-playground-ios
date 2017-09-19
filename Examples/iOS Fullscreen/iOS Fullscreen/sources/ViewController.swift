@@ -50,6 +50,27 @@ class ViewController: UIViewController {
         
         let playerViewController = PlayerViewController()
         playerViewController.contentControlsViewController = controls
+        playerViewController.customizeContentControlsProps = { props in
+            guard let controls = props.player else { return props }
+            guard var content = controls.item.playable else { return props }
+            
+            /* Seekbar at bottom */do {
+                guard case .normal = fullscreenViewController.state else { return props }
+                content.live.isHidden = true
+                content.pictureInPictureControl = .unsupported
+                content.settings.isHidden = true
+                content.title = ""
+            }
+            
+//            /* Change live dot color to red */do {
+//                content.live.dotColor = .red
+//            }
+            
+            return .player(.init {
+                $0.playlist = controls.playlist
+                $0.item = .playable(content)
+                })
+        }
         fullscreenViewController.childViewController = playerViewController
         
         OneSDK.Provider.default.getSDK()
