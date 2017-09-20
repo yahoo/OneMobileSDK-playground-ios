@@ -1,2 +1,1 @@
-github "aol-public/OneMobileSDK-videorenderer-ios" "1.5"
-github "vidible/OneMobileSDK-releases" "2.11"
+binary "https://github.com/vidible/OneMobileSDK-releases/releases/download/2.16/OneMobileSDK.json" "2.16.8"
