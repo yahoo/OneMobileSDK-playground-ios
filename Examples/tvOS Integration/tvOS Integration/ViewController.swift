@@ -60,5 +60,12 @@ class ViewController: UIViewController {
             .dispatch(on: .main)
             .onComplete(callback: handle)
     }
+    
+    @IBAction func playLiveVideoTouched(_ sender: UIButton) {
+        OneSDK.Provider.default.getSDK()
+            .then { $0.getPlayer(videoID:"59833447b90afb42310c19da") }
+            .dispatch(on: .main)
+            .onComplete(callback: handle)
+    }
 }
 
