@@ -1,11 +1,11 @@
 PODS:
-  - OneMobileSDK-Beta-Swift3 (2.17.1783)
+  - OneMobileSDK-Beta-Swift3 (2.17.1799)
 
 DEPENDENCIES:
   - OneMobileSDK-Beta-Swift3
 
 SPEC CHECKSUMS:
-  OneMobileSDK-Beta-Swift3: 14fe4e663935964f87198dacee521f9260081d93
+  OneMobileSDK-Beta-Swift3: 98ae7d25f18a83a22ec7b6a6ca46db3927226dba
 
 PODFILE CHECKSUM: d8c5ac879bc3c8c4fbd1e8554a1a73c41beaec4d
 
