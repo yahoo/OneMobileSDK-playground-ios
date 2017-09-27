@@ -13,8 +13,19 @@ class ViewController: UIViewController {
     }
     
     func handle(result: Result<One.Player>) {
+        var prevContentIsFinished: Bool?
+        
         switch result {
         case .value(let player):
+            _ = player.addObserver(
+                on: DispatchQueue.global(qos: .background),
+                mode: .everyUpdate,
+                { (props) in
+                    guard let isFinished = props.playbackItem?.content.isFinished, isFinished != prevContentIsFinished else { return }
+                    prevContentIsFinished = isFinished
+                    self.print(event: "Content isFinished state did change: \(isFinished)")
+                }
+            )
             
             let systemPlayerViewController = SystemPlayerViewController()
             
@@ -54,11 +65,23 @@ class ViewController: UIViewController {
         }
     }
     
+    func print(event: String) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm:ss,mmm"
+        Swift.print("\(self): \(formatter.string(from: Date())) \(event)")
+    }
+    
     @IBAction func playVideoTouched(_ sender: UIButton) {
         OneSDK.Provider.default.getSDK()
             .then { $0.getPlayer(videoID:"577cc23d50954952cc56bc47") }
             .dispatch(on: .main)
             .onComplete(callback: handle)
     }
+    
+    @IBAction func playLiveVideoTouched(_ sender: UIButton) {
+        OneSDK.Provider.default.getSDK()
+            .then { $0.getPlayer(videoID:"59833447b90afb42310c19da") }
+            .dispatch(on: .main)
+            .onComplete(callback: handle)
+    }
 }
-
