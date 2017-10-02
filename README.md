@@ -1,6 +1,6 @@
-# OneMobileSDK-Playground-iOS
+# OneMobileSDK Examples & Playgrounds
 
-This repository contains a lot of examples and samples
+This repository contains a lot of examples and samples of OneMobileSDK usage.
 
 ## Requirements:
 - Xcode 8/9
