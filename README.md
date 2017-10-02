@@ -8,4 +8,4 @@ This repository contains a lot of examples and samples
 
 ## Integration and usage guide:
 
-![Here](Usage guide.md)
+[Here](Usage guide.md)
