@@ -187,6 +187,8 @@
 				"${PODS_ROOT}/OneMobileSDK-Xcode9/Carthage/Build/iOS/OneMobileSDK.framework.dSYM",
 				"${PODS_ROOT}/OneMobileSDK-Xcode9/Carthage/Build/iOS/PlayerControls.framework",
 				"${PODS_ROOT}/OneMobileSDK-Xcode9/Carthage/Build/iOS/PlayerControls.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9/Carthage/Build/iOS/PlayerCore.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9/Carthage/Build/iOS/PlayerCore.framework.dSYM",
 				"${PODS_ROOT}/OneMobileSDK-Xcode9/Carthage/Build/iOS/VideoRenderer.framework",
 				"${PODS_ROOT}/OneMobileSDK-Xcode9/Carthage/Build/iOS/VideoRenderer.framework.dSYM",
 			);
@@ -196,6 +198,8 @@
 				"${DWARF_DSYM_FOLDER_PATH}/OneMobileSDK.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PlayerControls.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/PlayerControls.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PlayerCore.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/PlayerCore.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VideoRenderer.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/VideoRenderer.framework.dSYM",
 			);
@@ -367,6 +371,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7V23547MMU;
 				INFOPLIST_FILE = "Xcode9 Integration/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -382,6 +387,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7V23547MMU;
 				INFOPLIST_FILE = "Xcode9 Integration/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
