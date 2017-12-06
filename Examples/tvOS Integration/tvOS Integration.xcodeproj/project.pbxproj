@@ -196,15 +196,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS Integration/Pods-tvOS Integration-frameworks.sh",
-				"${PODS_ROOT}/OneMobileSDK-Beta-Swift3/Carthage/Build/tvOS/OneMobileSDK.framework",
-				"${PODS_ROOT}/OneMobileSDK-Beta-Swift3/Carthage/Build/tvOS/OneMobileSDK.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Beta-Swift3/Carthage/Build/tvOS/VideoRenderer.framework",
-				"${PODS_ROOT}/OneMobileSDK-Beta-Swift3/Carthage/Build/tvOS/VideoRenderer.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.1/Carthage/Build/tvOS/OneMobileSDK.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.1/Carthage/Build/tvOS/OneMobileSDK.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.1/Carthage/Build/tvOS/PlayerCore.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.1/Carthage/Build/tvOS/PlayerCore.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.1/Carthage/Build/tvOS/VideoRenderer.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.1/Carthage/Build/tvOS/VideoRenderer.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneMobileSDK.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/OneMobileSDK.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PlayerCore.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/PlayerCore.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VideoRenderer.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/VideoRenderer.framework.dSYM",
 			);

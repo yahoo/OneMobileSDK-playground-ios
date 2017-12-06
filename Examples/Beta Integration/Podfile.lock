@@ -1,11 +1,11 @@
 PODS:
-  - OneMobileSDK-Beta-Xcode9.1 (2.19.1915)
+  - OneMobileSDK-Beta-Xcode9.1 (2.19.1934)
 
 DEPENDENCIES:
   - OneMobileSDK-Beta-Xcode9.1
 
 SPEC CHECKSUMS:
-  OneMobileSDK-Beta-Xcode9.1: b2e32310cc2c398eb4d8c9b1068f2bbf83466d95
+  OneMobileSDK-Beta-Xcode9.1: a169a439da1f67d47406a3032fd7d7e59e42b0d5
 
 PODFILE CHECKSUM: 4007ac56578581f0e1edd22ec96b898c7b9bfbdc
 

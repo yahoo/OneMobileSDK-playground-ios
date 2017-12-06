@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50021F271FD86C9D0049F3BE /* PlayerCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50021F251FD86C6E0049F3BE /* PlayerCore.framework */; };
+		50021F281FD86C9D0049F3BE /* PlayerCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50021F251FD86C6E0049F3BE /* PlayerCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50AF29451EAF767700458836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF29441EAF767700458836 /* AppDelegate.swift */; };
 		50AF29471EAF767700458836 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF29461EAF767700458836 /* ViewController.swift */; };
 		50AF294A1EAF767700458836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AF29481EAF767700458836 /* Main.storyboard */; };
@@ -29,6 +31,7 @@
 			files = (
 				50AF295C1EAF778700458836 /* OneMobileSDK.framework in Embed Frameworks */,
 				50AF29631EAF7A0200458836 /* VideoRenderer.framework in Embed Frameworks */,
+				50021F281FD86C9D0049F3BE /* PlayerCore.framework in Embed Frameworks */,
 				50AF295E1EAF778700458836 /* PlayerControls.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -37,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		50021F251FD86C6E0049F3BE /* PlayerCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PlayerCore.framework; path = Carthage/Build/iOS/PlayerCore.framework; sourceTree = "<group>"; };
 		50AF29411EAF767700458836 /* Carthage Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Carthage Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AF29441EAF767700458836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50AF29461EAF767700458836 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,7 @@
 				50AF29621EAF7A0200458836 /* VideoRenderer.framework in Frameworks */,
 				50AF29591EAF777F00458836 /* OneMobileSDK.framework in Frameworks */,
 				50AF295D1EAF778700458836 /* PlayerControls.framework in Frameworks */,
+				50021F271FD86C9D0049F3BE /* PlayerCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +101,7 @@
 		50AF29561EAF777F00458836 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50021F251FD86C6E0049F3BE /* PlayerCore.framework */,
 				50AF29601EAF78CB00458836 /* VideoRenderer.framework */,
 				50AF29571EAF777F00458836 /* OneMobileSDK.framework */,
 				50AF29581EAF777F00458836 /* PlayerControls.framework */,
