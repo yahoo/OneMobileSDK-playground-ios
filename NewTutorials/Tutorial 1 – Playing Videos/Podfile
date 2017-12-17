@@ -4,4 +4,6 @@ source "https://github.com/vidible/OneMobileSDK-releases.git"
 
 abstract_target 'PlayingVideos' do
   pod 'OneMobileSDK-Xcode9.2'
+
+  target 'AutoPlay'
 end

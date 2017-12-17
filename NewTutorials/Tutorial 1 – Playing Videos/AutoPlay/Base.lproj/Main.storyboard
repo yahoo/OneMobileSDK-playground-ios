@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="erO-Px-Fkp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="OD0-yB-h7C">
+            <objects>
+                <navigationController id="erO-Px-Fkp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Efg-ET-RlM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qv5-f5-8xJ" kind="relationship" relationship="rootViewController" id="y94-kU-zRi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kir-hZ-Dqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-724" y="38"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Uxn-3q-0K7">
+            <objects>
+                <viewController id="Qv5-f5-8xJ" customClass="ViewController" customModule="AutoPlay" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ecJ-19-ZCL"/>
+                        <viewControllerLayoutGuide type="bottom" id="UTM-cN-FEl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zwz-ua-JRU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIQ-xO-z1Z">
+                                <rect key="frame" x="133" y="312" width="110" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Play video"/>
+                                <connections>
+                                    <action selector="playVideoTouched:" destination="Qv5-f5-8xJ" eventType="touchUpInside" id="3zJ-om-yge"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aTs-ac-JQa">
+                                <rect key="frame" x="312" y="628" width="51" height="31"/>
+                                <connections>
+                                    <action selector="autoplayToggledWithSender:" destination="Qv5-f5-8xJ" eventType="valueChanged" id="uXu-29-gqW"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto play:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNt-Gk-5zy">
+                                <rect key="frame" x="16" y="633" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qIQ-xO-z1Z" firstAttribute="centerX" secondItem="zwz-ua-JRU" secondAttribute="centerX" id="2Pb-Il-gWB"/>
+                            <constraint firstItem="vNt-Gk-5zy" firstAttribute="centerY" secondItem="aTs-ac-JQa" secondAttribute="centerY" id="Eyu-hI-iMj"/>
+                            <constraint firstItem="u87-hk-9XU" firstAttribute="trailing" secondItem="aTs-ac-JQa" secondAttribute="trailing" constant="14" id="F1S-y4-IHA"/>
+                            <constraint firstItem="qIQ-xO-z1Z" firstAttribute="centerY" secondItem="zwz-ua-JRU" secondAttribute="centerY" id="FcO-3k-PLY"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vNt-Gk-5zy" secondAttribute="trailingMargin" id="KYt-p9-FOF"/>
+                            <constraint firstItem="UTM-cN-FEl" firstAttribute="top" secondItem="aTs-ac-JQa" secondAttribute="bottom" constant="8" symbolic="YES" id="LsQ-4K-KuB"/>
+                            <constraint firstItem="vNt-Gk-5zy" firstAttribute="leading" secondItem="zwz-ua-JRU" secondAttribute="leadingMargin" id="NMU-zV-xIf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u87-hk-9XU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Sc-ao-QfN"/>
+                    <connections>
+                        <outlet property="autoplaySwitcher" destination="aTs-ac-JQa" id="3Os-IL-V5N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ucU-Ij-yq8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-14" y="37"/>
+        </scene>
+    </scenes>
+</document>
