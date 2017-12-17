@@ -6,6 +6,15 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1DF44077EF32CF543A685F8B /* libPods-PlayingVideos-VideoPlaylist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D9420A2AB0B53046ACDC8F /* libPods-PlayingVideos-VideoPlaylist.a */; };
+		DA81758F1FE6973A00A3A381 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA81758E1FE6973A00A3A381 /* AppDelegate.swift */; };
+		DA8175911FE6973A00A3A381 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8175901FE6973A00A3A381 /* ViewController.swift */; };
+		DA8175941FE6973A00A3A381 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8175921FE6973A00A3A381 /* Main.storyboard */; };
+		DA8175961FE6973A00A3A381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8175951FE6973A00A3A381 /* Assets.xcassets */; };
+		DA8175991FE6973A00A3A381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8175971FE6973A00A3A381 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		06CD2FC7FF460DFCC8FB456D /* libPods-PlayingVideos-ArrayOfVideos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayingVideos-ArrayOfVideos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0995B6633E8DA32D465E41AD /* Pods-PlayingVideos-ArrayOfVideos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayingVideos-ArrayOfVideos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayingVideos-ArrayOfVideos/Pods-PlayingVideos-ArrayOfVideos.debug.xcconfig"; sourceTree = "<group>"; };
@@ -24,8 +33,26 @@
 		CCFD8115600D9A75AF0DC515 /* libPods-PlayingVideos-AutoPlay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayingVideos-AutoPlay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF81BFFD1E8893FF324CC04F /* Pods-PlayingVideos-SingleVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayingVideos-SingleVideo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlayingVideos-SingleVideo/Pods-PlayingVideos-SingleVideo.release.xcconfig"; sourceTree = "<group>"; };
 		D72C19D3A9C187F60994B4E5 /* Pods-PlayingVideos-Coloring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayingVideos-Coloring.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayingVideos-Coloring/Pods-PlayingVideos-Coloring.debug.xcconfig"; sourceTree = "<group>"; };
+		DA81758C1FE6973900A3A381 /* VideoPlaylist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPlaylist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA81758E1FE6973A00A3A381 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DA8175901FE6973A00A3A381 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA8175931FE6973A00A3A381 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA8175951FE6973A00A3A381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA8175981FE6973A00A3A381 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA81759A1FE6973A00A3A381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E654DB429220B24CB808EC83 /* Pods-PlayingVideos-Mute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayingVideos-Mute.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlayingVideos-Mute/Pods-PlayingVideos-Mute.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA8175891FE6973900A3A381 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DF44077EF32CF543A685F8B /* libPods-PlayingVideos-VideoPlaylist.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0077DDE9DA039550D6C40F12 /* Frameworks */ = {
@@ -41,9 +68,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DA81758D1FE6973A00A3A381 /* VideoPlaylist */ = {
+			isa = PBXGroup;
+			children = (
+				DA81758E1FE6973A00A3A381 /* AppDelegate.swift */,
+				DA8175901FE6973A00A3A381 /* ViewController.swift */,
+				DA8175921FE6973A00A3A381 /* Main.storyboard */,
+				DA8175951FE6973A00A3A381 /* Assets.xcassets */,
+				DA8175971FE6973A00A3A381 /* LaunchScreen.storyboard */,
+				DA81759A1FE6973A00A3A381 /* Info.plist */,
+			);
+			path = VideoPlaylist;
+			sourceTree = "<group>";
+		};
 		DAF939C41FE3ECEE00458C9D = {
 			isa = PBXGroup;
 			children = (
+				DA81758D1FE6973A00A3A381 /* VideoPlaylist */,
 				DAF939CE1FE3ECEE00458C9D /* Products */,
 				E2B3B5F0D347094AEDFA9F78 /* Pods */,
 				0077DDE9DA039550D6C40F12 /* Frameworks */,
@@ -53,6 +94,7 @@
 		DAF939CE1FE3ECEE00458C9D /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				DA81758C1FE6973900A3A381 /* VideoPlaylist.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +120,29 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXNativeTarget section */
+		DA81758B1FE6973900A3A381 /* VideoPlaylist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA81759D1FE6973A00A3A381 /* Build configuration list for PBXNativeTarget "VideoPlaylist" */;
+			buildPhases = (
+				AE2BD7E4ADD9206FEC517B72 /* [CP] Check Pods Manifest.lock */,
+				DA8175881FE6973900A3A381 /* Sources */,
+				DA8175891FE6973900A3A381 /* Frameworks */,
+				DA81758A1FE6973900A3A381 /* Resources */,
+				72D09E8293116B3929B79BDF /* [CP] Embed Pods Frameworks */,
+				6AE8302340E517E0585DA637 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoPlaylist;
+			productName = VideoPlaylist;
+			productReference = DA81758C1FE6973900A3A381 /* VideoPlaylist.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
 /* Begin PBXProject section */
 		DAF939C51FE3ECEE00458C9D /* Project object */ = {
 			isa = PBXProject;
@@ -85,6 +150,12 @@
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = AOL;
+				TargetAttributes = {
+					DA81758B1FE6973900A3A381 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = DAF939C81FE3ECEE00458C9D /* Build configuration list for PBXProject "PlayingVideos" */;
 			compatibilityVersion = "Xcode 8.0";
@@ -99,11 +170,156 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				DA81758B1FE6973900A3A381 /* VideoPlaylist */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		DA81758A1FE6973900A3A381 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA8175991FE6973A00A3A381 /* LaunchScreen.storyboard in Resources */,
+				DA8175961FE6973A00A3A381 /* Assets.xcassets in Resources */,
+				DA8175941FE6973A00A3A381 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AE8302340E517E0585DA637 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlayingVideos-VideoPlaylist/Pods-PlayingVideos-VideoPlaylist-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72D09E8293116B3929B79BDF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PlayingVideos-VideoPlaylist/Pods-PlayingVideos-VideoPlaylist-frameworks.sh",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.2/Carthage/Build/iOS/OneMobileSDK.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.2/Carthage/Build/iOS/OneMobileSDK.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.2/Carthage/Build/iOS/PlayerControls.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.2/Carthage/Build/iOS/PlayerControls.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.2/Carthage/Build/iOS/PlayerCore.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.2/Carthage/Build/iOS/PlayerCore.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.2/Carthage/Build/iOS/VideoRenderer.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode9.2/Carthage/Build/iOS/VideoRenderer.framework.dSYM",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneMobileSDK.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/OneMobileSDK.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PlayerControls.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/PlayerControls.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PlayerCore.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/PlayerCore.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VideoRenderer.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/VideoRenderer.framework.dSYM",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlayingVideos-VideoPlaylist/Pods-PlayingVideos-VideoPlaylist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE2BD7E4ADD9206FEC517B72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlayingVideos-VideoPlaylist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA8175881FE6973900A3A381 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA8175911FE6973A00A3A381 /* ViewController.swift in Sources */,
+				DA81758F1FE6973A00A3A381 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DA8175921FE6973A00A3A381 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA8175931FE6973A00A3A381 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DA8175971FE6973A00A3A381 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA8175981FE6973A00A3A381 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		DA81759B1FE6973A00A3A381 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7887751D7A326BBDEF078AF4 /* Pods-PlayingVideos-VideoPlaylist.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CY9THR77Q9;
+				INFOPLIST_FILE = VideoPlaylist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA81759C1FE6973A00A3A381 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E23726197CB470302BEE75D /* Pods-PlayingVideos-VideoPlaylist.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CY9THR77Q9;
+				INFOPLIST_FILE = VideoPlaylist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DAF939DD1FE3ECEE00458C9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -214,6 +430,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DA81759D1FE6973A00A3A381 /* Build configuration list for PBXNativeTarget "VideoPlaylist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA81759B1FE6973A00A3A381 /* Debug */,
+				DA81759C1FE6973A00A3A381 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DAF939C81FE3ECEE00458C9D /* Build configuration list for PBXProject "PlayingVideos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
