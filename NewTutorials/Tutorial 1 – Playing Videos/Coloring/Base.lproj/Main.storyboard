@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eGB-Ug-qpX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="QPW-vw-AJb">
+            <objects>
+                <navigationController id="eGB-Ug-qpX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ChC-hk-hJN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QD5-Hd-0b8" kind="relationship" relationship="rootViewController" id="74n-2P-zFV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qiQ-UA-WDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-724" y="38"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CfD-Qi-78S">
+            <objects>
+                <viewController id="QD5-Hd-0b8" customClass="ViewController" customModule="Coloring" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4fQ-Hn-YEI"/>
+                        <viewControllerLayoutGuide type="bottom" id="TJe-L8-tFG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pPl-VA-FOD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFP-eX-o4d">
+                                <rect key="frame" x="133" y="312" width="110" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Play video"/>
+                                <connections>
+                                    <action selector="playVideoTouched:" destination="QD5-Hd-0b8" eventType="touchUpInside" id="YEF-Bk-hwO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QFP-eX-o4d" firstAttribute="centerY" secondItem="pPl-VA-FOD" secondAttribute="centerY" id="3ON-BP-5Rd"/>
+                            <constraint firstItem="QFP-eX-o4d" firstAttribute="centerX" secondItem="pPl-VA-FOD" secondAttribute="centerX" id="3YR-6j-dUT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sd1-bf-4rJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="T61-7H-aeu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4lc-m7-E6R" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-14" y="37"/>
+        </scene>
+    </scenes>
+</document>
