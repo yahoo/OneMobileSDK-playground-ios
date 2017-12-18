@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		88FF5CAAFE9DC954CA2B14FE /* libPods-Tutorial.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED97AF3365058FD9B25F133A /* libPods-Tutorial.a */; };
+		DA54FBAE1FE8203000013412 /* TutorialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54FBAD1FE8203000013412 /* TutorialsViewController.swift */; };
+		DA54FBB11FE8214F00013412 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54FBB01FE8214F00013412 /* Cells.swift */; };
+		DA54FBB31FE8243F00013412 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54FBB21FE8243F00013412 /* Utility.swift */; };
 		DA8175EC1FE7D3B300A3A381 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8175EB1FE7D3B300A3A381 /* AppDelegate.swift */; };
 		DA8175F11FE7D3B300A3A381 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8175EF1FE7D3B300A3A381 /* Main.storyboard */; };
 		DA8175F31FE7D3B300A3A381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8175F21FE7D3B300A3A381 /* Assets.xcassets */; };
@@ -37,6 +40,9 @@
 		CCFD8115600D9A75AF0DC515 /* libPods-PlayingVideos-AutoPlay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayingVideos-AutoPlay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF81BFFD1E8893FF324CC04F /* Pods-PlayingVideos-SingleVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayingVideos-SingleVideo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlayingVideos-SingleVideo/Pods-PlayingVideos-SingleVideo.release.xcconfig"; sourceTree = "<group>"; };
 		D72C19D3A9C187F60994B4E5 /* Pods-PlayingVideos-Coloring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayingVideos-Coloring.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayingVideos-Coloring/Pods-PlayingVideos-Coloring.debug.xcconfig"; sourceTree = "<group>"; };
+		DA54FBAD1FE8203000013412 /* TutorialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsViewController.swift; sourceTree = "<group>"; };
+		DA54FBB01FE8214F00013412 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		DA54FBB21FE8243F00013412 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		DA8175E91FE7D3B300A3A381 /* Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8175EB1FE7D3B300A3A381 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA8175F01FE7D3B300A3A381 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,7 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				DA8175EB1FE7D3B300A3A381 /* AppDelegate.swift */,
+				DA54FBAD1FE8203000013412 /* TutorialsViewController.swift */,
 				DA8175FB1FE7D5F700A3A381 /* PlayingVideosViewController.swift */,
+				DA54FBB01FE8214F00013412 /* Cells.swift */,
+				DA54FBB21FE8243F00013412 /* Utility.swift */,
 				DA8175EF1FE7D3B300A3A381 /* Main.storyboard */,
 				DA8175F21FE7D3B300A3A381 /* Assets.xcassets */,
 				DA8175F41FE7D3B300A3A381 /* LaunchScreen.storyboard */,
@@ -273,6 +282,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA54FBB31FE8243F00013412 /* Utility.swift in Sources */,
+				DA54FBAE1FE8203000013412 /* TutorialsViewController.swift in Sources */,
+				DA54FBB11FE8214F00013412 /* Cells.swift in Sources */,
 				DA8175EC1FE7D3B300A3A381 /* AppDelegate.swift in Sources */,
 				DA8175FC1FE7D5F700A3A381 /* PlayingVideosViewController.swift in Sources */,
 			);
