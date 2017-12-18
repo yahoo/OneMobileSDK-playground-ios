@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uQZ-Dj-WoQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="jH0-ns-q1e">
+            <objects>
+                <navigationController id="uQZ-Dj-WoQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gCR-4G-nAS">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="16G-Pd-eSh" kind="relationship" relationship="rootViewController" id="PAw-OU-uW0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZgQ-p7-yh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-724" y="38"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xOf-tI-ZFl">
+            <objects>
+                <viewController id="16G-Pd-eSh" customClass="ViewController" customModule="SingleVideo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lGM-DO-QLE"/>
+                        <viewControllerLayoutGuide type="bottom" id="ISA-59-DfW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P4M-nT-yDb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4T-CO-38Z">
+                                <rect key="frame" x="132.5" y="312" width="110" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Play video"/>
+                                <connections>
+                                    <action selector="playVideoTouched:" destination="16G-Pd-eSh" eventType="touchUpInside" id="gXL-2o-m2h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Q4T-CO-38Z" firstAttribute="centerY" secondItem="P4M-nT-yDb" secondAttribute="centerY" id="2Iv-s9-xni"/>
+                            <constraint firstItem="Q4T-CO-38Z" firstAttribute="centerX" secondItem="P4M-nT-yDb" secondAttribute="centerX" id="kKL-mV-nNd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fIU-1g-zyT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="28v-Og-UPf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Mw-N8-ws7" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-14" y="37"/>
+        </scene>
+    </scenes>
+</document>
