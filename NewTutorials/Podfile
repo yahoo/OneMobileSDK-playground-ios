@@ -2,6 +2,6 @@ platform :ios, 8.0
 
 source "https://github.com/vidible/OneMobileSDK-releases.git"
 
-abstract_target 'PlayingVideos' do
+target 'Tutorial' do
   pod 'OneMobileSDK-Xcode9.2'
 end
