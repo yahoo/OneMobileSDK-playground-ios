@@ -1,4 +1,4 @@
-//  Copyright © 2016 One by Aol : Publishers. All rights reserved.
+//  Copyright © 2017 Oath. All rights reserved.
 
 import UIKit
 
@@ -13,7 +13,7 @@ class TextCell: UITableViewCell {
         let action: () -> ()
     }
     
-    var viewModel: ViewModel! {
+    var viewModel = ViewModel(name: "", action: {}) {
         didSet { layoutSubviews() }
     }
     
@@ -21,28 +21,5 @@ class TextCell: UITableViewCell {
         super.layoutSubviews()
         
         self.nameLabel.text = viewModel.name
-    }
-}
-
-class SwitchCell: UITableViewCell {
-    @IBOutlet weak private var nameLabel: UILabel!
-    
-    struct ViewModel: CellViewModel {
-        let name: String
-        let action: () -> ()
-    }
-    
-    var viewModel: ViewModel! {
-        didSet { layoutSubviews() }
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        self.nameLabel.text = viewModel.name
-    }
-    
-    @IBAction func switchToggled() {
-        viewModel.action()
     }
 }

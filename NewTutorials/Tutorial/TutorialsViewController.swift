@@ -1,4 +1,4 @@
-//  Copyright © 2016 One by Aol : Publishers. All rights reserved.
+//  Copyright © 2017 Oath. All rights reserved.
 
 import UIKit
 
@@ -7,7 +7,7 @@ class TutorialsViewController: UITableViewController {
         guard let identifier = segue.identifier else { return }
         
         switch (identifier, segue.destination) {
-        case ("PlayingVideosViewController", let vc as PlayingVideosViewController): setup(playingVideoViewController: vc)
+        case ("PlayingVideos", let vc as TutorialCasesViewController): setupPlayingVideos(vc: vc)
         default: break
         }
     }

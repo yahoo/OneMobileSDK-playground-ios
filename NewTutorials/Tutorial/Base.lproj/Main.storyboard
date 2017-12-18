@@ -39,7 +39,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="sPi-zQ-L7O" kind="show" identifier="PlayingVideosViewController" id="6dU-BI-Vox"/>
+                                            <segue destination="sPi-zQ-L7O" kind="show" identifier="PlayingVideos" id="6dU-BI-Vox"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="UMb-Ic-ABi" style="IBUITableViewCellStyleDefault" id="YVt-2J-KJH">
@@ -119,7 +119,7 @@
         <!--Playing Videos-->
         <scene sceneID="kbm-x0-74A">
             <objects>
-                <tableViewController id="sPi-zQ-L7O" customClass="PlayingVideosViewController" customModule="Tutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="sPi-zQ-L7O" customClass="TutorialCasesViewController" customModule="Tutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="UsD-b1-bNc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
