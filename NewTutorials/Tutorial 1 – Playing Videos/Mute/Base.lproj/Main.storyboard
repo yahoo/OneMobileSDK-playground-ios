@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C8s-b1-hVX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="RvQ-7t-7YZ">
+            <objects>
+                <navigationController id="C8s-b1-hVX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="436-1Q-B8d">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3xy-Tt-JDj" kind="relationship" relationship="rootViewController" id="aVe-qO-dmW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="My7-kc-Ogy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-724" y="38"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ej2-sx-Alq">
+            <objects>
+                <viewController id="3xy-Tt-JDj" customClass="ViewController" customModule="Mute" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2fe-C9-7hA"/>
+                        <viewControllerLayoutGuide type="bottom" id="jkw-PI-gTI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vtk-o3-2yu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpq-IZ-tOs">
+                                <rect key="frame" x="133" y="312" width="110" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Play video"/>
+                                <connections>
+                                    <action selector="playVideoTouched:" destination="3xy-Tt-JDj" eventType="touchUpInside" id="47K-eS-44J"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6AV-8N-g2c">
+                                <rect key="frame" x="312" y="628" width="51" height="31"/>
+                                <connections>
+                                    <action selector="muteToggledWithSender:" destination="3xy-Tt-JDj" eventType="valueChanged" id="fMp-GA-9KL"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mute:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwQ-7V-aOx">
+                                <rect key="frame" x="16" y="633" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZwQ-7V-aOx" firstAttribute="centerY" secondItem="6AV-8N-g2c" secondAttribute="centerY" id="G4r-h1-34A"/>
+                            <constraint firstItem="Vpq-IZ-tOs" firstAttribute="centerY" secondItem="Vtk-o3-2yu" secondAttribute="centerY" id="TMd-z0-Wjb"/>
+                            <constraint firstItem="90a-GT-Dsa" firstAttribute="trailing" secondItem="6AV-8N-g2c" secondAttribute="trailing" constant="14" id="VTO-u7-Xvw"/>
+                            <constraint firstItem="jkw-PI-gTI" firstAttribute="top" secondItem="6AV-8N-g2c" secondAttribute="bottom" constant="8" symbolic="YES" id="Wxd-TQ-Hyt"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZwQ-7V-aOx" secondAttribute="trailingMargin" id="Z7d-lP-5Bi"/>
+                            <constraint firstItem="ZwQ-7V-aOx" firstAttribute="leading" secondItem="Vtk-o3-2yu" secondAttribute="leadingMargin" id="dKM-dM-KIk"/>
+                            <constraint firstItem="Vpq-IZ-tOs" firstAttribute="centerX" secondItem="Vtk-o3-2yu" secondAttribute="centerX" id="eY3-pg-iGi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="90a-GT-Dsa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KTv-aK-Ju9"/>
+                    <connections>
+                        <outlet property="muteSwitcher" destination="6AV-8N-g2c" id="t8s-rb-Lc8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8he-TQ-q7C" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-14" y="37"/>
+        </scene>
+    </scenes>
+</document>
