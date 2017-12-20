@@ -7,14 +7,12 @@ import PlayerControls
 func setupPlayingVideos(vc: TutorialCasesViewController) {
     func process(player: Future<Result<Player>>) {
         let wrapper = PlayerViewControllerWrapper()
-        wrapper.playerViewController.contentControlsViewController = DefaultControlsViewController()
-        vc.show(viewController: wrapper)
-        
         wrapper.props.isLoading = true
+        vc.show(viewController: wrapper)
         
         player
             .dispatch(on: .main)
-            .onSuccess { wrapper.playerViewController.player = $0 }
+            .onSuccess(call: wrapper.attach)
             .onError(call: vc.show)
             .onComplete { _ in wrapper.props.isLoading = false }
     }

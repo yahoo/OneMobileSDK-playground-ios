@@ -2,6 +2,7 @@
 
 import UIKit
 import OneMobileSDK
+import PlayerControls
 
 
 class TutorialCasesViewController: UITableViewController {
@@ -61,13 +62,22 @@ class PlayerViewControllerWrapper: UIViewController {
             view.setNeedsLayout()
         }
     }
-    let playerViewController = PlayerViewController()
+    
+    private let playerViewController: PlayerViewController = {
+        let playerViewController = PlayerViewController()
+        playerViewController.contentControlsViewController = DefaultControlsViewController()
+        return playerViewController
+    }()
     private let activityIndicatorView: UIActivityIndicatorView = {
         let activityIndicatorView = UIActivityIndicatorView()
         activityIndicatorView.activityIndicatorViewStyle = .gray
         activityIndicatorView.isHidden = true
         return activityIndicatorView
     }()
+    
+    func attach(player: Player) {
+        playerViewController.player = player
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
