@@ -3,12 +3,10 @@
 import UIKit
 
 
-protocol CellViewModel {}
-
 class TextCell: UITableViewCell {
     @IBOutlet weak private var nameLabel: UILabel!
     
-    struct ViewModel: CellViewModel {
+    struct ViewModel {
         let name: String
         let action: () -> ()
     }
@@ -19,7 +17,6 @@ class TextCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        self.nameLabel.text = viewModel.name
+        nameLabel.text = viewModel.name
     }
 }

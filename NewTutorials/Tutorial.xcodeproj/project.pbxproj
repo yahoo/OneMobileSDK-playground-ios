@@ -16,6 +16,7 @@
 		DA8175F31FE7D3B300A3A381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8175F21FE7D3B300A3A381 /* Assets.xcassets */; };
 		DA8175F61FE7D3B300A3A381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8175F41FE7D3B300A3A381 /* LaunchScreen.storyboard */; };
 		DA8175FC1FE7D5F700A3A381 /* TutorialCasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8175FB1FE7D5F700A3A381 /* TutorialCasesViewController.swift */; };
+		DA8896DC1FEA4C7D0063ED1F /* SetupTutorials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8896DB1FEA4C7D0063ED1F /* SetupTutorials.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		DA8175F51FE7D3B300A3A381 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA8175F71FE7D3B300A3A381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA8175FB1FE7D5F700A3A381 /* TutorialCasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCasesViewController.swift; sourceTree = "<group>"; };
+		DA8896DB1FEA4C7D0063ED1F /* SetupTutorials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTutorials.swift; sourceTree = "<group>"; };
 		E02B57DA03C7A3F17C4B697D /* Pods-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial/Pods-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
 		E654DB429220B24CB808EC83 /* Pods-PlayingVideos-Mute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayingVideos-Mute.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlayingVideos-Mute/Pods-PlayingVideos-Mute.release.xcconfig"; sourceTree = "<group>"; };
 		ED97AF3365058FD9B25F133A /* libPods-Tutorial.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tutorial.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 				DA8175EB1FE7D3B300A3A381 /* AppDelegate.swift */,
 				DA54FBAD1FE8203000013412 /* TutorialsViewController.swift */,
 				DA8175FB1FE7D5F700A3A381 /* TutorialCasesViewController.swift */,
+				DA8896DB1FEA4C7D0063ED1F /* SetupTutorials.swift */,
 				DA54FBB01FE8214F00013412 /* Cells.swift */,
 				DA54FBB21FE8243F00013412 /* Players.swift */,
 				DA8175EF1FE7D3B300A3A381 /* Main.storyboard */,
@@ -285,6 +288,7 @@
 				DA54FBB31FE8243F00013412 /* Players.swift in Sources */,
 				DA54FBAE1FE8203000013412 /* TutorialsViewController.swift in Sources */,
 				DA54FBB11FE8214F00013412 /* Cells.swift in Sources */,
+				DA8896DC1FEA4C7D0063ED1F /* SetupTutorials.swift in Sources */,
 				DA8175EC1FE7D3B300A3A381 /* AppDelegate.swift in Sources */,
 				DA8175FC1FE7D5F700A3A381 /* TutorialCasesViewController.swift in Sources */,
 			);
