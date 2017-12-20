@@ -18,8 +18,8 @@ class TutorialCasesViewController: UITableViewController {
         }
     }
     
-    func show(playerViewController: PlayerViewController) {
-        navigationController?.pushViewController(playerViewController, animated: true)
+    func show(viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func show(error: Error) {
@@ -48,5 +48,42 @@ class TutorialCasesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         props.rows[indexPath.row].action()
+    }
+}
+
+class PlayerViewControllerWrapper: UIViewController {
+    struct Props {
+        var isLoading = false
+    }
+    
+    var props = Props() {
+        didSet {
+            view.setNeedsLayout()
+        }
+    }
+    let playerViewController = PlayerViewController()
+    private let activityIndicatorView: UIActivityIndicatorView = {
+        let activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.activityIndicatorViewStyle = .gray
+        activityIndicatorView.isHidden = true
+        return activityIndicatorView
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        playerViewController.willMove(toParentViewController: self)
+        addChildViewController(playerViewController)
+        view.addSubview(playerViewController.view)
+        playerViewController.didMove(toParentViewController: self)
+        activityIndicatorView.color = view.tintColor
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activityIndicatorView)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        activityIndicatorView.isHidden = !props.isLoading
+        props.isLoading ?
+            activityIndicatorView.startAnimating() :
+            activityIndicatorView.stopAnimating()
     }
 }
