@@ -6,12 +6,8 @@ import PlayerControls
 
 func setupPlayingVideos(vc: TutorialCasesViewController) {
     func process(player: Future<Result<Player>>) {
-        let playerViewController: PlayerViewController = {
-            let playerViewController = PlayerViewController()
-            playerViewController.contentControlsViewController = DefaultControlsViewController()
-            return playerViewController
-        }()
-        
+        let playerViewController = PlayerViewController()
+        playerViewController.contentControlsViewController = DefaultControlsViewController()
         vc.show(playerViewController: playerViewController)
         
         player
