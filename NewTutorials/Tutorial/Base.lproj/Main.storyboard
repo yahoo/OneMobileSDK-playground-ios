@@ -59,7 +59,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="m5T-Kf-lDU" kind="show" id="Uh8-fS-t1U"/>
+                                            <segue destination="sPi-zQ-L7O" kind="show" identifier="CustomUX" id="fOn-qs-II3"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="qvf-kO-VDV" style="IBUITableViewCellStyleDefault" id="jjJ-DI-bpk">
@@ -149,38 +149,6 @@
                                     <outlet property="nameLabel" destination="rSF-yP-1XC" id="7cs-4H-mWm"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwitchCell" id="50G-mR-187" customClass="SwitchCell" customModule="Tutorial" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="50G-mR-187" id="6bf-m8-Uqd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Cell name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUl-9t-tl1">
-                                            <rect key="frame" x="16" y="11" width="286" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zjY-c4-fxh">
-                                            <rect key="frame" x="310" y="5" width="51" height="31"/>
-                                            <connections>
-                                                <action selector="switchToggled" destination="50G-mR-187" eventType="valueChanged" id="TUB-G0-v6O"/>
-                                            </connections>
-                                        </switch>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="VUl-9t-tl1" firstAttribute="centerY" secondItem="6bf-m8-Uqd" secondAttribute="centerY" id="5Qw-dh-GXF"/>
-                                        <constraint firstItem="zjY-c4-fxh" firstAttribute="leading" secondItem="VUl-9t-tl1" secondAttribute="trailing" constant="8" symbolic="YES" id="IP1-i9-lAt"/>
-                                        <constraint firstItem="zjY-c4-fxh" firstAttribute="trailing" secondItem="6bf-m8-Uqd" secondAttribute="trailingMargin" id="Rxb-Nc-EIf"/>
-                                        <constraint firstItem="VUl-9t-tl1" firstAttribute="leading" secondItem="6bf-m8-Uqd" secondAttribute="leadingMargin" id="eoo-dH-dVD"/>
-                                        <constraint firstItem="VUl-9t-tl1" firstAttribute="centerY" secondItem="zjY-c4-fxh" secondAttribute="centerY" id="o6D-Eo-AdO"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="nameLabel" destination="VUl-9t-tl1" id="oTv-ng-WYO"/>
-                                </connections>
-                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
@@ -262,6 +230,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Uh8-fS-t1U"/>
+        <segue reference="RXi-9H-ZSC"/>
+        <segue reference="fOn-qs-II3"/>
     </inferredMetricsTieBreakers>
 </document>

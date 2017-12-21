@@ -55,6 +55,11 @@ class TutorialCasesViewController: UITableViewController {
 class PlayerViewControllerWrapper: UIViewController {
     struct Props {
         var isLoading = false
+        var controlsColor: UIColor?
+        var isHiddenSomeControls = false
+        var liveDotColor: UIColor?
+        var sidebarProps: SideBarView.Props = []
+        var isFilteredSubtitles = false
     }
     
     var props = Props() {
@@ -65,6 +70,7 @@ class PlayerViewControllerWrapper: UIViewController {
     
     private let playerViewController: PlayerViewController = {
         let playerViewController = PlayerViewController()
+        // Using default controls but it's possible to use custom by subclassing from ContentControlsViewController and set it to contentControlsViewController
         playerViewController.contentControlsViewController = DefaultControlsViewController()
         return playerViewController
     }()
@@ -81,19 +87,58 @@ class PlayerViewControllerWrapper: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playerViewController.willMove(toParentViewController: self)
-        addChildViewController(playerViewController)
-        view.addSubview(playerViewController.view)
-        playerViewController.didMove(toParentViewController: self)
-        activityIndicatorView.color = view.tintColor
+        
+        do {
+            playerViewController.willMove(toParentViewController: self)
+            addChildViewController(playerViewController)
+            view.addSubview(playerViewController.view)
+            playerViewController.didMove(toParentViewController: self)
+            activityIndicatorView.color = view.tintColor
+        }
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activityIndicatorView)
+        
+        playerViewController.customizeContentControlsProps = { [weak self] props in
+            // Mudifing content props only if content video can be played
+            guard props.player?.item.playable != nil else { return props }
+            var props = props
+            
+            // Changing color of live dot indicator
+            props.player?.item.playable?.live.dotColor = self?.props.liveDotColor
+            
+            // Hiding 10s seek button and setting button
+            if self?.props.isHiddenSomeControls == true {
+                props.player?.item.playable?.seekbar?.seeker.seekTo = nil
+                props.player?.item.playable?.settings = .hidden
+            }
+            
+            // Filtering subtitles by name
+            if self?.props.isFilteredSubtitles == true {
+                guard case .`internal`(var group)? = props.player?.item.playable?.legible else { return props }
+                guard let options = group?.options else { return props }
+                var props = props
+                group?.options = options.filter { !$0.name.contains("English") }
+                props.player?.item.playable?.legible = .`internal`(group)
+            }
+            
+            return props
+        }
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
         activityIndicatorView.isHidden = !props.isLoading
         props.isLoading ?
             activityIndicatorView.startAnimating() :
             activityIndicatorView.stopAnimating()
+        
+        // Changing color of content view controller controls
+        playerViewController.view.tintColor = props.controlsColor
+        
+        // Adding sidebar buttons
+        if let defaultControlsViewController = playerViewController.contentControlsViewController as? DefaultControlsViewController {
+            defaultControlsViewController.sidebarProps = props.sidebarProps
+        }
     }
 }
