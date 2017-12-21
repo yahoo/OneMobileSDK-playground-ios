@@ -1,5 +1,5 @@
 
-//  Copyright © 2017 One by Aol : Publishers. All rights reserved.
+//  Copyright © 2017 Oath. All rights reserved.
 
 import UIKit
 import OneMobileSDK
