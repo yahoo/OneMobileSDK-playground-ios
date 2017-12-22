@@ -193,7 +193,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HKa-9S-Usv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
                                     <segue destination="mw1-k1-5o6" kind="embed" id="YVg-XX-oEi"/>
                                 </connections>
@@ -201,10 +201,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HKa-9S-Usv" firstAttribute="bottom" secondItem="ktd-6a-BFq" secondAttribute="bottom" id="0t0-h2-bir"/>
-                            <constraint firstAttribute="trailing" secondItem="HKa-9S-Usv" secondAttribute="trailing" id="G3B-qI-83a"/>
-                            <constraint firstItem="HKa-9S-Usv" firstAttribute="leading" secondItem="xOf-Bs-kFW" secondAttribute="leading" id="Tpr-sI-WB2"/>
-                            <constraint firstItem="HKa-9S-Usv" firstAttribute="top" secondItem="xOf-Bs-kFW" secondAttribute="top" id="XcU-tt-g3J"/>
+                            <constraint firstItem="HKa-9S-Usv" firstAttribute="bottom" secondItem="ktd-6a-BFq" secondAttribute="bottom" id="0Tm-tp-ZkE"/>
+                            <constraint firstItem="HKa-9S-Usv" firstAttribute="top" secondItem="ktd-6a-BFq" secondAttribute="top" id="4fr-Qd-eJS"/>
+                            <constraint firstItem="HKa-9S-Usv" firstAttribute="leading" secondItem="xOf-Bs-kFW" secondAttribute="leading" id="gj0-Ix-1ju"/>
+                            <constraint firstAttribute="trailing" secondItem="HKa-9S-Usv" secondAttribute="trailing" id="x8P-Sl-Bal"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ktd-6a-BFq"/>
                     </view>
@@ -233,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6l7-lO-pAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1825" y="-589"/>
+            <point key="canvasLocation" x="1824.8" y="-589.65517241379314"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Va3-hN-gcQ">
@@ -285,7 +285,7 @@
             <objects>
                 <viewController id="mw1-k1-5o6" customClass="PlayerViewController" customModule="OneMobileSDK" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eYU-aX-K1W">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="UQ3-OA-QfI"/>
