@@ -4,12 +4,12 @@ import UIKit
 
 
 class TextCell: UITableViewCell {
-    @IBOutlet weak private var nameLabel: UILabel!
-    
     struct ViewModel {
         let name: String
         let action: () -> ()
     }
+    
+    @IBOutlet weak private var nameLabel: UILabel!
     
     var viewModel = ViewModel(name: "", action: {}) {
         didSet { layoutSubviews() }

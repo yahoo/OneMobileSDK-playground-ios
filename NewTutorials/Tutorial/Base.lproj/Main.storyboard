@@ -59,7 +59,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="m5T-Kf-lDU" kind="show" id="Uh8-fS-t1U"/>
+                                            <segue destination="sPi-zQ-L7O" kind="show" identifier="CustomUX" id="fOn-qs-II3"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="qvf-kO-VDV" style="IBUITableViewCellStyleDefault" id="jjJ-DI-bpk">
@@ -192,15 +192,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HKa-9S-Usv">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HKa-9S-Usv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="mw1-k1-5o6" kind="embed" id="YVg-XX-oEi"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HKa-9S-Usv" firstAttribute="bottom" secondItem="ktd-6a-BFq" secondAttribute="bottom" id="0t0-h2-bir"/>
+                            <constraint firstAttribute="trailing" secondItem="HKa-9S-Usv" secondAttribute="trailing" id="G3B-qI-83a"/>
+                            <constraint firstItem="HKa-9S-Usv" firstAttribute="leading" secondItem="xOf-Bs-kFW" secondAttribute="leading" id="Tpr-sI-WB2"/>
+                            <constraint firstItem="HKa-9S-Usv" firstAttribute="top" secondItem="xOf-Bs-kFW" secondAttribute="top" id="XcU-tt-g3J"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ktd-6a-BFq"/>
                     </view>
                     <navigationItem key="navigationItem" id="fXV-Mt-uQy">
@@ -292,6 +297,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Uh8-fS-t1U"/>
+        <segue reference="RXi-9H-ZSC"/>
+        <segue reference="fOn-qs-II3"/>
     </inferredMetricsTieBreakers>
 </document>
