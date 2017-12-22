@@ -38,5 +38,5 @@ func liveVideo() -> Future<Result<Player>> {
 
 func subtitlesVideo() -> Future<Result<Player>> {
     return OneSDK.Provider.default.getSDK()
-        .then { $0.getPlayer(videoID: "59b0122a8c08e07695c98519") }
+        .then { $0.getPlayer(videoID: "59397934955a316f1c4f65b4") }
 }

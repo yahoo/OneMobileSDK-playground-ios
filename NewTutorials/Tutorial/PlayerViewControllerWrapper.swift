@@ -58,7 +58,7 @@ class PlayerViewControllerWrapper: UIViewController {
                     if self?.props.controls.isFilteredSubtitles == true {
                         guard case .`internal`(var group) = controls.legible else { return props }
                         guard let options = group?.options else { return props }
-                        group?.options = options.filter { !$0.name.contains("English") }
+                        group?.options = options.filter { !$0.name.contains("CC") }
                         controls.legible = .`internal`(group)
                     }
                     

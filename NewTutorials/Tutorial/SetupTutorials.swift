@@ -94,5 +94,5 @@ func setupCustomUX(tutorialCasesViewController: TutorialCasesViewController) {
                         wrapper.props.controls.isFilteredSubtitles = true
                         show(wrapper: wrapper,
                              in: tutorialCasesViewController,
-                             with: liveVideo()) })])
+                             with: subtitlesVideo()) })])
 }
