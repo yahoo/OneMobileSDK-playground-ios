@@ -8,13 +8,17 @@ import PlayerControls
 class PlayerViewControllerWrapper: UIViewController {
     struct Props {
         var player: Future<Result<Player>>?
-        // Using default controls but it's possible to use custom by subclassing from ContentControlsViewController and set it to contentControlsViewController
-        var controlsViewController: ContentControlsViewController = DefaultControlsViewController()
-        var controlsColor: UIColor?
-        var isHiddenSomeControls = false
-        var liveDotColor: UIColor?
-        var sidebarProps: SideBarView.Props = []
-        var isFilteredSubtitles = false
+        var controls = Controls()
+        
+        struct Controls {
+            // Using default controls but it's possible to use custom by subclassing from ContentControlsViewController and set it to contentControlsViewController
+            var viewController: ContentControlsViewController = DefaultControlsViewController()
+            var color: UIColor?
+            var isSomeHidden = false
+            var liveDotColor: UIColor?
+            var sidebarProps: SideBarView.Props = []
+            var isFilteredSubtitles = false
+        }
     }
     
     var props = Props() {
@@ -42,16 +46,16 @@ class PlayerViewControllerWrapper: UIViewController {
                     guard var controls = player.item.playable else { return props }
                     
                     // Changing color of live dot indicator
-                    controls.live.dotColor = self?.props.liveDotColor
+                    controls.live.dotColor = self?.props.controls.liveDotColor
                     
-                    // Hiding 10s seek button and setting button
-                    if self?.props.isHiddenSomeControls == true {
+                    // Hiding/showing 10s seek button and setting button
+                    if self?.props.controls.isSomeHidden == true {
                         controls.seekbar?.seeker.seekTo = nil
                         controls.settings = .hidden
                     }
                     
                     // Filtering subtitles by name
-                    if self?.props.isFilteredSubtitles == true {
+                    if self?.props.controls.isFilteredSubtitles == true {
                         guard case .`internal`(var group) = controls.legible else { return props }
                         guard let options = group?.options else { return props }
                         group?.options = options.filter { !$0.name.contains("English") }
@@ -93,14 +97,14 @@ class PlayerViewControllerWrapper: UIViewController {
             activityIndicatorView.startAnimating() :
             activityIndicatorView.stopAnimating()
         
-        playerViewController?.contentControlsViewController = props.controlsViewController
+        playerViewController?.contentControlsViewController = props.controls.viewController
         
         // Changing color of content view controller controls
-        playerViewController?.view.tintColor = props.controlsColor
+        playerViewController?.view.tintColor = props.controls.color
         
         // Adding sidebar buttons
         if let defaultControlsViewController = playerViewController?.contentControlsViewController as? DefaultControlsViewController {
-            defaultControlsViewController.sidebarProps = props.sidebarProps
+            defaultControlsViewController.sidebarProps = props.controls.sidebarProps
         }
     }
 }
