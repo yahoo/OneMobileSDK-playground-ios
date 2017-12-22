@@ -1,3 +1,9 @@
+## :musical_note: NOTE *** _This doc is obsolete, and may no longer be accurate_ ***
+Please refer to this link instead: https://github.com/aol-public/OneMobileSDK-playground-ios/blob/master/README.md
+
+
+
+
 # How to start using OneMobileSDK v2.x
 
 ## Integrate SDK with your project
