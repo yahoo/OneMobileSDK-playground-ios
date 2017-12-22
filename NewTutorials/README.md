@@ -1,6 +1,6 @@
 # OneMobileSDK Tutorials
 
-This project contains iOS and tvOS samples of OneMobileSDK usage.
+This project contains iOS and tvOS code tutorials of OneMobileSDK usage.
 
 ## Requirements
 
@@ -9,9 +9,9 @@ This project contains iOS and tvOS samples of OneMobileSDK usage.
 * iOS 8 or higher
 * [Cocoapods](https://cocoapods.org)
 
-## Instalation
+## Installation
 
-Before run project need to install OneMobileSDK pod. To do it open terminal and execute command:
+Before you open the project workspace, you need to install the OneMobileSDK Cocoapod. To do this open terminal and execute command:
 
 ```bash
 pod install
