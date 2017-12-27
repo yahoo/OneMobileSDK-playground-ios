@@ -6,12 +6,12 @@ import UIKit
 class TextCell: UITableViewCell {
     struct ViewModel {
         let name: String
-        let action: () -> ()
+        let action: (PlayerViewControllerWrapper) -> ()
     }
     
     @IBOutlet weak private var nameLabel: UILabel!
     
-    var viewModel = ViewModel(name: "", action: {}) {
+    var viewModel = ViewModel(name: "", action: { _ in }) {
         didSet { layoutSubviews() }
     }
     

@@ -177,7 +177,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="S3J-EC-5Te" id="m9k-aR-wMf"/>
-                        <segue destination="8f1-HZ-Vde" kind="show" identifier="Player" id="Gab-40-BOs"/>
+                        <segue destination="8f1-HZ-Vde" kind="show" identifier="PlayerWrapper" id="Gab-40-BOs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuN-hU-JVk" userLabel="First Responder" sceneMemberID="firstResponder"/>

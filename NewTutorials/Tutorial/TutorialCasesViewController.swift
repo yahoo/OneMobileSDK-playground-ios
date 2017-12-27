@@ -17,8 +17,11 @@ class TutorialCasesViewController: UITableViewController {
         }
     }
     
-    func show(viewController: UIViewController) {
-        navigationController?.pushViewController(viewController, animated: true)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "PlayerWrapper" else { return }
+        guard let wrapper = segue.destination as? PlayerViewControllerWrapper else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        props.rows[indexPath.row].action(wrapper)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +37,6 @@ class TutorialCasesViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        props.rows[indexPath.row].action()
+        performSegue(withIdentifier: "PlayerWrapper", sender: nil)
     }
 }
