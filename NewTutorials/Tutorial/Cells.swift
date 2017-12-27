@@ -6,7 +6,7 @@ import UIKit
 class TextCell: UITableViewCell {
     struct Props {
         let name: String
-        let select: (PlayerViewControllerWrapper) -> ()
+        let select: (UIViewController) -> ()
     }
     
     @IBOutlet weak private var nameLabel: UILabel!
