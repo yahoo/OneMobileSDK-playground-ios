@@ -1,7 +1,11 @@
-platform :ios, 8.0
-
 source "https://github.com/vidible/OneMobileSDK-releases.git"
 
 target 'Tutorial' do
-  pod 'OneMobileSDK-Xcode9.2'
+	platform :ios, 8.0
+  	pod 'OneMobileSDK-Xcode9.2'
+end
+
+target 'Tutorial_tvOS' do
+	platform :tvos, 9.0
+  	pod 'OneMobileSDK-Xcode9.2'
 end
