@@ -5,7 +5,7 @@ import UIKit
 
 class TutorialCasesViewController: UITableViewController {
     struct Props {
-        var rows: [TextCell.ViewModel] = []
+        var rows: [TextCell.Props] = []
     }
     
     @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
@@ -21,7 +21,7 @@ class TutorialCasesViewController: UITableViewController {
         guard segue.identifier == "PlayerWrapper" else { return }
         guard let wrapper = segue.destination as? PlayerViewControllerWrapper else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        props.rows[indexPath.row].action(wrapper)
+        props.rows[indexPath.row].select(wrapper)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,7 +32,7 @@ class TutorialCasesViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TextCell") as? TextCell else {
             fatalError("Unknown cell")
         }
-        cell.viewModel = props.rows[indexPath.row]
+        cell.props = props.rows[indexPath.row]
         return cell
     }
     

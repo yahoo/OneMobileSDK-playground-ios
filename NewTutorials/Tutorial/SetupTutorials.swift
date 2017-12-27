@@ -8,15 +8,15 @@ import PlayerControls
 func setupPlayingVideos(tutorialCasesViewController: TutorialCasesViewController) {
     tutorialCasesViewController.props = .init(
         rows: [.init(name: "Single video",
-                     action: { $0.props.player = singleVideo() }),
+                     select: { $0.props.player = singleVideo() }),
                .init(name: "Array of videos",
-                     action: { $0.props.player = arrayOfVideos() }),
+                     select: { $0.props.player = arrayOfVideos() }),
                .init(name: "Video playlist",
-                     action: { $0.props.player = videoPlaylist() }),
+                     select: { $0.props.player = videoPlaylist() }),
                .init(name: "Muted video",
-                     action: { $0.props.player = mutedVideo() }),
+                     select: { $0.props.player = mutedVideo() }),
                .init(name: "Video without autoplay",
-                     action: { $0.props.player = videoWithoutAutoplay() })])
+                     select: { $0.props.player = videoWithoutAutoplay() })])
 }
 
 func setupCustomUX(tutorialCasesViewController: TutorialCasesViewController) {
@@ -58,13 +58,13 @@ func setupCustomUX(tutorialCasesViewController: TutorialCasesViewController) {
     
     tutorialCasesViewController.props = .init(
         rows: [.init(name: "Custom color",
-                     action: customColors),
+                     select: customColors),
                .init(name: "Custom sidebar",
-                     action: customSidebar),
+                     select: customSidebar),
                .init(name: "Hidden 10s seek and settings",
-                     action: hiddenControls),
+                     select: hiddenControls),
                .init(name: "Live dot color",
-                     action: liveDotColor),
+                     select: liveDotColor),
                .init(name: "Filtered subtitles",
-                     action: filteredSubtitles)])
+                     select: filteredSubtitles)])
 }
