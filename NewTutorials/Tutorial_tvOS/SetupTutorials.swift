@@ -1,49 +1,24 @@
 //  Copyright © 2017 Oath. All rights reserved.
 
 import UIKit
-
+import CoreImage
+import OneMobileSDK
 
 func setup(tutorialCasesViewController: TutorialCasesViewController) {
-    func playSingleVideo(viewController: UIViewController) {
-        guard let wrapper = viewController as? SystemPlayerViewControllerWrapper else { return }
-        wrapper.props.player = singleVideo()
-    }
-    
-    func playArrayOfVideos(viewController: UIViewController) {
-        guard let wrapper = viewController as? SystemPlayerViewControllerWrapper else { return }
-        wrapper.props.player = arrayOfVideos()
-    }
-    
-    func playVideoPlaylist(viewController: UIViewController) {
-        guard let wrapper = viewController as? SystemPlayerViewControllerWrapper else { return }
-        wrapper.props.player = videoPlaylist()
-    }
-    
-    func playMutedVideo(viewController: UIViewController) {
-        guard let wrapper = viewController as? SystemPlayerViewControllerWrapper else { return }
-        wrapper.props.player = mutedVideo()
-    }
-    
-    func playVideoWithoutAutoplay(viewController: UIViewController) {
-        guard let wrapper = viewController as? SystemPlayerViewControllerWrapper else { return }
-        wrapper.props.player = videoWithoutAutoplay()
-    }
-    
-    func playFilteredVideo(viewController: UIViewController) {
-        guard let wrapper = viewController as? SystemPlayerViewControllerWrapper else { return }
-        wrapper.props.player = singleVideo()
-        wrapper.props.filter = {
-            let gauss = CIFilter(name: "CIGaussianBlur")
-            gauss?.setValue(5, forKey: "inputRadius")
-            return gauss
-        }()
+    func select(player: Future<Result<Player>>, filter: CIFilter? = nil) -> (UIViewController) -> () {
+        return {
+            guard let wrapper = $0 as? SystemPlayerViewControllerWrapper else { return }
+            wrapper.props.player = player
+            wrapper.props.filter = filter
+        }
     }
     
     tutorialCasesViewController.props = .init(
-        rows: [.init(name: "Single video", select: playSingleVideo),
-               .init(name: "Array of videos", select: playArrayOfVideos),
-               .init(name: "Video playlist", select: playVideoPlaylist),
-               .init(name: "Muted video", select: playMutedVideo),
-               .init(name: "Video without autoplay", select: playVideoWithoutAutoplay),
-               .init(name: "Filtered video", select: playFilteredVideo)])
+        rows: [.init(name: "Single video", select: select(player: singleVideo())),
+               .init(name: "Array of videos", select: select(player: arrayOfVideos())),
+               .init(name: "Video playlist", select: select(player: videoPlaylist())),
+               .init(name: "Muted video", select: select(player: mutedVideo())),
+               .init(name: "Video without autoplay", select: select(player: videoWithoutAutoplay())),
+               .init(name: "Filtered video", select: select(player: singleVideo(),
+                                                            filter: CIFilter(name: "CICMYKHalftone")))])
 }

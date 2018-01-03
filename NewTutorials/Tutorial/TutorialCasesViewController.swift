@@ -34,8 +34,4 @@ class TutorialCasesViewController: UITableViewController {
         cell.props = props.rows[indexPath.row]
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "PlayerWrapper", sender: nil)
-    }
 }

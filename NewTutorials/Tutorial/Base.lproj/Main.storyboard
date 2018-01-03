@@ -147,6 +147,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="rSF-yP-1XC" id="7cs-4H-mWm"/>
+                                    <segue destination="8f1-HZ-Vde" kind="show" identifier="PlayerWrapper" id="Yvm-BV-A1S"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -177,7 +178,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="S3J-EC-5Te" id="m9k-aR-wMf"/>
-                        <segue destination="8f1-HZ-Vde" kind="show" identifier="PlayerWrapper" id="Gab-40-BOs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuN-hU-JVk" userLabel="First Responder" sceneMemberID="firstResponder"/>
