@@ -40,28 +40,35 @@ class PlayerViewControllerWrapper: UIViewController {
             }
             
             func render(player: Player) {
+                typealias Controls = PlayerControls.ContentControlsViewController.Props.Player.Item.Controls
+                
                 playerViewController?.customizeContentControlsProps = { [weak self] props in
                     guard let strongSelf = self else { return props }
-                    // Mudifing content props only if content video can be played
+                    // Modifying content props only if content video can be played
                     guard var player = props.player else { return props }
                     guard var controls = player.item.playable else { return props }
                     
-                    // Changing color of live dot indicator
-                    controls.live.dotColor = strongSelf.props.controls.liveDotColor
+                    func changeControlsLiveDot() {
+                        controls.live.dotColor = strongSelf.props.controls.liveDotColor
+                    }
                     
-                    // Hiding/showing 10s seek button and setting button
-                    if strongSelf.props.controls.isSomeHidden {
+                    func hideSomeControls() {
+                        guard strongSelf.props.controls.isSomeHidden else { return }
                         controls.seekbar?.seeker.seekTo = nil
                         controls.settings = .hidden
                     }
                     
-                    // Filtering subtitles by name
-                    if strongSelf.props.controls.isFilteredSubtitles {
-                        guard case .`internal`(var group) = controls.legible else { return props }
-                        guard let options = group?.options else { return props }
+                    func filteredSubtitles() {
+                        guard strongSelf.props.controls.isFilteredSubtitles else { return }
+                        guard case .`internal`(var group) = controls.legible else { return }
+                        guard let options = group?.options else { return }
                         group?.options = options.filter { !$0.name.contains("CC") }
                         controls.legible = .`internal`(group)
                     }
+                    
+                    changeControlsLiveDot()
+                    hideSomeControls()
+                    filteredSubtitles()
                     
                     var props = props
                     player.item = .playable(controls)
