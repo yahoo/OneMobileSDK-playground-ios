@@ -29,10 +29,10 @@ class SystemPlayerViewControllerWrapper: UIViewController {
             
             func render(player: Player) {
                 if let filter = props.filter {
-                    systemPlayerViewController?.contentCIFilterHandler = {
+                    systemPlayerViewController?.contentCIFilterHandler = { request in
                         guard let outputImage = filter.outputImage else { return }
-                        filter.setValue($0.sourceImage, forKey: kCIInputImageKey)
-                        $0.finish(with: outputImage, context: nil)
+                        filter.setValue(request.sourceImage, forKey: kCIInputImageKey)
+                        request.finish(with: outputImage, context: nil)
                     }
                 }
                 
