@@ -6,55 +6,54 @@ This document will describe basic concepts and then will link you to sample proj
 
 As always, we highly appreciate, welcome, and value all feedback on this documentation or the OMSDK in any way, shape, or form. If you have any suggestions for corrections, additions, or any further clarity, please don’t hesitate to email the [Video Support Team](mailto:video.support@oath.com).
 
-If you want to see the code - go to this [section](#tldr-%E2%80%93-quick-start-)!
+If you want to see the code - go to this [section](#tldr-%E2%80%93-quick-start)!
 
-# Table of Contents
+## Table of Contents
 
-- [O2 Mobile SDK Tutorial – for iOS and tvOS](#o2-mobile-sdk-tutorial-%E2%80%93-for-ios-and-tvos)
-- [Table of Contents](#table-of-contents)
-- [What is the O2 Mobile SDK?](#what-is-the-o2-mobile-sdk)
-- [Main SDK Features](#main-sdk-features)
-- [Why would I use the O2 Mobile SDK?](#why-would-i-use-the-o2-mobile-sdk)
-- [Advertising Info and User Tracking](#advertising-info-and-user-tracking)
-- [Starting Requirements](#starting-requirements)
-- [Onboarding your Apps for SDK Authentication](#onboarding-your-apps-for-sdk-authentication)
-- [High-Level Architecture Overview](#high-level-architecture-overview)
-- [How the SDK works](#how-the-sdk-works)
-- [Default (Player) Controls UX](#default-player-controls-ux)
-- [TL;DR : Quick Start](#tldr--quick-start)
-    + [Tutorial 1 : Playing Videos](#tutorial-1--playing-videos)
-        * [Setting default player controls’ tint color](#setting-default-player-controls-tint-color)
-        * [Playing with AutoPlay on/off](#playing-with-autoplay-onoff)
-        * [Playing Muted](#playing-muted)
-        * [Disabling HLS (or forcing MP4 playback)](#disabling-hls-or-forcing-mp4-playback)
-    + [Tutorial 2 : Customizing the Default Controls UX](#tutorial-2--customizing-the-default-controls-ux)
-        * [Hiding Various Controls buttons](#hiding-various-controls-buttons)
-        * [Closed Captioning / SAP Settings button](#closed-captioning--sap-settings-button)
-        * [Using the 4 Custom Sidebar buttons](#using-the-4-custom-sidebar-buttons)
-        * [Setting the LIVE indicator’s tint color](#setting-the-live-indicators-tint-color)
-    + [Tutorial 3 : Observing the Player](#tutorial-3--observing-the-player)
-        * [Current Playback State and Position](#current-playback-state-and-position)
-        * [Looping Playback](#looping-playback)
-        * [LIVE, VOD, or 360°?](#live-vod-or-360%C2%B0)
-        * [Manually Hooking up Previous or Next Videos](#manually-hooking-up-previous-or-next-videos)
-    + [Tutorial 4 : Error Handling in the SDK](#tutorial-4--error-handling-in-the-sdk)
-        * [SDK Initialization Errors](#sdk-initialization-errors)
-        * [Player Initialization Errors](#player-initialization-errors)
-        * [Restricted Videos](#restricted-videos)
-  * [Specific Notes for tvOS Apps](#specific-notes-for-tvos-apps)
-    + [Tutorial 5 : Playing Videos on tvOS](#tutorial-5--playing-videos-on-tvos)
-  * [Next Steps](#next-steps)
-    + [Getting O2 Video/Playlist IDs into your apps](#getting-o2-videoplaylist-ids-into-your-apps)
-    + [Controlling Ads via your O2 Portal Account](#controlling-ads-via-your-o2-portal-account)
+[O2 Mobile SDK Tutorial – for iOS and tvOS](#o2-mobile-sdk-tutorial---for-ios-and-tvos)
+1. [What is the O2 Mobile SDK?](#what-is-the-o2-mobile-sdk)
+2. [Main SDK Features](#main-sdk-features)
+3. [Why would I use the O2 Mobile SDK?](#why-would-i-use-the-o2-mobile-sdk)
+4. [Advertising Info and User Tracking](#advertising-info-and-user-tracking)
+5. [Starting Requirements](#starting-requirements)
+6. [Onboarding your Apps for SDK Authentication](#onboarding-your-apps-for-sdk-authentication)
+7. [High-Level Architecture Overview](#high-level-architecture-overview)
+8. [How the SDK works](#how-the-sdk-works)
+9. [Default (Player) Controls UX](#default-player-controls-ux)
+10. [TLDR – Quick Start](#tldr-%E2%80%93-quick-start)
+11. [Tutorial 1 – Playing Videos](#tutorial-1--playing-videos)
+    1. [Setting default player controls’ tint color](#setting-default-player-controls-tint-color)
+    2. [Playing with AutoPlay on/off](#playing-with-autoplay-onoff)
+    3. [Playing Muted](#playing-muted)
+    4. [Disabling HLS (or forcing MP4 playback)](#disabling-hls-or-forcing-mp4-playback)
+12. [Tutorial 2 – Customizing the Default Controls UX](#tutorial-2--customizing-the-default-controls-ux)
+    1. [Hiding Various Controls buttons](#hiding-various-controls-buttons)
+    2. [Closed Captioning / SAP Settings button](#closed-captioning--sap-settings-button)
+    3. [Using the 4 Custom Sidebar buttons](#using-the-4-custom-sidebar-buttons)
+    4. [Setting the LIVE indicator’s tint color](#setting-the-live-indicators-tint-color)
+13. [Tutorial 3 – Observing the Player](#tutorial-3--observing-the-player)
+    1. [Current Playback State and Position](#current-playback-state-and-position)
+    2. [Looping Playback](#looping-playback)
+    3. [LIVE, VOD, or 360°?](#live-vod-or-360%C2%B0%3F)
+    4. [Manually Hooking up Previous or Next Videos](#manually-hooking-up-previous-or-next-videos)
+14. [Tutorial 4 – Error Handling in the SDK](#tutorial-4--error-handling-in-the-sdk)
+    1. [SDK Initialization Errors](#sdk-initialization-errors)
+    2. [Player Initialization Errors](#player-initialization-errors)
+    3. [Restricted Videos](#restricted-videos)
+15. [Specific Notes for tvOS Apps](#specific-notes-for-tvos-apps)
+    - [Tutorial 5 – Playing Videos on tvOS](#tutorial-5--playing-videos-on-tvos)
+16. [Next Steps](#next-steps)
+    - [Getting O2 Video/Playlist IDs into your apps](#getting-o2-videoplaylist-ids-into-your-apps)
+    - [Controlling Ads via your O2 Portal Account](#controlling-ads-via-your-o2-portal-account)
 
-# What is the O2 Mobile SDK?
+## What is the O2 Mobile SDK?
 The O2 Mobile SDK (OMSDK or SDK) is a native iOS SDK with the sole purpose for playing and monetizing videos from the Oath O2 video platform in your app. The OMSDK is written in Swift and is delivered as a framework. You can include this in your app projects either via CocoaPods or Carthage. Currently, Swift Package Manager not supported on iOS or tvOS.
 
 As part of playing videos, the OMSDK also handles video ads (pre-roll, mid-roll, and post-roll) and associated videos and ads playback and performance analytics. Analytics are focused on tracking what is played, how far it is played (e.g., deciles, quartiles), and details about the actual device or network. For more details on the analytics supported or to access the analytics data, you will work with the [Video Support Team](mailto:video.support@oath.com) to build reports that focus specifically on your app’s video and ads performance.
 
 The SDK includes a complete default video player controls UX (user experience), which includes a limited albeit robust set of customization options. The controls implementation is fully open source, and the SDK architecture allows for you to include your own fully customized controls UX, should you not be interested in the built-in default one.
 
-# Main SDK Features
+## Main SDK Features
 * Playback of one or more individual videos or a single playlist of videos
 * Video playback of VOD (video on demand), 360°, and LIVE streaming video types
 * Supports either .mp4 or .m3u8 (HLS) formats
@@ -69,7 +68,7 @@ The SDK includes a complete default video player controls UX (user experience), 
 * Native iOS Picture-in-Picture support
 * Apple AirPlay support
 
-# Why would I use the O2 Mobile SDK?
+## Why would I use the O2 Mobile SDK?
 The O2 Mobile SDK is used to natively play O2 videos. If you have a native app, you should use the SDK. The main reason as to why you’d want to use the SDK, is because you get all the ads and analytics for free. The ads are important for monetization. Analytics are important for tracking your app’s video and video ads performance and usage. This helps you understand what your users are watching with your app, and how much.
 
 There are several technical advantages to using the native OMSDK over a web player-based solution. We won’t go into these in depth in this document, but here are some of the advantages:
@@ -80,10 +79,10 @@ There are several technical advantages to using the native OMSDK over a web play
 * Fine-grained control, less limits
 * More customization options
 
-# Advertising Info and User Tracking
+## Advertising Info and User Tracking
 The O2 Mobile SDK does not track anything that is not related to playing videos or video ads. We use the IDFA (ID for advertisers) value and respect the user's settings for Limit Ad Tracking (iOS enforces this anyway). The device geolocation is determined by our backend video servers based on IP address, for the purposes of determining and filtering out content that is geo-restricted by content owners. The SDK does not explicitly use the built-in Location Services APIs, and thus does not require your users to grant access to device location data.
 
-# Starting Requirements
+## Starting Requirements
 * **Xcode 9+**
 * **Swift 3.2 (use in Obj-C projects is also possible by writing wrapper around Swift framework)**
 * **CocoaPods or Carthage**
@@ -91,12 +90,12 @@ The O2 Mobile SDK does not track anything that is not related to playing videos 
 * **Account in the O2 Portal, and access to Oath-ingested video content**
 * **Onboarded application bundle ID**
 
-# Onboarding your Apps for SDK Authentication
+## Onboarding your Apps for SDK Authentication
 In order for the OMSDK to authenticate itself for video playback within your app, we pass the containing app’s unique App Store bundle identifier to our back end service. You need to email the [Video Support Team](mailto:video.support@oath.com) to register all of your app bundle IDs for OMSDK usage. You can also register multiple bundle IDs against your same app entity. Possible reasons to do this, is to allow for a dev/test app bundle ID or an enterprise bundle ID, that can co-exist on a device alongside your production app. Also, both iOS and Android app bundle IDs can either be the same or different – for the same app. Registration not only authenticates your application, but it ensures your backend video and ads analytics are all configured properly. In addition, this registration information also defines all the video content your app is allowed to playback through the SDK.
 
 The sample projects are all set up to use the following test-only bundle ID: `com.aol.mobile.one.testapp`
 
-# High-Level Architecture Overview
+## High-Level Architecture Overview
 At a high-level, the OMSDK architecture is composed of the following components:
 * SDK Core
 * A set of Video Renderers that are built-in (e.g., flat 2D and RYOT 360°) And possibility to use external renderers (e.g., Verizon Envrmnt 360°, custom, etc.)
@@ -108,7 +107,7 @@ Our modular approach makes it easy for us (or you) to add new renderers in the f
 
 Remember that new renderers have to be registered on our micro-service. Reach [Video Support Team](mailto:video.support@oath.com) to start this process.
 
-# How the SDK works
+## How the SDK works
 At a very basic level, the OMSDK controls only the video frame. Because of this, you are completely in control of your app’s design and UX (look and feel). You can control whether videos play in a small view, in-place over a thumbnail image, or at full-screen. Your app also has complete control over device rotation, use of view/navigation controllers, scrollers, and any transitions between them. The SDK does not dictate any overall visual design or behavior on your app.
 
 If you choose to use the SDK’s built-in default player controls UX implementation, then that part of the video UX is imposed on you. All controls rendering is also done within the frame you provide for the video. Regardless of which controls UX you use, we currently do not allow any customization or overriding of the ads playback UX (which is different from the normal video playback UX), so that visual interface is dictated, and you cannot override it. Future customization options are planned here.
@@ -130,7 +129,7 @@ The runtime circumstances and algorithm for getting an ad or not, are not in the
 
 **Note**: The SDK only operates with an active network connection – without it, you will not be able to do anything.
 
-# Default (Player) Controls UX
+## Default (Player) Controls UX
 
 |Portrait|Landscape|
 |--------|---------|
@@ -167,38 +166,35 @@ The complete implementation of the default player controls UX is open-source and
 The default iOS Controls UI implementation repo can be found here: 
 [O2 Mobile SDK Controls for iOS](https://github.com/aol-public/OneMobileSDK-controls-ios)
 
-# TL;DR : Quick Start
+## TLDR – Quick Start
 
 Please, use tutorials inside this repository to get started. 
 The complexity of tutorial is increasing with its number :) 
 So for beginning use Tutorial 1!
 
-### Tutorial 1 : Playing Videos
-
-**insert tutorial link here**
+## Tutorial 1 : Playing Videos
 
 This tutorial sample shows you how to quickly init the OMSDK and play videos using all the default options and behaviors, with very little code. Playing a single video, a list of individual videos, or videos from an O2 Playlist are all done the same way. The only difference between playing a single video or multiple videos is that the SDK strings multiple videos together, connects up the previous and next player controls UX buttons, and if AutoPlay is on - plays them straight through.
 
-##### Setting default player controls’ tint color
+#### Setting default player controls’ tint color
 
 The built-in tint color of the default video player controls UX is pink/magenta. This is deliberate. You set the tint color of the default player controls by setting the UIViewController’s tintColor. This can be done programmatically or via Interface Builder (IB) in Xcode, for your UIViewController, if you’re instantiating your view that way. In this sample, you’ll find a code block that shows you how to override the default controls color.
 
-##### Playing with AutoPlay on/off
+#### Playing with AutoPlay on/off
 
 By default, the SDK plays videos with AutoPlay mode on. This means, that as soon as you construct a `Player`, the first video queues to play immediately (first, calling for an ad, of course). In this case, no further user action is required. As soon as the ad or the video is ready to play, it will. To override this behavior and turn off AutoPlay, look for the alternate way to construct the `Player` in this sample.
 
 If AutoPlay mode is off, the user will have to tap the play button to start the playback process. Alternatively, you can programmatically do this by controlling the Player object.
 
-##### Playing Muted
+#### Playing Muted
 
 You can easily control the mute state of the `Player` object. In this sample, you’ll find a code block that shows you how to set the mute state of the `Player` object.
 
-##### Disabling HLS (or forcing MP4 playback)
+#### Disabling HLS (or forcing MP4 playback)
 
 Many (but not all) of the videos in the O2 video platform, have multiple renditions. There may be some set of circumstances where you do not want to use HLS (.m3u8) renditions, and therefore, want to force the alternate high resolution .mp4 rendition. As a result, our SDK has the ability to override or disable getting the default HLS rendition. Look for this alternate initialization code in this tutorial sample for an example of how to programmatically control this.
 
-### Tutorial 2 : Customizing the Default Controls UX
-**insert tutorial link here**
+## Tutorial 2 : Customizing the Default Controls UX
 
 This tutorial sample shows you how to further modify the default controls UX.
 
@@ -229,9 +225,7 @@ Use this sample to see how to add custom code and behaviors to one of the 4 side
 
 The LIVE indicator only appears during a LIVE streaming video playback. This will not appear for a video on demand video. Part of the LIVE indicator is the ability to colorize the • that appears next to the LIVE indicator. In general, you may want to use a standard pure-red color. However, it’s possible that you want to use your app’s brand color or while here instead. You can use black or any dark-gray color, but that is ill advised, because of the general nature of video to have lots of blacks in it. The sample code in this example shows how to set this.
 
-### Tutorial 3 : Observing the Player
-
-**insert tutorial link here**
+## Tutorial 3 : Observing the Player
 
 This tutorial sample shows you how to observe just about everything you can observe from OMSDK `Player` objects. As you would suspect, many properties that can be observed, can also be set or manipulated.
 
@@ -243,6 +237,7 @@ Determining the current state of the `Player` is a key need for apps … most ap
 
 If your app has some need to loop a `Player` (one video or many), such as running a kiosk-style interface, for example. This is an easy operation to accomplish with the OMSDK. Look in this example, to see how to determine when playback finishes, and how to reset the video index back to the first video and start it over.
 
+<a name="live-vod-360"></a>
 ##### LIVE, VOD, or 360°?
 
 You may need to inspect some more metadata on the video, such as what type of video this is – LIVE, video on demand, or 360°. This tutorial sample shows how to inspect this. You may need to make certain app design or UX decisions accordingly, based on the type of video that’s currently playing.
@@ -252,7 +247,6 @@ You may need to inspect some more metadata on the video, such as what type of vi
 There are many legitimate app UX circumstance, that can dictate the dynamicness of a video player – meaning, that not every app design will simply be setup to operate off fixed playlists or lists of videos. As such, the Player can be modified on the fly to dynamically handle what video is played when the previous or next buttons are tapped. This example tutorial has sample code that shows you precisely how to do this. However, be judicious with the usage of this behavior, and make sure it matches a natural flow of content for the user.
 
 ### Tutorial 4 : Error Handling in the SDK
-**insert tutorial link here**
 
 This tutorial sample shows you how to handle various different types of errors that can occur when using the OMSDK and how to catch and identify them. How you handle these in your app is up to you. The SDK is designed to either return a valid SDK or Player instance otherwise it returns an error. There is no middle ground. If you don’t get a valid instance, you should look at the error result instead to determine why. This section describes some common issues.
 
@@ -281,11 +275,11 @@ The OMSDK supports tvOS with the same source framework as iOS. We are utilising 
 Because there is no way to tap on the screen, you cannot access the ad URL. Additionally, tvOS has no support for web views – so there would be no consistent way to render the ad URL.
 
 ### Tutorial 5 : Playing Videos on tvOS
-**insert tutorial link here**
 
 This tutorial sample shows you how to do many of the same things as iOS as described above in [Tutorial 1](###Tutorial\ 1\ –\ Playing\ Videos), but for tvOS. In terms of the OMSDK, the biggest difference is that you cannot use the default Custom Controls UX with tvOS – you must use the built-in `AVPlayerViewController` controls. With this, you get direct access to the advanced Siri Remote control features, for example.
 
 ## Next Steps 
+
 ### Getting O2 Video/Playlist IDs into your apps
 
 The OMSDK operates on O2 video and playlist IDs. That said, it is the application’s responsibility to dynamically acquire video IDs and/or playlist IDs either via your own CMS (content management system) or perhaps via a direct O2 Search API call. Since apps are generally dynamic in their content (video or otherwise), you need to figure out how to deliver these content IDs into your app, so they can be passed to the SDK to play against. Although unadvised, the easiest possible approach is to hardcode one or more playlist ID[s] into an app, and let those playlists dynamically change their content via the O2 Portal. The upside to this is you don’t need a CMS or further server communications on your end to get video information into your app, and thus to the SDK. The downside, is that if any of those IDs are ever deleted, the app will virtually be useless in terms of O2 video playback.
@@ -294,4 +288,4 @@ For more information about the O2 Search API, the O2 Portal, or creation and man
 
 ### Controlling Ads via your O2 Portal Account
 
-**Need support team help here**. How to get set up for Portal, ads, etc. How to monetize with ads
+TBD...
