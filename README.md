@@ -6,7 +6,7 @@ This document will describe basic concepts and then will link you to sample proj
 
 As always, we highly appreciate, welcome, and value all feedback on this documentation or the OMSDK in any way, shape, or form. If you have any suggestions for corrections, additions, or any further clarity, please don’t hesitate to email the [Video Support Team](mailto:video.support@oath.com).
 
-If you want to see the code - go to this [section](#tldr:-quick-start)!
+If you want to see the code - go to this [section](#tldr)!
 
 ## Table of Contents
 
@@ -20,8 +20,8 @@ If you want to see the code - go to this [section](#tldr:-quick-start)!
 7. [High-Level Architecture Overview](#high-level-architecture-overview)
 8. [How the SDK works](#how-the-sdk-works)
 9. [Default (Player) Controls UX](#default-player-controls-ux)
-10. [TLDR: Quick Start](#tldr:-quick-start)
-11. [Tutorial 1: Playing Videos](#tutorial-1:-playing-videos)
+10. [TLDR: Quick Start](#tldr)
+11. [Tutorial 1: Playing Videos](#tutorial-1)
     1. [Setting default player controls’ tint color](#setting-default-player-controls-tint-color)
     2. [Playing with AutoPlay on/off](#playing-with-autoplay-onoff)
     3. [Playing Muted](#playing-muted)
@@ -176,7 +176,7 @@ So for beginning use Tutorial 1!
 
 This tutorial sample shows you how to quickly init the OMSDK and play videos using all the default options and behaviors, with very little code. Playing a single video, a list of individual videos, or videos from an O2 Playlist are all done the same way. The only difference between playing a single video or multiple videos is that the SDK strings multiple videos together, connects up the previous and next player controls UX buttons, and if AutoPlay is on - plays them straight through.
 
-#### **Setting default player controls’ tint color**
+#### Setting default player controls’ tint color
 
 The built-in tint color of the default video player controls UX is pink/magenta. This is deliberate. You set the tint color of the default player controls by setting the UIViewController’s tintColor. This can be done programmatically or via Interface Builder (IB) in Xcode, for your UIViewController, if you’re instantiating your view that way. In this sample, you’ll find a code block that shows you how to override the default controls color.
 
