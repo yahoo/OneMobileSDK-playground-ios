@@ -10,7 +10,7 @@ If you want to see the code - go to this [section](#tldr:-quick-start)!
 
 ## Table of Contents
 
-[O2 Mobile SDK Tutorial – for iOS and tvOS](#o2-mobile-sdk-tutorial---for-ios-and-tvos)
+[O2 Mobile SDK Tutorial - for iOS and tvOS](#o2-mobile-sdk-tutorial---for-ios-and-tvos)
 1. [What is the O2 Mobile SDK?](#what-is-the-o2-mobile-sdk)
 2. [Main SDK Features](#main-sdk-features)
 3. [Why would I use the O2 Mobile SDK?](#why-would-i-use-the-o2-mobile-sdk)
@@ -21,7 +21,7 @@ If you want to see the code - go to this [section](#tldr:-quick-start)!
 8. [How the SDK works](#how-the-sdk-works)
 9. [Default (Player) Controls UX](#default-player-controls-ux)
 10. [TLDR: Quick Start](#tldr:-quick-start)
-11. [Tutorial 1: Playing Videos](#tutorial-1--playing-videos)
+11. [Tutorial 1: Playing Videos](#tutorial-1:-playing-videos)
     1. [Setting default player controls’ tint color](#setting-default-player-controls-tint-color)
     2. [Playing with AutoPlay on/off](#playing-with-autoplay-onoff)
     3. [Playing Muted](#playing-muted)
@@ -246,7 +246,7 @@ You may need to inspect some more metadata on the video, such as what type of vi
 
 There are many legitimate app UX circumstance, that can dictate the dynamicness of a video player – meaning, that not every app design will simply be setup to operate off fixed playlists or lists of videos. As such, the Player can be modified on the fly to dynamically handle what video is played when the previous or next buttons are tapped. This example tutorial has sample code that shows you precisely how to do this. However, be judicious with the usage of this behavior, and make sure it matches a natural flow of content for the user.
 
-### Tutorial 4: Error Handling in the SDK
+## Tutorial 4: Error Handling in the SDK
 
 This tutorial sample shows you how to handle various different types of errors that can occur when using the OMSDK and how to catch and identify them. How you handle these in your app is up to you. The SDK is designed to either return a valid SDK or Player instance otherwise it returns an error. There is no middle ground. If you don’t get a valid instance, you should look at the error result instead to determine why. This section describes some common issues.
 
