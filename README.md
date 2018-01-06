@@ -166,6 +166,7 @@ The complete implementation of the default player controls UX is open-source and
 The default iOS Controls UI implementation repo can be found here: 
 [O2 Mobile SDK Controls for iOS](https://github.com/aol-public/OneMobileSDK-controls-ios)
 
+<a name="tldr"></a>
 ## TLDR: Quick Start
 
 Please, use tutorials inside this repository to get started. 
@@ -195,6 +196,7 @@ You can easily control the mute state of the `Player` object. In this sample, yo
 
 Many (but not all) of the videos in the O2 video platform, have multiple renditions. There may be some set of circumstances where you do not want to use HLS (.m3u8) renditions, and therefore, want to force the alternate high resolution .mp4 rendition. As a result, our SDK has the ability to override or disable getting the default HLS rendition. Look for this alternate initialization code in this tutorial sample for an example of how to programmatically control this.
 
+<a name="tutorial-2"></a>
 ## Tutorial 2: Customizing the Default Controls UX
 
 This tutorial sample shows you how to further modify the default controls UX.
@@ -226,6 +228,7 @@ Use this sample to see how to add custom code and behaviors to one of the 4 side
 
 The LIVE indicator only appears during a LIVE streaming video playback. This will not appear for a video on demand video. Part of the LIVE indicator is the ability to colorize the • that appears next to the LIVE indicator. In general, you may want to use a standard pure-red color. However, it’s possible that you want to use your app’s brand color or while here instead. You can use black or any dark-gray color, but that is ill advised, because of the general nature of video to have lots of blacks in it. The sample code in this example shows how to set this.
 
+<a name="tutorial-3"></a>
 ## Tutorial 3: Observing the Player
 
 This tutorial sample shows you how to observe just about everything you can observe from OMSDK `Player` objects. As you would suspect, many properties that can be observed, can also be set or manipulated.
@@ -247,6 +250,7 @@ You may need to inspect some more metadata on the video, such as what type of vi
 
 There are many legitimate app UX circumstance, that can dictate the dynamicness of a video player – meaning, that not every app design will simply be setup to operate off fixed playlists or lists of videos. As such, the Player can be modified on the fly to dynamically handle what video is played when the previous or next buttons are tapped. This example tutorial has sample code that shows you precisely how to do this. However, be judicious with the usage of this behavior, and make sure it matches a natural flow of content for the user.
 
+<a name="tutorial-4"></a>
 ## Tutorial 4: Error Handling in the SDK
 
 This tutorial sample shows you how to handle various different types of errors that can occur when using the OMSDK and how to catch and identify them. How you handle these in your app is up to you. The SDK is designed to either return a valid SDK or Player instance otherwise it returns an error. There is no middle ground. If you don’t get a valid instance, you should look at the error result instead to determine why. This section describes some common issues.
@@ -275,6 +279,7 @@ The OMSDK supports tvOS with the same source framework as iOS. We are utilising 
 
 Because there is no way to tap on the screen, you cannot access the ad URL. Additionally, tvOS has no support for web views – so there would be no consistent way to render the ad URL.
 
+<a name="tutorial-5"></a>
 ### Tutorial 5: Playing Videos on tvOS
 
 This tutorial sample shows you how to do many of the same things as iOS as described above in [Tutorial 1](###Tutorial\ 1\ –\ Playing\ Videos), but for tvOS. In terms of the OMSDK, the biggest difference is that you cannot use the default Custom Controls UX with tvOS – you must use the built-in `AVPlayerViewController` controls. With this, you get direct access to the advanced Siri Remote control features, for example.
