@@ -2,12 +2,15 @@
 
 import UIKit
 
+
 class TutorialsViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
+        guard let tutorialCasesViewController = segue.destination as? TutorialCasesViewController else { fatalError("Unknown destination") }
         
-        switch (identifier, segue.destination) {
-        case ("PlayingVideos", let vc as TutorialCasesViewController): setupPlayingVideos(vc: vc)
+        switch identifier {
+        case "PlayingVideos": setupPlayingVideos(tutorialCasesViewController: tutorialCasesViewController)
+        case "CustomUX": setupCustomUX(tutorialCasesViewController: tutorialCasesViewController)
         default: break
         }
     }

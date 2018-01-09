@@ -95,6 +95,7 @@
 				DAE58FD91FEBC7F300B46D06 /* PlayerViewControllerWrapper.swift */,
 				DA8896DB1FEA4C7D0063ED1F /* SetupTutorials.swift */,
 				DA54FBB01FE8214F00013412 /* Cells.swift */,
+				DA8896D91FE929430063ED1F /* SetupTutorials.swift */,
 				DA54FBB21FE8243F00013412 /* Players.swift */,
 				DA8175EF1FE7D3B300A3A381 /* Main.storyboard */,
 				DA8175F21FE7D3B300A3A381 /* Assets.xcassets */,
@@ -294,6 +295,7 @@
 				DA54FBB11FE8214F00013412 /* Cells.swift in Sources */,
 				DA8896DC1FEA4C7D0063ED1F /* SetupTutorials.swift in Sources */,
 				DA8175EC1FE7D3B300A3A381 /* AppDelegate.swift in Sources */,
+				DA8896DA1FE929430063ED1F /* SetupTutorials.swift in Sources */,
 				DA8175FC1FE7D5F700A3A381 /* TutorialCasesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

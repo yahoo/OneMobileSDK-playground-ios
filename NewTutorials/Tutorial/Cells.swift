@@ -4,19 +4,19 @@ import UIKit
 
 
 class TextCell: UITableViewCell {
-    @IBOutlet weak private var nameLabel: UILabel!
-    
-    struct ViewModel {
+    struct Props {
         let name: String
-        let action: () -> ()
+        let select: (PlayerViewControllerWrapper) -> ()
     }
     
-    var viewModel = ViewModel(name: "", action: {}) {
+    @IBOutlet weak private var nameLabel: UILabel!
+    
+    var props = Props(name: "", select: { _ in }) {
         didSet { layoutSubviews() }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        nameLabel.text = viewModel.name
+        nameLabel.text = props.name
     }
 }
