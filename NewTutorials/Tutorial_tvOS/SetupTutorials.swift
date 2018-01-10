@@ -15,8 +15,6 @@ func setup(tutorialCasesViewController: TutorialCasesViewController) {
     
     tutorialCasesViewController.props = .init(
         rows: [.init(name: "Single video", select: select(player: singleVideo())),
-               .init(name: "Array of videos", select: select(player: arrayOfVideos())),
-               .init(name: "Video playlist", select: select(player: videoPlaylist())),
                .init(name: "Muted video", select: select(player: mutedVideo())),
                .init(name: "Video without autoplay", select: select(player: videoWithoutAutoplay())),
                .init(name: "Filtered video", select: select(player: singleVideo(),
