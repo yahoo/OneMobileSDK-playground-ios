@@ -117,7 +117,7 @@ To play a video, you follow these very basic steps:
 2. Using OneSDK initialize a new `Player` object with a video ID/IDs or playlist ID
 3. Set `Player` to the `PlayerViewController`
 4. Set `Controls` to the `PlayerViewController`
-4. Show `PlayerViewController`!
+5. Show `PlayerViewController`!
 
 **That’s it!**
 
@@ -178,9 +178,17 @@ So for beginning use Tutorial 1!
 
 This tutorial sample shows you how to quickly init the OMSDK and play videos using all the default options and behaviors, with very little code. Playing a single video, a list of individual videos, or videos from an O2 Playlist are all done the same way. The only difference between playing a single video or multiple videos is that the SDK strings multiple videos together, connects up the previous and next player controls UX buttons, and if AutoPlay is on - plays them straight through.
 
+##### _Tutorial Sample:_
+
+> [Playing Videos](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+
 #### Setting default player controls’ tint color
 
 The built-in tint color of the default video player controls UX is pink/magenta. This is deliberate. You set the tint color of the default player controls by setting the UIViewController’s tintColor. This can be done programmatically or via Interface Builder (IB) in Xcode, for your UIViewController, if you’re instantiating your view that way. In this sample, you’ll find a code block that shows you how to override the default controls color.
+
+##### _Tutorial Sample:_
+
+> [Setting Controls’ Tint Color](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
 
 #### Playing with AutoPlay on/off
 
@@ -188,13 +196,25 @@ By default, the SDK plays videos with AutoPlay mode on. This means, that as soon
 
 If AutoPlay mode is off, the user will have to tap the play button to start the playback process. Alternatively, you can programmatically do this by controlling the Player object.
 
+##### _Tutorial Sample:_
+
+> [Turning Off AutoPlay](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+
 #### Playing Muted
 
 You can easily control the mute state of the `Player` object. In this sample, you’ll find a code block that shows you how to set the mute state of the `Player` object.
 
+##### _Tutorial Sample:_
+
+> [Controlling Mute State](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+
 #### Disabling HLS (or forcing MP4 playback)
 
 Many (but not all) of the videos in the O2 video platform, have multiple renditions. There may be some set of circumstances where you do not want to use HLS (.m3u8) renditions, and therefore, want to force the alternate high resolution .mp4 rendition. As a result, our SDK has the ability to override or disable getting the default HLS rendition. On iOS and tvOS, this is not something that we specifically advocate, so we won't show you this code in this tutorial.  If you believe you have a good need for avoiding the network and visual performance improvements that HLS provides, please email [Video Support Team](mailto:video.support@oath.com) and we will be happy to help you!
+
+##### _Tutorial Sample:_
+
+> _sample coming soon_
 
 <a name="tutorial-2"></a>
 ## Tutorial 2: Customizing the Default Controls UX
@@ -284,6 +304,10 @@ Because there is no way to tap on the screen, you cannot access the ad URL. Addi
 
 This tutorial sample shows you how to do many of the same things as iOS as described above in [Tutorial 1](#tutorial-1), but for tvOS. In terms of the OMSDK, the biggest difference is that you cannot use the default Custom Controls UX with tvOS – you must use the built-in `AVPlayerViewController` controls. With this, you get direct access to the advanced Siri Remote control features, for example.
 
+##### _Tutorial Sample:_
+
+> _sample coming soon_
+
 ## Next Steps 
 
 ### Getting O2 Video/Playlist IDs into your apps
@@ -294,4 +318,6 @@ For more information about the O2 Search API, the O2 Portal, or creation and man
 
 ### Controlling Ads via your O2 Portal Account
 
-TBD...
+You have some options with respect to ads and the OMSDK.  During early development, your developers are going to want ads disabled because they’re intrusive to the development process, and unnecessary.  Before you launch, you will likely want to see test or Public Service Announcement (PSA) ads enabled all the time, so you can get a feel for how ads will impact your users in various parts of your app.  And, as you launch, you’ll want to enable live production ads for your app, so you’re ready to go as soon as your app passes through the App Store submission process.
+
+To make changes to the ads settings for your app, please contact [Video Support Team](mailto:video.support@oath.com) and they’ll promptly assist you.
