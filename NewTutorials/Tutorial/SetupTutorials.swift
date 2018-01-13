@@ -26,7 +26,7 @@ func setupCustomUX(tutorialCasesViewController: TutorialCasesViewController) {
     
     func customColors(props: inout Props) {
         props.player = singleVideo()
-        props.controls.color = UIColor.magenta
+        props.controls.color = UIColor(red:0.51, green:0.87, blue:0.47, alpha:1.0)
     }
     
     func customSidebar(props: inout Props) {
