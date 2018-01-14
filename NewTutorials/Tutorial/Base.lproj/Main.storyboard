@@ -99,7 +99,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="m5T-Kf-lDU" kind="show" id="RXi-9H-ZSC"/>
+                                            <segue destination="sPi-zQ-L7O" kind="show" identifier="ErrorHandling" id="iCu-7P-bMq"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -182,7 +182,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuN-hU-JVk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063" y="91"/>
+            <point key="canvasLocation" x="888" y="92"/>
         </scene>
         <!--Player View Controller Wrapper-->
         <scene sceneID="Fwm-sq-Em4">
@@ -311,34 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6l7-lO-pAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824.8" y="-589.65517241379314"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Va3-hN-gcQ">
-            <objects>
-                <viewController id="m5T-Kf-lDU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DZP-wP-fBi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, not implemented yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ush-IN-1fs">
-                                <rect key="frame" x="84" y="323" width="207" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ush-IN-1fs" firstAttribute="centerY" secondItem="DZP-wP-fBi" secondAttribute="centerY" id="VZe-WY-WfF"/>
-                            <constraint firstItem="ush-IN-1fs" firstAttribute="centerX" secondItem="DZP-wP-fBi" secondAttribute="centerX" id="qih-zz-rWh"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="i2y-ki-kae"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Evk-pC-YOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1825" y="91"/>
+            <point key="canvasLocation" x="1376" y="92"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vo9-Zi-LWo">
@@ -356,7 +329,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvC-fr-H6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-385" y="92"/>
+            <point key="canvasLocation" x="-206" y="92"/>
         </scene>
         <!--Player View Controller-->
         <scene sceneID="wdZ-8h-SuS">
@@ -371,10 +344,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uef-m2-gOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2562" y="-590"/>
+            <point key="canvasLocation" x="1866" y="93"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cm1-Ar-Cqd"/>
+        <segue reference="fOn-qs-II3"/>
     </inferredMetricsTieBreakers>
 </document>
