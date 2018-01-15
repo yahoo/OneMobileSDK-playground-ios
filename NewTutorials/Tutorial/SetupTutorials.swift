@@ -9,7 +9,7 @@ func setupPlayingVideos(tutorialCasesViewController: TutorialCasesViewController
     func select(player: Future<Result<Player>>) -> (UIViewController) -> () {
         return {
             guard let wrapper = $0 as? PlayerViewControllerWrapper else { return }
-            wrapper.props.player = player
+            wrapper.player = player
         }
     }
     
@@ -21,56 +21,78 @@ func setupPlayingVideos(tutorialCasesViewController: TutorialCasesViewController
                .init(name: "Video without autoplay", select: select(player: videoWithoutAutoplay()))])
 }
 
+func select(controller: @escaping (PlayerViewControllerWrapper) -> ()) -> (UIViewController) -> () {
+    return {
+        guard let wrapper = $0 as? PlayerViewControllerWrapper else { return }
+        controller(wrapper)
+    }
+}
+
 func setupCustomUX(tutorialCasesViewController: TutorialCasesViewController) {
     typealias Props = PlayerViewControllerWrapper.Props
     
-    func customColors(props: inout Props) {
-        props.player = singleVideo()
-        props.controls.color = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+    func customColors(wrapper: PlayerViewControllerWrapper) {
+        wrapper.props.player = singleVideo()
+        wrapper.props.controls.color = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
     }
     
-    func customSidebar(props: inout Props) {
-        props.player = singleVideo()
-        props.controls.sidebarProps = [.init(isEnabled: true,
-                                             isSelected: false,
-                                             icons: .init(normal: UIImage(named: "icon-fav")!,
-                                                          selected: UIImage(named: "icon-fav-active")!,
-                                                          highlighted: nil),
-                                             handler: .nop),
-                                       .init(isEnabled: true,
-                                             isSelected: false,
-                                             icons: .init(normal: UIImage(named: "icon-share")!,
-                                                          selected: UIImage(named: "icon-share-active")!,
-                                                          highlighted: nil),
-                                             handler: .nop)]
+    func customSidebar(wrapper: PlayerViewControllerWrapper) {
+        wrapper.props.controls.sidebarProps = [.init(isEnabled: true,
+                                                     isSelected: false,
+                                                     icons: .init(normal: UIImage(named: "icon-fav")!,
+                                                                  selected: UIImage(named: "icon-fav-active")!,
+                                                                  highlighted: nil),
+                                                     handler: .nop),
+                                               .init(isEnabled: true,
+                                                     isSelected: false,
+                                                     icons: .init(normal: UIImage(named: "icon-share")!,
+                                                                  selected: UIImage(named: "icon-share-active")!,
+                                                                  highlighted: nil),
+                                                     handler: .nop)]
+        wrapper.player = singleVideo()
     }
     
-    func hiddenControls(props: inout Props) {
-        props.player = arrayOfVideos()
-        props.controls.isSomeHidden = true
+    func hiddenControls(wrapper: PlayerViewControllerWrapper) {
+        wrapper.props.controls.isSomeHidden = true
+        wrapper.player = arrayOfVideos()
     }
     
-    func liveDotColor(props: inout Props) {
-        props.player = liveVideo()
-        props.controls.liveDotColor = UIColor.red
+    func liveDotColor(wrapper: PlayerViewControllerWrapper) {
+        wrapper.props.controls.liveDotColor = UIColor.red
+        wrapper.player = liveVideo()
     }
     
-    func filteredSubtitles(props: inout Props) {
-        props.player = subtitlesVideo()
-        props.controls.isFilteredSubtitles = true
-    }
-    
-    func select(props: @escaping (inout Props) -> ()) -> (UIViewController) -> () {
-        return {
-            guard let wrapper = $0 as? PlayerViewControllerWrapper else { return }
-            props(&wrapper.props)
-        }
+    func filteredSubtitles(wrapper: PlayerViewControllerWrapper) {
+        wrapper.props.controls.isFilteredSubtitles = true
+        wrapper.player = subtitlesVideo()
     }
     
     tutorialCasesViewController.props = .init(
-        rows: [.init(name: "Custom color", select: select(props: customColors)),
-               .init(name: "Custom sidebar", select: select(props: customSidebar)),
-               .init(name: "Hidden 10s seek and settings", select: select(props: hiddenControls)),
-               .init(name: "Live dot color", select: select(props: liveDotColor)),
-               .init(name: "Filtered subtitles", select: select(props: filteredSubtitles))])
+        rows: [.init(name: "Custom color", select: select(controller: customColors)),
+               .init(name: "Custom sidebar", select: select(controller: customSidebar)),
+               .init(name: "Hidden 10s seek and settings", select: select(controller: hiddenControls)),
+               .init(name: "Live dot color", select: select(controller: liveDotColor)),
+               .init(name: "Filtered subtitles", select: select(controller: filteredSubtitles))])
+}
+
+func setupObserving(tutorialCasesViewController: TutorialCasesViewController) {
+    func videoStats(wrapper: PlayerViewControllerWrapper) {
+        wrapper.props.showStats = true
+        wrapper.player = videoPlaylist()
+    }
+    
+    func loopingVideos(wrapper: PlayerViewControllerWrapper) {
+        wrapper.props.looping = true
+        wrapper.player = videoPlaylist()
+    }
+    
+    func hooking(wrapper: PlayerViewControllerWrapper) {
+        wrapper.props.nextVideoHooking = true
+        wrapper.player = videoPlaylist()
+    }
+    
+    tutorialCasesViewController.props = .init(
+        rows: [.init(name: "Video stats", select: select(controller: videoStats)),
+               .init(name: "Looping videos", select: select(controller: loopingVideos)),
+               .init(name: "Next video hooking", select: select(controller: hooking))])
 }

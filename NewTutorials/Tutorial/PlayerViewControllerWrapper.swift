@@ -11,101 +11,79 @@ class PlayerViewControllerWrapper: UIViewController {
         var controls = Controls()
         
         struct Controls {
-            // Using default controls but it's possible to use custom by subclassing from ContentControlsViewController and set it to contentControlsViewController
-            var viewController: ContentControlsViewController = DefaultControlsViewController()
             var color = UIColor.magenta
             var isSomeHidden = false
             var liveDotColor: UIColor?
             var sidebarProps: SideBarView.Props = []
             var isFilteredSubtitles = false
         }
+        
+        var showStats = false
+        
+        struct Stats {
+            var isPlaying = false
+            var currentTime: Double = 0
+            
+            enum VideoType { case live, vod(is360: Bool), unknown }
+            var videoType = VideoType.unknown
+        }
+        var stats = Stats()
+        
+        var looping = false
+        var nextVideoHooking = false
+        
+        var isLoading = false
+        var isLastVideoFinished = false
+    }
+    
+    private var playerPropsObserverDispose: Player.PropsObserverDispose?
+    var player: Future<Result<Player>>? {
+        willSet {
+            playerPropsObserverDispose?()
+            playerViewController?.player = nil
+        }
+        didSet {
+            guard let player = player else { return }
+            
+            props.isLoading = true
+            player
+                .dispatch(on: .main)
+                .onSuccess(call: render)
+                .onError(call: render)
+                .onComplete { [weak self] _ in self?.props.isLoading = false }
+        }
     }
     
     var props = Props() {
         didSet {
             view.setNeedsLayout()
-            
-            guard let player = props.player else { playerViewController?.player = nil; return }
-            
-            func show(error: Error) {
-                let alert = UIAlertController(title: "Error",
-                                              message: "\(error)",
-                    preferredStyle: .alert)
-                alert.addAction(.init(title: "OK",
-                                      style: .default,
-                                      handler: nil))
-                present(alert,
-                        animated: true,
-                        completion: nil)
-            }
-            
-            func render(player: Player) {
-                typealias Controls = PlayerControls.ContentControlsViewController.Props.Player.Item.Controls
-                
-                playerViewController?.customizeContentControlsProps = { [weak self] props in
-                    guard let strongSelf = self else { return props }
-                    // Modifying content props only if content video can be played
-                    guard var player = props.player else { return props }
-                    guard var controls = player.item.playable else { return props }
-                    
-                    func changeControlsLiveDot() {
-                        controls.live.dotColor = strongSelf.props.controls.liveDotColor
-                    }
-                    
-                    func hideSomeControls() {
-                        guard strongSelf.props.controls.isSomeHidden else { return }
-                        controls.seekbar?.seeker.seekTo = nil
-                        controls.settings = .hidden
-                    }
-                    
-                    func filteredSubtitles() {
-                        guard strongSelf.props.controls.isFilteredSubtitles else { return }
-                        guard case .`internal`(var group) = controls.legible else { return }
-                        guard let options = group?.options else { return }
-                        group?.options = options.filter { !$0.name.contains("CC") }
-                        controls.legible = .`internal`(group)
-                    }
-                    
-                    changeControlsLiveDot()
-                    hideSomeControls()
-                    filteredSubtitles()
-                    
-                    var props = props
-                    player.item = .playable(controls)
-                    props = .player(player)
-                    
-                    return props
-                }
-                
-                playerViewController?.player = player
-            }
-            
-            isLoading = true
-            player
-                .dispatch(on: .main)
-                .onSuccess(call: render)
-                .onError(call: show)
-                .onComplete { [weak self] _ in self?.isLoading = false }
+            guard props.looping && props.isLastVideoFinished else { return }
+            playerViewController?.player?.selectVideo(atIndex: 0)
         }
     }
-    private var isLoading = false {
-        didSet {
-            view.setNeedsLayout()
-        }
-    }
+    @IBOutlet weak private var statusViewHiddenBottomConstaint: NSLayoutConstraint!
+    @IBOutlet weak private var statusViewShownBottomConstaint: NSLayoutConstraint!
+    @IBOutlet weak private var statsView: UIView!
+    @IBOutlet weak private var isPlayingLabel: UILabel!
+    @IBOutlet weak private var currentTimeLabel: UILabel!
+    @IBOutlet weak private var videoTypeLabel: UILabel!
     @IBOutlet weak private var activityIndicatorView: UIActivityIndicatorView!
     private var playerViewController: PlayerViewController? {
         return childViewControllers.first as? PlayerViewController
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Using default controls but it's possible to use custom by subclassing from ContentControlsViewController and set it to contentControlsViewController
+        playerViewController?.contentControlsViewController = DefaultControlsViewController()
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        activityIndicatorView.isHidden = !isLoading
-        isLoading ?
+        activityIndicatorView.isHidden = !props.isLoading
+        props.isLoading ?
             activityIndicatorView.startAnimating() :
             activityIndicatorView.stopAnimating()
-        
-        playerViewController?.contentControlsViewController = props.controls.viewController
         
         // Changing color of content view controller controls
         playerViewController?.view.tintColor = props.controls.color
@@ -114,5 +92,135 @@ class PlayerViewControllerWrapper: UIViewController {
         if let defaultControlsViewController = playerViewController?.contentControlsViewController as? DefaultControlsViewController {
             defaultControlsViewController.sidebarProps = props.controls.sidebarProps
         }
+        
+        statsView.isHidden = !props.showStats
+        statusViewHiddenBottomConstaint.isActive = !props.showStats
+        statusViewShownBottomConstaint.isActive = props.showStats
+        
+        guard props.showStats else { return }
+        isPlayingLabel.text = String(props.stats.isPlaying)
+        currentTimeLabel.text = String(format: "%.1fs", props.stats.currentTime)
+        
+        switch props.stats.videoType {
+        case .live: videoTypeLabel.text = "live"
+        case .vod(let is360): videoTypeLabel.text = "vod" + (is360 ? ", 360" : "")
+        default: videoTypeLabel.text = "unknown"
+        }
+    }
+    
+    private func render(error: Error) {
+        let alert = UIAlertController(title: "Error",
+                                      message: "\(error)",
+            preferredStyle: .alert)
+        alert.addAction(.init(title: "OK",
+                              style: .default,
+                              handler: nil))
+        present(alert,
+                animated: true,
+                completion: nil)
+    }
+    
+    private func render(player: Player) {
+        typealias Controls = PlayerControls.ContentControlsViewController.Props.Player.Item.Controls
+        
+        playerViewController?.customizeContentControlsProps = { [weak self] props in
+            guard let strongSelf = self else { return props }
+            // Modifying content props only if content video can be played
+            guard var contentPlayer = props.player else { return props }
+            guard var controls = contentPlayer.item.playable else { return props }
+            
+            func changeControlsLiveDot() {
+                controls.live.dotColor = strongSelf.props.controls.liveDotColor
+            }
+            
+            func hideSomeControls() {
+                guard strongSelf.props.controls.isSomeHidden else { return }
+                controls.seekbar?.seeker.seekTo = nil
+                controls.settings = .hidden
+            }
+            
+            func filteredSubtitles() {
+                guard strongSelf.props.controls.isFilteredSubtitles else { return }
+                guard case .`internal`(var group) = controls.legible else { return }
+                guard let options = group?.options else { return }
+                group?.options = options.filter { !$0.name.contains("CC") }
+                controls.legible = .`internal`(group)
+            }
+            
+            let customNextCommand: Command? = {
+                let nextIndex: Int = Int(arc4random_uniform(UInt32(player.props.playlist.count+1)))
+                let command: Command? = {
+                    if strongSelf.props.nextVideoHooking {
+                        return Command { player.selectVideo(atIndex: nextIndex) }
+                    }
+                    if strongSelf.props.looping && !player.props.playlist.hasNextVideo {
+                        return Command { player.selectVideo(atIndex: 0) }
+                    }
+                    if player.props.playlist.hasNextVideo {
+                        return Command(action: player.nextVideo)
+                    }
+                    return nil
+                }()
+                switch player.props.item {
+                case .available(let item): return item.content.isSeeking ? nil : command
+                case .unavailable: return command
+                }
+            }()
+            let customPrevCommand: Command? = {
+                let command: Command? = {
+                    if strongSelf.props.looping && !player.props.playlist.hasPrevVideo {
+                        return Command { player.selectVideo(atIndex: player.props.playlist.count-1) }
+                    }
+                    if player.props.playlist.hasPrevVideo {
+                        return Command(action: player.prevVideo)
+                    }
+                    return nil
+                }()
+                switch player.props.item {
+                case .available(let item): return item.content.isSeeking ? nil : command
+                case .unavailable: return command
+                }
+            }()
+            
+            changeControlsLiveDot()
+            hideSomeControls()
+            filteredSubtitles()
+            
+            contentPlayer.playlist?.next = customNextCommand
+            contentPlayer.playlist?.prev = customPrevCommand
+            contentPlayer.item = .playable(controls)
+            
+            var props = props
+            props = .player(contentPlayer)
+            
+            return props
+        }
+        
+        playerPropsObserverDispose = player.addObserver { [weak self] props in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.props.stats = {
+                guard let item = props.playbackItem else { return .init() }
+                let isStreamPlaying = item.ad.isPlaying || item.content.isPlaying
+                let currentTime = item.ad.time.static?.current ?? item.content.time.static?.current ?? 0
+                let videoType: PlayerViewControllerWrapper.Props.Stats.VideoType = {
+                    if item.content.time.isLive || item.ad.time.isLive { return .live }
+                    if item.content.time.isStatic || item.ad.time.isStatic { return .vod(is360: item.videoAngles != nil) }
+                    return .unknown
+                }()
+                
+                return .init(isPlaying: isStreamPlaying,
+                             currentTime: currentTime,
+                             videoType: videoType)
+            }()
+            strongSelf.props.isLastVideoFinished = {
+                guard let item = props.playbackItem else { return false }
+                guard item.content.time.static?.isFinished ?? item.content.time.live?.isFinished ?? false else { return false }
+                guard !props.playlist.hasNextVideo else { return false }
+                return true
+            }()
+        }
+        
+        playerViewController?.player = player
     }
 }

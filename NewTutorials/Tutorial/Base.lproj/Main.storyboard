@@ -79,7 +79,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="m5T-Kf-lDU" kind="show" id="acH-md-HC1"/>
+                                            <segue destination="sPi-zQ-L7O" kind="show" identifier="Observing" id="cm1-Ar-Cqd"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="09o-vF-1h9" style="IBUITableViewCellStyleDefault" id="LnE-CB-Qu4">
@@ -198,15 +198,87 @@
                                     <segue destination="mw1-k1-5o6" kind="embed" id="YVg-XX-oEi"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQI-5n-InP">
+                                <rect key="frame" x="0.0" y="667" width="375" height="96"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is playing:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C86-MT-5Dw">
+                                        <rect key="frame" x="8" y="8" width="77" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSb-SB-Cp1">
+                                        <rect key="frame" x="8" y="37" width="101" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asy-3X-VgY">
+                                        <rect key="frame" x="325" y="8" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2m-wD-KJp">
+                                        <rect key="frame" x="325" y="37" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLP-qw-dPQ">
+                                        <rect key="frame" x="325" y="66" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GML-Nl-KEb">
+                                        <rect key="frame" x="8" y="66" width="87" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="C86-MT-5Dw" firstAttribute="leading" secondItem="NQI-5n-InP" secondAttribute="leadingMargin" id="0Ai-Mt-v9w"/>
+                                    <constraint firstAttribute="height" constant="96" id="41w-um-NhB"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GML-Nl-KEb" secondAttribute="trailing" constant="20" symbolic="YES" id="5GH-iv-FZ2"/>
+                                    <constraint firstItem="C86-MT-5Dw" firstAttribute="top" secondItem="NQI-5n-InP" secondAttribute="topMargin" id="CWX-Zi-ajh"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NSb-SB-Cp1" secondAttribute="trailing" constant="20" symbolic="YES" id="DNo-3E-dD7"/>
+                                    <constraint firstAttribute="trailing" secondItem="m2m-wD-KJp" secondAttribute="trailing" constant="8" id="Dgq-dM-E9S"/>
+                                    <constraint firstItem="NSb-SB-Cp1" firstAttribute="top" secondItem="C86-MT-5Dw" secondAttribute="bottom" constant="8" symbolic="YES" id="EEK-uu-VY2"/>
+                                    <constraint firstItem="C86-MT-5Dw" firstAttribute="leading" secondItem="NSb-SB-Cp1" secondAttribute="leading" id="EMI-36-GRM"/>
+                                    <constraint firstItem="Asy-3X-VgY" firstAttribute="trailing" secondItem="NQI-5n-InP" secondAttribute="trailingMargin" id="GHq-KK-fjw"/>
+                                    <constraint firstAttribute="trailing" secondItem="JLP-qw-dPQ" secondAttribute="trailing" constant="8" id="K8d-3Q-Po7"/>
+                                    <constraint firstItem="NSb-SB-Cp1" firstAttribute="baseline" secondItem="m2m-wD-KJp" secondAttribute="baseline" id="MRJ-6y-K2W"/>
+                                    <constraint firstItem="Asy-3X-VgY" firstAttribute="leading" secondItem="m2m-wD-KJp" secondAttribute="leading" id="NS0-yp-ZdP"/>
+                                    <constraint firstItem="C86-MT-5Dw" firstAttribute="baseline" secondItem="Asy-3X-VgY" secondAttribute="baseline" id="R8x-98-Msg"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="C86-MT-5Dw" secondAttribute="trailing" constant="20" symbolic="YES" id="YU4-9H-54u"/>
+                                    <constraint firstItem="GML-Nl-KEb" firstAttribute="top" secondItem="NSb-SB-Cp1" secondAttribute="bottom" constant="8" symbolic="YES" id="ddQ-L7-NWg"/>
+                                    <constraint firstItem="NSb-SB-Cp1" firstAttribute="leading" secondItem="GML-Nl-KEb" secondAttribute="leading" id="hUQ-Lj-DMy"/>
+                                    <constraint firstAttribute="width" constant="375" id="mJo-lU-2Ei"/>
+                                    <constraint firstItem="m2m-wD-KJp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JLP-qw-dPQ" secondAttribute="leading" id="rGp-ny-Hd3"/>
+                                    <constraint firstItem="GML-Nl-KEb" firstAttribute="baseline" secondItem="JLP-qw-dPQ" secondAttribute="baseline" id="v7L-B1-7fY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HKa-9S-Usv" firstAttribute="bottom" secondItem="ktd-6a-BFq" secondAttribute="bottom" id="0Tm-tp-ZkE"/>
                             <constraint firstItem="HKa-9S-Usv" firstAttribute="top" secondItem="ktd-6a-BFq" secondAttribute="top" id="4fr-Qd-eJS"/>
+                            <constraint firstItem="NQI-5n-InP" firstAttribute="leading" secondItem="xOf-Bs-kFW" secondAttribute="leading" id="DoU-z2-j5J"/>
+                            <constraint firstAttribute="bottom" secondItem="NQI-5n-InP" secondAttribute="bottom" constant="-96" id="PhF-K3-dGg"/>
+                            <constraint firstAttribute="trailing" secondItem="NQI-5n-InP" secondAttribute="trailing" id="ZJA-HT-u4V"/>
                             <constraint firstItem="HKa-9S-Usv" firstAttribute="leading" secondItem="xOf-Bs-kFW" secondAttribute="leading" id="gj0-Ix-1ju"/>
                             <constraint firstAttribute="trailing" secondItem="HKa-9S-Usv" secondAttribute="trailing" id="x8P-Sl-Bal"/>
+                            <constraint firstItem="NQI-5n-InP" firstAttribute="top" secondItem="HKa-9S-Usv" secondAttribute="bottom" id="xd7-78-gTF"/>
+                            <constraint firstAttribute="bottom" secondItem="NQI-5n-InP" secondAttribute="bottom" id="znb-nv-mUl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ktd-6a-BFq"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="znb-nv-mUl"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="fXV-Mt-uQy">
                         <barButtonItem key="rightBarButtonItem" id="QEH-1R-MWg">
@@ -229,6 +301,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicatorView" destination="5q3-sa-c83" id="lat-aS-uOx"/>
+                        <outlet property="currentTimeLabel" destination="m2m-wD-KJp" id="NKo-RD-M5l"/>
+                        <outlet property="isPlayingLabel" destination="Asy-3X-VgY" id="JY6-qr-oSv"/>
+                        <outlet property="statsView" destination="NQI-5n-InP" id="VOH-nk-hUC"/>
+                        <outlet property="statusViewHiddenBottomConstaint" destination="PhF-K3-dGg" id="1Qv-3P-OED"/>
+                        <outlet property="statusViewShownBottomConstaint" destination="znb-nv-mUl" id="EJk-fl-X12"/>
+                        <outlet property="videoTypeLabel" destination="JLP-qw-dPQ" id="MqT-d7-JBV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6l7-lO-pAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -297,7 +375,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RXi-9H-ZSC"/>
-        <segue reference="fOn-qs-II3"/>
+        <segue reference="cm1-Ar-Cqd"/>
     </inferredMetricsTieBreakers>
 </document>
