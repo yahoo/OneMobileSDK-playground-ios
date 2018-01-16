@@ -13,7 +13,7 @@ class PlayerViewControllerWrapper: UIViewController {
         struct Controls {
             // Using default controls but it's possible to use custom by subclassing from ContentControlsViewController and set it to contentControlsViewController
             var viewController: ContentControlsViewController = DefaultControlsViewController()
-            var color: UIColor?
+            var color = UIColor.magenta
             var isSomeHidden = false
             var liveDotColor: UIColor?
             var sidebarProps: SideBarView.Props = []
