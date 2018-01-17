@@ -5,22 +5,7 @@ import OneMobileSDK
 import PlayerControls
 
 
-func setupPlayingVideos(tutorialCasesViewController: TutorialCasesViewController) {
-    func select(player: Future<Result<Player>>) -> (UIViewController) -> () {
-        return {
-            guard let wrapper = $0 as? PlayerViewControllerWrapper else { return }
-            wrapper.player = player
-        }
-    }
-    
-    tutorialCasesViewController.props = .init(
-        rows: [.init(name: "Single video", select: select(player: singleVideo())),
-               .init(name: "Array of videos", select: select(player: arrayOfVideos())),
-               .init(name: "Video playlist", select: select(player: videoPlaylist())),
-               .init(name: "Muted video", select: select(player: mutedVideo())),
-               .init(name: "Video without autoplay", select: select(player: videoWithoutAutoplay()))])
-}
-
+typealias Props = PlayerViewControllerWrapper.Props
 func select(controller: @escaping (PlayerViewControllerWrapper) -> ()) -> (UIViewController) -> () {
     return {
         guard let wrapper = $0 as? PlayerViewControllerWrapper else { return }
@@ -28,11 +13,18 @@ func select(controller: @escaping (PlayerViewControllerWrapper) -> ()) -> (UIVie
     }
 }
 
+func setupPlayingVideos(tutorialCasesViewController: TutorialCasesViewController) {
+    tutorialCasesViewController.props = .init(
+        rows: [.init(name: "Single video", select: select(controller: { $0.player = singleVideo() })),
+               .init(name: "Array of videos", select: select(controller: { $0.player = arrayOfVideos() })),
+               .init(name: "Video playlist", select: select(controller: { $0.player = videoPlaylist() })),
+               .init(name: "Muted video", select: select(controller: { $0.player = mutedVideo() })),
+               .init(name: "Video without autoplay", select: select(controller: { $0.player = videoWithoutAutoplay() }))])
+}
+
 func setupCustomUX(tutorialCasesViewController: TutorialCasesViewController) {
-    typealias Props = PlayerViewControllerWrapper.Props
-    
     func customColors(wrapper: PlayerViewControllerWrapper) {
-        wrapper.props.player = singleVideo()
+        wrapper.player = singleVideo()
         wrapper.props.controls.color = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
     }
     
@@ -96,3 +88,23 @@ func setupObserving(tutorialCasesViewController: TutorialCasesViewController) {
                .init(name: "Looping videos", select: select(controller: loopingVideos)),
                .init(name: "Next video hooking", select: select(controller: hooking))])
 }
+
+func setupErrorHandling(tutorialCasesViewController: TutorialCasesViewController) {
+    func restricted(wrapper: PlayerViewControllerWrapper) {
+        wrapper.player = restrictedVideo()
+    }
+    
+    func deleted(wrapper: PlayerViewControllerWrapper) {
+        wrapper.player = deletedVideo()
+    }
+    
+    func unknown(wrapper: PlayerViewControllerWrapper) {
+        wrapper.player = unknownVideo()
+    }
+    
+    tutorialCasesViewController.props = .init(
+        rows: [.init(name: "Restricted video", select: select(controller: restricted)),
+               .init(name: "Deleted video", select: select(controller: deleted)),
+               .init(name: "Unknown video", select: select(controller: unknown))])
+}
+

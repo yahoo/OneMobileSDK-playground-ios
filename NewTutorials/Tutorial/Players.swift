@@ -40,3 +40,18 @@ func subtitlesVideo() -> Future<Result<Player>> {
     return OneSDK.Provider.default.getSDK()
         .then { $0.getPlayer(videoID: "59397934955a316f1c4f65b4") }
 }
+
+func restrictedVideo() -> Future<Result<Player>> {
+    return OneSDK.Provider.default.getSDK()
+        .then { $0.getPlayer(videoID: "59396b1c9e45105fa1b599c9") }
+}
+
+func deletedVideo() -> Future<Result<Player>> {
+    return OneSDK.Provider.default.getSDK()
+        .then { $0.getPlayer(videoID: "577cc23d50954952cc56bc48") }
+}
+
+func unknownVideo() -> Future<Result<Player>> {
+    return OneSDK.Provider.default.getSDK()
+        .then { $0.getPlayer(videoID: "unknown") }
+}

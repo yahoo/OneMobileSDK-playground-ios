@@ -8,11 +8,12 @@ class TutorialsViewController: UITableViewController {
         guard let identifier = segue.identifier else { return }
         guard let tutorialCasesViewController = segue.destination as? TutorialCasesViewController else { fatalError("Unknown segue destination") }
         
-        switch (identifier) {
-        case ("PlayingVideos"): setupPlayingVideos(tutorialCasesViewController: tutorialCasesViewController)
-        case ("CustomUX"): setupCustomUX(tutorialCasesViewController: tutorialCasesViewController)
-        case ("Observing"): setupObserving(tutorialCasesViewController: tutorialCasesViewController)
-        default: fatalError("Unknown segue")
+        switch identifier {
+        case "PlayingVideos": setupPlayingVideos(tutorialCasesViewController: tutorialCasesViewController)
+        case "CustomUX": setupCustomUX(tutorialCasesViewController: tutorialCasesViewController)
+        case "Observing": setupObserving(tutorialCasesViewController: tutorialCasesViewController)
+        case "ErrorHandling": setupErrorHandling(tutorialCasesViewController: tutorialCasesViewController)
+        default: break
         }
     }
 }

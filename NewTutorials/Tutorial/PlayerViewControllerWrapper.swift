@@ -7,7 +7,6 @@ import PlayerControls
 
 class PlayerViewControllerWrapper: UIViewController {
     struct Props {
-        var player: Future<Result<Player>>?
         var controls = Controls()
         
         struct Controls {
@@ -34,6 +33,8 @@ class PlayerViewControllerWrapper: UIViewController {
         
         var isLoading = false
         var isLastVideoFinished = false
+
+        var error: Error?
     }
     
     private var playerPropsObserverDispose: Player.PropsObserverDispose?
@@ -44,7 +45,6 @@ class PlayerViewControllerWrapper: UIViewController {
         }
         didSet {
             guard let player = player else { return }
-            
             props.isLoading = true
             player
                 .dispatch(on: .main)
@@ -53,7 +53,6 @@ class PlayerViewControllerWrapper: UIViewController {
                 .onComplete { [weak self] _ in self?.props.isLoading = false }
         }
     }
-    
     var props = Props() {
         didSet {
             view.setNeedsLayout()
@@ -96,6 +95,8 @@ class PlayerViewControllerWrapper: UIViewController {
         statsView.isHidden = !props.showStats
         statusViewHiddenBottomConstaint.isActive = !props.showStats
         statusViewShownBottomConstaint.isActive = props.showStats
+        
+        if let error = props.error { render(error: error) }
         
         guard props.showStats else { return }
         isPlayingLabel.text = String(props.stats.isPlaying)
@@ -218,6 +219,16 @@ class PlayerViewControllerWrapper: UIViewController {
                 guard item.content.time.static?.isFinished ?? item.content.time.live?.isFinished ?? false else { return false }
                 guard !props.playlist.hasNextVideo else { return false }
                 return true
+            }()
+            strongSelf.props.error = {
+                switch props.item {
+                case .available(let item):
+                    guard case .failed(let playbackError) = item.content.status else { return nil }
+                    return playbackError
+                case .unavailable(let unavailable):
+                    struct VideoError: Swift.Error { let reason: String }
+                    return VideoError(reason: unavailable.reason)
+                }
             }()
         }
         
