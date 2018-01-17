@@ -86,7 +86,7 @@ func setupObserving(tutorialCasesViewController: TutorialCasesViewController) {
     tutorialCasesViewController.props = .init(
         rows: [.init(name: "Video stats", select: select(controller: videoStats)),
                .init(name: "Looping videos", select: select(controller: loopingVideos)),
-               .init(name: "Next video hooking", select: select(controller: hooking))])
+               .init(name: "Next video hooking (random index)", select: select(controller: hooking))])
 }
 
 func setupErrorHandling(tutorialCasesViewController: TutorialCasesViewController) {
