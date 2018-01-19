@@ -22,29 +22,29 @@ If you want to see the code - go to this [section](#tldr)!
 9. [Default (Player) Controls UX](#default-player-controls-ux)
 10. [TLDR: Quick Start](#tldr)
 11. [Tutorial 1: Playing Videos](#tutorial-1)
-    1. [Setting default player controls’ tint color](#setting-default-player-controls-tint-color)
-    2. [Playing with AutoPlay on/off](#playing-with-autoplay-onoff)
-    3. [Playing Muted](#playing-muted)
-    4. [Disabling HLS (or forcing MP4 playback)](#disabling-hls-or-forcing-mp4-playback)
+	1. [Setting default player controls’ tint color](#setting-default-player-controls-tint-color)
+	2. [Playing with AutoPlay on/off](#playing-with-autoplay-onoff)
+	3. [Playing Muted](#playing-muted)
+	4. [Disabling HLS (or forcing MP4 playback)](#disabling-hls-or-forcing-mp4-playback)
 12. [Tutorial 2: Customizing the Default Controls UX](#tutorial-2)
-    1. [Hiding Various Controls buttons](#hiding-various-controls-buttons)
-    2. [Closed Captioning / SAP Settings button](#closed-captioning--sap-settings-button)
-    3. [Using the 4 Custom Sidebar buttons](#using-the-4-custom-sidebar-buttons)
-    4. [Setting the LIVE indicator’s tint color](#setting-the-live-indicators-tint-color)
+	1. [Hiding Various Controls buttons](#hiding-various-controls-buttons)
+	2. [Closed Captioning / SAP Settings button](#closed-captioning--sap-settings-button)
+	3. [Using the 4 Custom Sidebar buttons](#using-the-4-custom-sidebar-buttons)
+	4. [Setting the LIVE indicator’s tint color](#setting-the-live-indicators-tint-color)
 13. [Tutorial 3: Observing the Player](#tutorial-3)
-    1. [Current Playback State and Position](#current-playback-state-and-position)
-    2. [Looping Playback](#looping-playback)
-    3. [LIVE, VOD, or 360°?](#live-vod-or-360)
-    4. [Manually Hooking up Previous or Next Videos](#manually-hooking-up-previous-or-next-videos)
+	1. [Current Playback State and Position](#current-playback-state-and-position)
+	2. [Looping Playback](#looping-playback)
+	3. [LIVE, VOD, or 360°?](#live-vod-or-360)
+	4. [Manually Hooking up Previous or Next Videos](#manually-hooking-up-previous-or-next-videos)
 14. [Tutorial 4: Error Handling in the SDK](#tutorial-4)
-    1. [SDK Initialization Errors](#sdk-initialization-errors)
-    2. [Player Initialization Errors](#player-initialization-errors)
-    3. [Restricted Videos](#restricted-videos)
+	1. [SDK Initialization Errors](#sdk-initialization-errors)
+	2. [Player Initialization Errors](#player-initialization-errors)
+	3. [Restricted Videos](#restricted-videos)
 15. [Specific Notes for tvOS Apps](#specific-notes-for-tvos-apps)
-    1. [Tutorial 5: Playing Videos on tvOS](#tutorial-5)
+	1. [Tutorial 5: Playing Videos on tvOS](#tutorial-5)
 16. [Next Steps](#next-steps)
-    1. [Getting O2 Video/Playlist IDs into your apps](#getting-o2-videoplaylist-ids-into-your-apps)
-    2. [Controlling Ads via your O2 Portal Account](#controlling-ads-via-your-o2-portal-account)
+	1. [Getting O2 Video/Playlist IDs into your apps](#getting-o2-videoplaylist-ids-into-your-apps)
+	2. [Controlling Ads via your O2 Portal Account](#controlling-ads-via-your-o2-portal-account)
 
 ## What is the O2 Mobile SDK?
 The O2 Mobile SDK (OMSDK or SDK) is a native iOS SDK with the sole purpose for playing and monetizing videos from the Oath O2 video platform in your app. The OMSDK is written in Swift and is delivered as a framework. You can include this in your app projects either via CocoaPods or Carthage. Currently, Swift Package Manager not supported on iOS or tvOS.
@@ -210,16 +210,16 @@ You can easily control the mute state of the `Player` object. In this sample, yo
 
 #### Disabling HLS (or forcing MP4 playback)
 
-Many (but not all) of the videos in the O2 video platform, have multiple renditions. There may be some set of circumstances where you do not want to use HLS (.m3u8) renditions, and therefore, want to force the alternate high resolution .mp4 rendition. As a result, our SDK has the ability to override or disable getting the default HLS rendition. On iOS and tvOS, this is not something that we specifically advocate, so we won't show you this code in this tutorial.  If you believe you have a good need for avoiding the network and visual performance improvements that HLS provides, please email [Video Support Team](mailto:video.support@oath.com) and we will be happy to help you!
-
-##### _Tutorial Sample:_
-
-> _sample coming soon_
+Many (but not all) of the videos in the O2 video platform, have multiple renditions. There may be some set of circumstances where you do not want to use HLS (.m3u8) renditions, and therefore, want to force the alternate high resolution .mp4 rendition. As a result, our SDK has the ability to override or disable getting the default HLS rendition. On iOS and tvOS, this is not something that we specifically advocate, so we won't show you this code in this tutorial. If you believe you have a good need for avoiding the network and visual performance improvements that HLS provides, please email [Video Support Team](mailto:video.support@oath.com) and we will be happy to help you!
 
 <a name="tutorial-2"></a>
 ## Tutorial 2: Customizing the Default Controls UX
 
 This tutorial sample shows you how to further modify the default controls UX.
+
+##### _Tutorial Sample:_
+
+> [Custom UX Color](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
 
 #### Hiding Various Controls buttons
 
@@ -236,17 +236,33 @@ You can change the look of the default controls UX on a player-by-player basis t
 
 If you hide the title, and bottom element buttons such as CC/SAP, PiP, and AirPlay, the seekbar will fall down closer to the bottom of the video frame, to cover the gap usually left for those elements. See this tutorial for examples of how to hide/show these elements.
 
+##### _Tutorial Sample:_
+
+> [Hiding Default Controls Buttons](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+
 #### Closed Captioning / SAP Settings button
 
 This new feature of the OMSDK is generally dependent on having this information in the HLS stream. There are ways to filter out what CC languages and SAP audio tracks are available. Also, there’s a way to control what the choices are for a given video. One reason to control this may be to implement a “sticky” closed captioning setting. By default, turning CC on only applies the the current playing video. A next or previous video would not have CC on by default. If you wanted your app to support a sticky setting for this, you would do it yourself. This part of this tutorial will show you how to accomplish this.
+
+##### _Tutorial Sample:_
+
+> [Filtered Subtitles](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
 
 #### Using the 4 Custom Sidebar buttons
 
 Use this sample to see how to add custom code and behaviors to one of the 4 sidebar buttons. The Sidebar buttons are part of the default player controls UX and are there for you to add up to 4 different overlays/behaviors to your player. You provide the button graphics – icons for normal, selected, and highlighted modes, and you provide a handler to be called in the case of a button tap. The SDK will handle showing/hiding the buttons along with the other player controls.
 
+##### _Tutorial Sample:_
+
+> [Custom Sidebar Buttons](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+
 #### Setting the LIVE indicator’s tint color
 
 The LIVE indicator only appears during a LIVE streaming video playback. This will not appear for a video on demand video. Part of the LIVE indicator is the ability to colorize the • that appears next to the LIVE indicator. In general, you may want to use a standard pure-red color. However, it’s possible that you want to use your app’s brand color or while here instead. You can use black or any dark-gray color, but that is ill advised, because of the general nature of video to have lots of blacks in it. The sample code in this example shows how to set this.
+
+##### _Tutorial Sample:_
+
+> [LIVE Indicator Color](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
 
 <a name="tutorial-3"></a>
 ## Tutorial 3: Observing the Player
@@ -257,9 +273,17 @@ This tutorial sample shows you how to observe just about everything you can obse
 
 Determining the current state of the `Player` is a key need for apps … most app-level video playback logic starts here. In addition to the play/pause state, also includes the current position. Once you can query for these property values, you can also programmatically modify them.
 
+##### _Tutorial Sample:_
+
+> [Video States](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+
 #### Looping Playback
 
 If your app has some need to loop a `Player` (one video or many), such as running a kiosk-style interface, for example. This is an easy operation to accomplish with the OMSDK. Look in this example, to see how to determine when playback finishes, and how to reset the video index back to the first video and start it over.
+
+##### _Tutorial Sample:_
+
+> [Looping Videos](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
 
 <a name="live-vod-360"></a>
 #### LIVE, VOD, or 360°?
@@ -269,6 +293,10 @@ You may need to inspect some more metadata on the video, such as what type of vi
 #### Manually Hooking up Previous or Next Videos
 
 There are many legitimate app UX circumstance, that can dictate the dynamicness of a video player – meaning, that not every app design will simply be setup to operate off fixed playlists or lists of videos. As such, the Player can be modified on the fly to dynamically handle what video is played when the previous or next buttons are tapped. This example tutorial has sample code that shows you precisely how to do this. However, be judicious with the usage of this behavior, and make sure it matches a natural flow of content for the user.
+
+##### _Tutorial Sample:_
+
+> [Hooking Up Next Video](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
 
 <a name="tutorial-4"></a>
 ## Tutorial 4: Error Handling in the SDK
@@ -280,7 +308,7 @@ This tutorial sample shows you how to handle various different types of errors t
 For various reasons, the SDK may fail to initialize. The most common reason for this, is you’re trying to use the OMSDK without first having [onboarded your app’s bundle ID](##Onboarding\ your\ Apps\ for\ SDK\ Authentication). In this case, you’ll get an error that looks like something like this:
 ```
 {
-  "error": "Not found - com.company.ungregisteredapp"
+	"error": "Not found - com.company.ungregisteredapp"
 } 
 ```
 
@@ -291,7 +319,27 @@ Contact [Video Support Team](mailto:video.support@oath.com) if you are stuck and
 
 #### Restricted Videos
 
-Videos can be restricted for playback in two very distinct ways. The first is geo restricted content. The second is device restricted content. If you’re attempting to initialize a `Player` with content that’s restricted against your device or geolocation, that content is automatically filtered out. Only valid, playable video IDs are accepted, and have their metadata pulled into the `Player` instance. If you end up with no `Player` instance, it’s because there are no valid video IDs for it to operate on. So, you get an error this this effect.
+Videos can be restricted for playback in two very distinct ways. The first is geo restricted content. The second is device restricted content. If you’re attempting to initialize a `Player` with content that’s restricted against your device or geolocation, that content is automatically filtered out. Only valid, playable video IDs are accepted, and have their metadata pulled into the `Player` instance. If you end up with no `Player` instance, it’s because there are no valid video IDs for it to operate on. So, you get an error to this effect. This tutorial sample shows how to detect that a video is not playable because it is restricted.
+
+##### _Tutorial Sample:_
+
+> [Restricted Video](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+
+#### Deleted Videos
+
+Videos can be deleted by the content owners, for a multitude of reasons including being removed for legal or copyright violations. If you’re attempting to initialize a `Player` with content that represents deleted videos, that content is also filtered out. Only valid, playable video IDs are accepted, and have their metadata pulled into the `Player` instance. If you end up with no `Player` instance, it’s because there are no valid video IDs for it to operate on. So, you get an error to this effect. This tutorial sample shows how to detect that a video is not playable because it has been deleted.
+
+##### _Tutorial Sample:_
+
+> [Deleted Video](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+
+#### Invalid/Unknown Videos
+
+Only valid, playable video IDs are accepted, and have their metadata pulled into the `Player` instance. If you end up with no `Player` instance, it’s because there are no valid video IDs for it to operate on. If you pass some ID that is incorrect, invalid, or unknown, the SDK has no idea what to do. So, you get an error to this effect. This tutorial sample shows how to detect that a video is not playable because the ID that was passed is invalid or unknown.
+
+##### _Tutorial Sample:_
+
+> [Unknown Video](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
 
 ## Specific Notes for tvOS Apps
 
@@ -306,7 +354,7 @@ This tutorial sample shows you how to do many of the same things as iOS as descr
 
 ##### _Tutorial Sample:_
 
-> _sample coming soon_
+> [Playing Videos on tvOS](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials/Tutorial_tvOS)
 
 ## Next Steps 
 
@@ -318,6 +366,6 @@ For more information about the O2 Search API, the O2 Portal, or creation and man
 
 ### Controlling Ads via your O2 Portal Account
 
-You have some options with respect to ads and the OMSDK.  During early development, your developers are going to want ads disabled because they’re intrusive to the development process, and unnecessary.  Before you launch, you will likely want to see test or Public Service Announcement (PSA) ads enabled all the time, so you can get a feel for how ads will impact your users in various parts of your app.  And, as you launch, you’ll want to enable live production ads for your app, so you’re ready to go as soon as your app passes through the App Store submission process.
+You have some options with respect to ads and the OMSDK. During early development, your developers are going to want ads disabled because they’re intrusive to the development process, and unnecessary. Before you launch, you will likely want to see test or Public Service Announcement (PSA) ads enabled all the time, so you can get a feel for how ads will impact your users in various parts of your app. And, as you launch, you’ll want to enable live production ads for your app, so you’re ready to go as soon as your app passes through the App Store submission process.
 
 To make changes to the ads settings for your app, please contact [Video Support Team](mailto:video.support@oath.com) and they’ll promptly assist you.
