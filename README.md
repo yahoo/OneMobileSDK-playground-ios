@@ -40,6 +40,8 @@ If you want to see the code - go to this [section](#tldr)!
 	1. [SDK Initialization Errors](#sdk-initialization-errors)
 	2. [Player Initialization Errors](#player-initialization-errors)
 	3. [Restricted Videos](#restricted-videos)
+	4. [Deleted Videos](#deleted-videos)
+	5. [Invalid or Unknown Videos](#invalid-or-unknown-videos)
 15. [Specific Notes for tvOS Apps](#specific-notes-for-tvos-apps)
 	1. [Tutorial 5: Playing Videos on tvOS](#tutorial-5)
 16. [Next Steps](#next-steps)
@@ -333,7 +335,7 @@ Videos can be deleted by the content owners, for a multitude of reasons includin
 
 > [Deleted Video](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
 
-#### Invalid/Unknown Videos
+#### Invalid or Unknown Videos
 
 Only valid, playable video IDs are accepted, and have their metadata pulled into the `Player` instance. If you end up with no `Player` instance, it’s because there are no valid video IDs for it to operate on. If you pass some ID that is incorrect, invalid, or unknown, the SDK has no idea what to do. So, you get an error to this effect. This tutorial sample shows how to detect that a video is not playable because the ID that was passed is invalid or unknown.
 
