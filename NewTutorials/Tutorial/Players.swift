@@ -33,7 +33,8 @@ func videoWithoutAutoplay() -> Future<Result<Player>> {
 
 func liveVideo() -> Future<Result<Player>> {
     return OneSDK.Provider.default.getSDK()
-        .then { $0.getPlayer(videoID: "59833447b90afb42310c19da") }
+        .then { $0.getPlayer(videoID: "5a600ab092fdde68e1f7a606") }
+//        .then { $0.getPlayer(videoID: "59833447b90afb42310c19da") }
 }
 
 func subtitlesVideo() -> Future<Result<Player>> {
