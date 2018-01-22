@@ -114,7 +114,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9E-M6-XzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308" y="92"/>
+            <point key="canvasLocation" x="226" y="90"/>
         </scene>
         <!--Tutorial Cases View Controller-->
         <scene sceneID="kbm-x0-74A">
@@ -133,7 +133,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Cell name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSF-yP-1XC">
-                                            <rect key="frame" x="16" y="11" width="343" height="20.5"/>
+                                            <rect key="frame" x="16" y="11" width="76" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -141,8 +141,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="rSF-yP-1XC" firstAttribute="leading" secondItem="xeC-W1-Qpq" secondAttribute="leadingMargin" id="3m7-uR-HVw"/>
-                                        <constraint firstItem="rSF-yP-1XC" firstAttribute="trailing" secondItem="xeC-W1-Qpq" secondAttribute="trailingMargin" id="8H1-4i-Qu9"/>
-                                        <constraint firstItem="rSF-yP-1XC" firstAttribute="centerY" secondItem="xeC-W1-Qpq" secondAttribute="centerY" id="TeC-Yx-D5d"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="rSF-yP-1XC" secondAttribute="trailing" constant="15" id="Fgl-AH-TLa"/>
+                                        <constraint firstItem="rSF-yP-1XC" firstAttribute="top" secondItem="xeC-W1-Qpq" secondAttribute="top" constant="11" id="iw3-5k-KWh"/>
+                                        <constraint firstAttribute="bottom" secondItem="rSF-yP-1XC" secondAttribute="bottom" constant="12" id="sc1-k3-kXx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -182,7 +183,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuN-hU-JVk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="888" y="92"/>
+            <point key="canvasLocation" x="932" y="90"/>
         </scene>
         <!--Player View Controller Wrapper-->
         <scene sceneID="Fwm-sq-Em4">
@@ -311,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6l7-lO-pAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376" y="92"/>
+            <point key="canvasLocation" x="1628" y="90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vo9-Zi-LWo">
@@ -329,7 +330,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvC-fr-H6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-206" y="92"/>
+            <point key="canvasLocation" x="-465" y="91"/>
         </scene>
         <!--Player View Controller-->
         <scene sceneID="wdZ-8h-SuS">
@@ -344,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uef-m2-gOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1866" y="93"/>
+            <point key="canvasLocation" x="2330" y="90"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
