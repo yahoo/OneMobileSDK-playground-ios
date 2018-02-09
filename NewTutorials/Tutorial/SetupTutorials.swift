@@ -34,13 +34,15 @@ func setupCustomUX(tutorialCasesViewController: TutorialCasesViewController) {
                                                      icons: .init(normal: UIImage(named: "icon-fav")!,
                                                                   selected: UIImage(named: "icon-fav-active")!,
                                                                   highlighted: nil),
-                                                     handler: .nop),
+                                                     handler: .nop,
+                                                     accessibility: .init(label: "Mark video as favorite", hint: "")),
                                                .init(isEnabled: true,
                                                      isSelected: false,
                                                      icons: .init(normal: UIImage(named: "icon-share")!,
                                                                   selected: UIImage(named: "icon-share-active")!,
                                                                   highlighted: nil),
-                                                     handler: .nop)]
+                                                     handler: .nop,
+                                                     accessibility: .init(label: "Share video", hint: ""))]
         wrapper.player = singleVideo()
     }
     
@@ -108,3 +110,10 @@ func setupErrorHandling(tutorialCasesViewController: TutorialCasesViewController
                .init(name: "Unknown video", select: select(controller: unknown))])
 }
 
+extension SideBarView.ButtonProps.Accessibility {
+    init(label: String, hint: String) {
+        self.label = label
+        self.hint = hint
+        self.traits = UIAccessibilityTraitButton
+    }
+}
