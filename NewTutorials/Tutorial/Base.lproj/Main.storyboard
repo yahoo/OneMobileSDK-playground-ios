@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tutorials-->
+        <!--O2 Mobile SDK Tutorials-->
         <scene sceneID="vB3-cB-1xO">
             <objects>
                 <tableViewController id="mXB-rT-kQr" customClass="TutorialsViewController" customModule="Tutorial" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,7 +110,7 @@
                             <outlet property="delegate" destination="mXB-rT-kQr" id="hU1-Ge-7V7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tutorials" id="DkD-J8-PXc"/>
+                    <navigationItem key="navigationItem" title="O2 Mobile SDK Tutorials" id="DkD-J8-PXc"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9E-M6-XzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
