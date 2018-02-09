@@ -122,7 +122,7 @@ class PlayerViewControllerWrapper: UIViewController {
     }
     
     private func render(player: Player) {
-        typealias Controls = PlayerControls.ContentControlsViewController.Props.Player.Item.Controls
+        typealias Controls = PlayerControls.ContentControlsViewController.Props.Controls
         
         playerViewController?.customizeContentControlsProps = { [weak self] props in
             guard let strongSelf = self else { return props }
@@ -131,7 +131,7 @@ class PlayerViewControllerWrapper: UIViewController {
             guard var controls = contentPlayer.item.playable else { return props }
             
             func changeControlsLiveDot() {
-                controls.live.dotColor = strongSelf.props.controls.liveDotColor
+                controls.live.dotColor = strongSelf.props.controls.liveDotColor.map(Color.init)
             }
             
             func hideSomeControls() {
