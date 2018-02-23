@@ -52,7 +52,7 @@ func setupCustomUX(tutorialCasesViewController: TutorialCasesViewController) {
     }
     
     func liveDotColor(wrapper: PlayerViewControllerWrapper) {
-        wrapper.props.controls.liveDotColor = UIColor.red
+        wrapper.props.controls.liveDotColor = .red
         wrapper.player = liveVideo()
     }
     
