@@ -42,9 +42,12 @@ If you want to see the code - go to this [section](#tldr)!
 	3. [Restricted Videos](#restricted-videos)
 	4. [Deleted Videos](#deleted-videos)
 	5. [Invalid or Unknown Videos](#invalid-or-unknown-videos)
-15. [Specific Notes for tvOS Apps](#specific-notes-for-tvos-apps)
+15. [Specific Notes for iPhone X](#specific-notes-for-iphone-x)
+	1. [Player Controls on the iPhone X](#player-controls-on-the-iphone-x)
+	2. [Home Indicator Auto Hidden Setup](#home-indicator-auto-hidden-setup)
+16. [Specific Notes for tvOS Apps](#specific-notes-for-tvos-apps)
 	1. [Tutorial 5: Playing Videos on tvOS](#tutorial-5)
-16. [Next Steps](#next-steps)
+17. [Next Steps](#next-steps)
 	1. [Getting O2 Video/Playlist IDs into your apps](#getting-o2-videoplaylist-ids-into-your-apps)
 	2. [Controlling Ads via your O2 Portal Account](#controlling-ads-via-your-o2-portal-account)
 
@@ -357,6 +360,36 @@ This tutorial sample shows you how to do many of the same things as iOS as descr
 ##### _Tutorial Sample:_
 
 > [Playing Videos on tvOS](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials/Tutorial_tvOS)
+
+
+## Specific Notes for iPhone X
+
+### Player Controls on the iPhone X
+
+The OMSDK also supports the iPhone X. Video, thumbnail and shadow are stretched to the entire view, when main controls and LIVE indicator are limited by the safe area.
+
+|Portrait|
+|--------|
+|<img width="302" alt="new-port" src="https://user-images.githubusercontent.com/31652265/36854565-feaaf04e-1d79-11e8-9db0-5359cc2ac0fe.png"> <img width="300" alt="newad-port" src="https://user-images.githubusercontent.com/31652265/36856781-82ec2724-1d7f-11e8-9124-05000b2355ab.png">|
+
+|Landscape|
+|--------|
+|<img width="600" alt="new-land" src="https://user-images.githubusercontent.com/31652265/36854733-5b511dbe-1d7a-11e8-8c2b-b47d16238b36.png">
+<img width="600" alt="newad-land" src="https://user-images.githubusercontent.com/31652265/36856788-8775270a-1d7f-11e8-8fa9-c375fd0b546b.png">|
+
+### Home Indicator Auto Hidden setup
+
+One of the most important changes in iPhone X is that it doesn't have Home Button anymore. It was replaced with a Home Indicator - a small horizontal bar on the bottom of the screen. It is obvious that no one wants to see that indicator showing while the video is playing (especially in full-screen), so we've added logic to our default controls UX that will turn on 'Home Indicator Auto Hidden' mode after our controls are hidden.
+
+### What You Must Do to Enable this Auto-Hiding Behavior in your App
+
+To implement this desired behavior, in the main view controller that contains the `Player` object, you should override the default `childViewControllerForHomeIndicatorAutoHidden` method of `UIViewController`, which has to return the `defaultControlsViewController`. If you don't add that method to your controller, it wouldn't use our implementation, so you will be able to control it on your own.
+
+To see how it works, simply launch our Tutorials app on an iPhone X and play any video.
+
+##### _Tutorial Sample:_
+
+> [Adding Method Override to Support iPhone X](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials/Tutorial)
 
 ## Next Steps 
 

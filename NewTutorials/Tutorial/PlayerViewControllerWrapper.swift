@@ -77,6 +77,11 @@ class PlayerViewControllerWrapper: UIViewController {
         playerViewController?.contentControlsViewController = DefaultControlsViewController()
     }
     
+    @available(iOS 11, *)
+    override func childViewControllerForHomeIndicatorAutoHidden() -> UIViewController? {
+        return playerViewController?.contentControlsViewController
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         activityIndicatorView.isHidden = !props.isLoading
