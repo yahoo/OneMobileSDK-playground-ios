@@ -1,12 +1,16 @@
 PODS:
-  - OneMobileSDK-Xcode9.3 (2.23.2277)
+  - OneMobileSDK-Xcode9.3 (2.24.2319)
 
 DEPENDENCIES:
   - OneMobileSDK-Xcode9.3
 
+SPEC REPOS:
+  https://github.com/vidible/OneMobileSDK-releases.git:
+    - OneMobileSDK-Xcode9.3
+
 SPEC CHECKSUMS:
-  OneMobileSDK-Xcode9.3: f3355117f6171857aa3dd157d27372c53b7dfcff
+  OneMobileSDK-Xcode9.3: 2fe4ec9a3c7921b72e829ea33bdf41569156dae9
 
 PODFILE CHECKSUM: 47046a146d8a0758a7f712e3e3c9dc7ab98c8b72
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0
