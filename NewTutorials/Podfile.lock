@@ -1,5 +1,5 @@
 PODS:
-  - OneMobileSDK-Xcode9.3 (2.24.2319)
+  - OneMobileSDK-Xcode9.3 (2.25.2350)
 
 DEPENDENCIES:
   - OneMobileSDK-Xcode9.3
@@ -9,7 +9,7 @@ SPEC REPOS:
     - OneMobileSDK-Xcode9.3
 
 SPEC CHECKSUMS:
-  OneMobileSDK-Xcode9.3: 2fe4ec9a3c7921b72e829ea33bdf41569156dae9
+  OneMobileSDK-Xcode9.3: cbd3c3594a4959e69c459a3502c8f2091e6552e8
 
 PODFILE CHECKSUM: 47046a146d8a0758a7f712e3e3c9dc7ab98c8b72
 

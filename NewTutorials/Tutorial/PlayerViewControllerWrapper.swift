@@ -147,10 +147,9 @@ class PlayerViewControllerWrapper: UIViewController {
             
             func filteredSubtitles() {
                 guard strongSelf.props.controls.isFilteredSubtitles else { return }
-                guard case .`internal`(var group) = controls.legible else { return }
-                guard let options = group?.options else { return }
-                group?.options = options.filter { !$0.name.contains("CC") }
-                controls.legible = .`internal`(group)
+                guard var group = controls.legible else { return }
+                group.options = group.options.filter { !$0.name.contains("CC") }
+                controls.legible = group
             }
             
             let customNextCommand: Command? = {
