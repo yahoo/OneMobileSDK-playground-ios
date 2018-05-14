@@ -21,7 +21,7 @@ class ViewController: UIViewController {
                 on: DispatchQueue.global(qos: .background),
                 mode: .everyUpdate,
                 { (props) in
-                    guard let isFinished = props.playbackItem?.content.isFinished, isFinished != prevContentIsFinished else { return }
+                    guard let isFinished = props.playbackItem?.content.time.static?.isFinished, isFinished != prevContentIsFinished else { return }
                     prevContentIsFinished = isFinished
                     self.print(event: "Content isFinished state did change: \(isFinished)")
                 }

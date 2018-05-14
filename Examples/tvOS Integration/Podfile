@@ -3,5 +3,5 @@
 source "https://github.com/vidible/OneMobileSDK-releases.git"
 
 target 'tvOS Integration' do
-  pod 'OneMobileSDK-Xcode9.1'
+  pod 'OneMobileSDK-Xcode9.3'
 end
