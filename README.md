@@ -31,6 +31,7 @@ If you want to see the code - go to this [section](#tldr)!
 	2. [Closed Captioning / SAP Settings button](#closed-captioning--sap-settings-button)
 	3. [Using the 4 Custom Sidebar buttons](#using-the-4-custom-sidebar-buttons)
 	4. [Setting the LIVE indicator’s tint color](#setting-the-live-indicators-tint-color)
+	5. [Animations Customization and Disabling](#animations-customization-and-disabling)
 13. [Tutorial 3: Observing the Player](#tutorial-3)
 	1. [Current Playback State and Position](#current-playback-state-and-position)
 	2. [Looping Playback](#looping-playback)
@@ -63,6 +64,7 @@ The SDK includes a complete default video player controls UX (user experience), 
 * Video playback of VOD (video on demand), 360°, and LIVE streaming video types
 * Supports either .mp4 or .m3u8 (HLS) formats
 * Video ads (VAST support of .mp4 format only)
+* Prerolls and midrolls support
 * Tap an ad to access ad URL (more information) via an in-app-browser
 * Full video and ads analytics
 * Default video player controls UX (full source code open sourced)
@@ -88,10 +90,10 @@ There are several technical advantages to using the native OMSDK over a web play
 The O2 Mobile SDK does not track anything that is not related to playing videos or video ads. We use the IDFA (ID for advertisers) value and respect the user's settings for Limit Ad Tracking (iOS enforces this anyway). The device geolocation is determined by our backend video servers based on IP address, for the purposes of determining and filtering out content that is geo-restricted by content owners. The SDK does not explicitly use the built-in Location Services APIs, and thus does not require your users to grant access to device location data.
 
 ## Starting Requirements
-* **Xcode 9+**
-* **Swift 3.2 (use in Obj-C projects is also possible by writing wrapper around Swift framework)**
+* **Xcode 9.3+**
+* **Swift 3.3 (use in Obj-C projects is also possible by writing wrapper around Swift framework)**
 * **CocoaPods or Carthage**
-* **Mobile device running iOS 8 or later or AppleTV device running tvOS 9 or later**
+* **Mobile device running iOS 9 or later or AppleTV device running tvOS 9 or later**
 * **Account in the O2 Portal, and access to Oath-ingested video content**
 * **Onboarded application bundle ID**
 
@@ -155,6 +157,16 @@ The default player controls UX contains the following elements:
 * AirPlay button
 * 4 app-custom sidebar buttons
 
+It also includes some gestures to interact with player:
+
+| Controls hide/show gesture|
+|---------------------------|
+|<img width="650" alt="show-hide-anim" src="https://user-images.githubusercontent.com/31652265/40317058-ec57c4a0-5d28-11e8-9f5c-535c48f17a3b.gif">|
+
+|Content full-screen gesture|
+|---------------------------|
+|<img width="650" alt="show-hide-anim" src="https://user-images.githubusercontent.com/31652265/40316727-e4ff0228-5d27-11e8-8cb4-14df42c4447f.gif">|
+
 This video controls implementation allows for a few runtime customizations, that you can set on a player by player basis. This includes:
 * Setting the tint color for the controls (e.g., matching your app’s brand)
 * Hiding various elements of the controls (useful for smaller view versus full-screen playback)
@@ -165,6 +177,8 @@ The built-in tint color of the default video player controls UX is <span style="
 The player controls are shown under several well-established circumstances. This includes whenever the video is paused, such as before a video starts (with AutoPlay off) or while buffering, after any video finishes (with AutoPlay off), or after all videos linked to the player finish. They also will display (fade in) on demand whenever a video is tapped. If a video is actively playing, the controls will automatically hide (fade out) after a predetermined number of seconds. At any time the controls are shown, they can be quickly hidden by tapping on the video (not over a button, of course).
 
 The default player controls UX implementation includes 4 optional app-specific sidebar buttons. You can set any or all of these to use as you see fit. This was built to allow for app-specific video overlay customization in anticipation for up to 4 new behaviors. Because these 4 sidebar buttons are built right into the default controls UX, they will automatically fade in/out with the rest of the video controls. There is no need to handle any of that logic or attempt to synchronize to the animation timings.
+
+We also think that there should be more gestures that will help users interact with our player. One of these is a double tap gesture. By doing double tap in the empty space of the player, the user will be able to change video gravity from aspect fit to aspect fill. This gesture won't have any conflicts with controls show/hide gesture. 
 
 The complete implementation of the default player controls UX is open-source and provided to serve as an implementation sample of its own. Feel free to inspect it, copy it, modify it at will.
 
@@ -268,6 +282,14 @@ The LIVE indicator only appears during a LIVE streaming video playback. This wil
 ##### _Tutorial Sample:_
 
 > [LIVE Indicator Color](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+
+#### Animations Customization and Disabling
+
+We've added some new animations to our default player controls UX. If you want to change the animation duration, or disable the animations, you can. The sample code in this example shows how to turn off these animations as well as how to change the animation duration.
+
+##### _Tutorial Sample:_
+
+> [Animations Customization](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
 
 <a name="tutorial-3"></a>
 ## Tutorial 3: Observing the Player

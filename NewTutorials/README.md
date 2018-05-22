@@ -4,9 +4,9 @@ This project contains iOS and tvOS code tutorials of OneMobileSDK usage.
 
 ## Requirements
 
-* Xcode 9
-* Swift 3.1/3.2
-* iOS 8 or higher
+* Xcode 9.3
+* Swift 3.3
+* iOS 9 or higher
 * [Cocoapods](https://cocoapods.org)
 
 ## Installation
