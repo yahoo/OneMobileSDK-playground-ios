@@ -61,12 +61,18 @@ func setupCustomUX(tutorialCasesViewController: TutorialCasesViewController) {
         wrapper.player = subtitlesVideo()
     }
     
+    func disabledAnimations(wrapper: PlayerViewControllerWrapper) {
+        wrapper.props.controls.isAnimationsDisabled = false
+        wrapper.player = singleVideo()
+    }
+    
     tutorialCasesViewController.props = .init(
         rows: [.init(name: "Custom color", select: select(controller: customColors)),
                .init(name: "Custom sidebar", select: select(controller: customSidebar)),
                .init(name: "Hidden 10s seek and settings", select: select(controller: hiddenControls)),
                .init(name: "Live dot color", select: select(controller: liveDotColor)),
-               .init(name: "Filtered subtitles", select: select(controller: filteredSubtitles))])
+               .init(name: "Filtered subtitles", select: select(controller: filteredSubtitles)),
+               .init(name: "Disabled Animations", select: select(controller: disabledAnimations))])
 }
 
 func setupObserving(tutorialCasesViewController: TutorialCasesViewController) {

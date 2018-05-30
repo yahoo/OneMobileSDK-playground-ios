@@ -15,6 +15,7 @@ class PlayerViewControllerWrapper: UIViewController {
             var liveDotColor: UIColor?
             var sidebarProps: SideBarView.Props = []
             var isFilteredSubtitles = false
+            var isAnimationsDisabled = false
         }
         
         var showStats = false
@@ -33,7 +34,7 @@ class PlayerViewControllerWrapper: UIViewController {
         
         var isLoading = false
         var isLastVideoFinished = false
-
+        
         var error: Error?
     }
     
@@ -74,9 +75,16 @@ class PlayerViewControllerWrapper: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Using default controls but it's possible to use custom by subclassing from ContentControlsViewController and set it to contentControlsViewController
-        playerViewController?.contentControlsViewController = DefaultControlsViewController()
+        let defaultControlsViewController = DefaultControlsViewController()
+        // Values to change controls animation duration.
+        // If one of the control items appear/dissapear, his default value will be equal to appearance animation.
+        defaultControlsViewController.controlsAppearanceAnimationDuration = 0.25
+        defaultControlsViewController.controlsDisappearanceAnimationDuration = 0.35
+        playerViewController?.contentControlsViewController = defaultControlsViewController
     }
     
+    // You should override this method and return contentControlsViewController to turn on
+    // home indicator auto-hidden behaviour if player controls are hidden.
     @available(iOS 11, *)
     override func childViewControllerForHomeIndicatorAutoHidden() -> UIViewController? {
         return playerViewController?.contentControlsViewController
@@ -152,6 +160,11 @@ class PlayerViewControllerWrapper: UIViewController {
                 controls.legible = group
             }
             
+            func disabledAnimations() {
+                guard strongSelf.props.controls.isAnimationsDisabled else { return }
+                controls.animationsEnabled = true
+            }
+            
             let customNextCommand: Command? = {
                 let nextIndex: Int = Int(arc4random_uniform(UInt32(player.props.playlist.count+1)))
                 let command: Command? = {
@@ -190,6 +203,7 @@ class PlayerViewControllerWrapper: UIViewController {
             changeControlsLiveDot()
             hideSomeControls()
             filteredSubtitles()
+            disabledAnimations()
             
             contentPlayer.playlist?.next = customNextCommand
             contentPlayer.playlist?.prev = customPrevCommand
