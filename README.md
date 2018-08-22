@@ -21,23 +21,23 @@ If you want to see the code - go to this [section](#tldr)!
 8. [How the SDK works](#how-the-sdk-works)
 9. [Default (Player) Controls UX](#default-player-controls-ux)
 10. [TLDR: Quick Start](#tldr)
-11. [Tutorial 1: Playing Videos](#tutorial-1)
+11. [Tutorial 1: Playing Videos](#tutorial-1-playing-videos)
 	1. [Setting default player controls’ tint color](#setting-default-player-controls-tint-color)
 	2. [Playing with AutoPlay on/off](#playing-with-autoplay-onoff)
 	3. [Playing Muted](#playing-muted)
 	4. [Disabling HLS (or forcing MP4 playback)](#disabling-hls-or-forcing-mp4-playback)
-12. [Tutorial 2: Customizing the Default Controls UX](#tutorial-2)
+12. [Tutorial 2: Customizing the Default Controls UX](#tutorial-2-customizing-the-default-controls-ux)
 	1. [Hiding Various Controls buttons](#hiding-various-controls-buttons)
 	2. [Closed Captioning / SAP Settings button](#closed-captioning--sap-settings-button)
 	3. [Using the 4 Custom Sidebar buttons](#using-the-4-custom-sidebar-buttons)
 	4. [Setting the LIVE indicator’s tint color](#setting-the-live-indicators-tint-color)
 	5. [Animations Customization and Disabling](#animations-customization-and-disabling)
-13. [Tutorial 3: Observing the Player](#tutorial-3)
+13. [Tutorial 3: Observing the Player](#tutorial-3-observing-the-player)
 	1. [Current Playback State and Position](#current-playback-state-and-position)
 	2. [Looping Playback](#looping-playback)
 	3. [LIVE, VOD, or 360°?](#live-vod-or-360)
 	4. [Manually Hooking up Previous or Next Videos](#manually-hooking-up-previous-or-next-videos)
-14. [Tutorial 4: Error Handling in the SDK](#tutorial-4)
+14. [Tutorial 4: Error Handling in the SDK](#tutorial-4-error-handling-in-the-sdk)
 	1. [SDK Initialization Errors](#sdk-initialization-errors)
 	2. [Player Initialization Errors](#player-initialization-errors)
 	3. [Restricted Videos](#restricted-videos)
@@ -47,8 +47,9 @@ If you want to see the code - go to this [section](#tldr)!
 	1. [Player Controls on the iPhone X](#player-controls-on-the-iphone-x)
 	2. [Home Indicator Auto Hidden Setup](#home-indicator-auto-hidden-setup)
 16. [Specific Notes for tvOS Apps](#specific-notes-for-tvos-apps)
-	1. [Tutorial 5: Playing Videos on tvOS](#tutorial-5)
-17. [Next Steps](#next-steps)
+	1. [Tutorial 5: Playing Videos on tvOS](#tutorial-5-playing-videos-on-tvos)
+17. [Note about iOS hardware ringer](#note-about-ios-hardware-ringer)
+18. [Next Steps](#next-steps)
 	1. [Getting O2 Video/Playlist IDs into your apps](#getting-o2-videoplaylist-ids-into-your-apps)
 	2. [Controlling Ads via your O2 Portal Account](#controlling-ads-via-your-o2-portal-account)
 
@@ -91,7 +92,7 @@ The O2 Mobile SDK does not track anything that is not related to playing videos 
 
 ## Starting Requirements
 * **Xcode 9.3+**
-* **Swift 3.3 (use in Obj-C projects is also possible by writing wrapper around Swift framework)**
+* **Swift 4.1 (use in Obj-C projects is also possible by writing wrapper around Swift framework)**
 * **CocoaPods or Carthage**
 * **Mobile device running iOS 9 or later or AppleTV device running tvOS 9 or later**
 * **Account in the O2 Portal, and access to Oath-ingested video content**
@@ -413,6 +414,23 @@ To see how it works, simply launch our Tutorials app on an iPhone X and play any
 
 > [Adding Method Override to Support iPhone X](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials/Tutorial)
 
+## Note about iOS hardware ringer
+
+By default the hardware ringer position (muted/unmuted) is respected - if it is in muted state the video will play without sound.
+To override this behavior you need to add following code before creating a player. 
+This needs to be done only once - for example this in `AppDelegate` class.
+
+```
+let audioSession = AVAudioSession.sharedInstance()
+do {
+    try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+} catch {
+    assertionFailure("Audio session `setCategory` failed!")
+}
+```
+
+Details about this category can be found [here](https://developer.apple.com/documentation/avfoundation/avaudiosessioncategoryplayback?language=objc).
+ 
 ## Next Steps 
 
 ### Getting O2 Video/Playlist IDs into your apps
