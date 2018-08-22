@@ -16,6 +16,7 @@ class PlayerViewControllerWrapper: UIViewController {
             var sidebarProps: SideBarView.Props = []
             var isFilteredSubtitles = false
             var isAnimationsDisabled = false
+            var isCustomColorsMode = false
         }
         
         var showStats = false
@@ -162,7 +163,17 @@ class PlayerViewControllerWrapper: UIViewController {
             
             func disabledAnimations() {
                 guard strongSelf.props.controls.isAnimationsDisabled else { return }
-                controls.animationsEnabled = true
+                controls.animationsEnabled = false
+            }
+            func customSeekbarColors() {
+                guard strongSelf.props.controls.isCustomColorsMode else { return }
+                //Constructor have default values, so you can setup only those elements that you want
+                controls.seekbar?.seekbarColors = .init(currentTimeColor: Color(.white),
+                                                        progressColor: Color(.white),
+                                                        bufferedColor: Color(.cyan),
+                                                        fillerColor: Color(.cyan),
+                                                        cuePointsColor: Color(.white),
+                                                        dragControlColor: Color(.white))
             }
             
             let customNextCommand: Command? = {
@@ -204,6 +215,7 @@ class PlayerViewControllerWrapper: UIViewController {
             hideSomeControls()
             filteredSubtitles()
             disabledAnimations()
+            customSeekbarColors()
             
             contentPlayer.playlist?.next = customNextCommand
             contentPlayer.playlist?.prev = customPrevCommand
