@@ -32,6 +32,7 @@ If you want to see the code - go to this [section](#tldr)!
 	3. [Using the 4 Custom Sidebar buttons](#using-the-4-custom-sidebar-buttons)
 	4. [Setting the LIVE indicator’s tint color](#setting-the-live-indicators-tint-color)
 	5. [Animations Customization and Disabling](#animations-customization-and-disabling)
+	6. [Custom colors for seeker elements](#custom-colors-for-seeker-elements)
 13. [Tutorial 3: Observing the Player](#tutorial-3-observing-the-player)
 	1. [Current Playback State and Position](#current-playback-state-and-position)
 	2. [Looping Playback](#looping-playback)
@@ -290,7 +291,15 @@ We've added some new animations to our default player controls UX. If you want t
 
 ##### _Tutorial Sample:_
 
-> [Animations Customization](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Animations Customization and Disabling](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+
+#### Custom Colors for Seeker Elements
+
+The 2.28 version of SDK now includes a new feature to set custom colors for each element of player's seeker, like current time, progress, cue points etc. It is also possible to set custom color only for one of seeker elements, when the others will have the same color as the view's tint color.
+
+##### _Tutorial Sample:_
+
+> [Custom colors for seeker elements](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
 
 <a name="tutorial-3"></a>
 ## Tutorial 3: Observing the Player
