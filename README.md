@@ -49,10 +49,13 @@ If you want to see the code - go to this [section](#tldr)!
 	2. [Home Indicator Auto Hidden Setup](#home-indicator-auto-hidden-setup)
 16. [Specific Notes for tvOS Apps](#specific-notes-for-tvos-apps)
 	1. [Tutorial 5: Playing Videos on tvOS](#tutorial-5-playing-videos-on-tvos)
-17. [Note about iOS hardware ringer](#note-about-ios-hardware-ringer)
-18. [Next Steps](#next-steps)
+17. [Next Steps](#next-steps)
 	1. [Getting O2 Video/Playlist IDs into your apps](#getting-o2-videoplaylist-ids-into-your-apps)
 	2. [Controlling Ads via your O2 Portal Account](#controlling-ads-via-your-o2-portal-account)
+18. [FAQ](#faq)
+    1. [iOS hardware ringer](#ios-hardware-ringer)
+    2. [Extracting SDK version in runtime](#extracting-sdk-version-in-runtime) 
+
 
 ## What is the O2 Mobile SDK?
 The O2 Mobile SDK (OMSDK or SDK) is a native iOS SDK with the sole purpose for playing and monetizing videos from the Oath O2 video platform in your app. The OMSDK is written in Swift and is delivered as a framework. You can include this in your app projects either via CocoaPods or Carthage. Currently, Swift Package Manager not supported on iOS or tvOS.
@@ -423,7 +426,23 @@ To see how it works, simply launch our Tutorials app on an iPhone X and play any
 
 > [Adding Method Override to Support iPhone X](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials/Tutorial)
 
-## Note about iOS hardware ringer
+## Next Steps 
+
+### Getting O2 Video/Playlist IDs into your apps
+
+The OMSDK operates on O2 video and playlist IDs. That said, it is the application’s responsibility to dynamically acquire video IDs and/or playlist IDs either via your own CMS (content management system) or perhaps via a direct O2 Search API call. Since apps are generally dynamic in their content (video or otherwise), you need to figure out how to deliver these content IDs into your app, so they can be passed to the SDK to play against. Although unadvised, the easiest possible approach is to hardcode one or more playlist ID[s] into an app, and let those playlists dynamically change their content via the O2 Portal. The upside to this is you don’t need a CMS or further server communications on your end to get video information into your app, and thus to the SDK. The downside, is that if any of those IDs are ever deleted, the app will virtually be useless in terms of O2 video playback.
+
+For more information about the O2 Search API, the O2 Portal, or creation and manipulation of playlists, please email the [Video Support Team](mailto:video.support@oath.com).
+
+### Controlling Ads via your O2 Portal Account
+
+You have some options with respect to ads and the OMSDK. During early development, your developers are going to want ads disabled because they’re intrusive to the development process, and unnecessary. Before you launch, you will likely want to see test or Public Service Announcement (PSA) ads enabled all the time, so you can get a feel for how ads will impact your users in various parts of your app. And, as you launch, you’ll want to enable live production ads for your app, so you’re ready to go as soon as your app passes through the App Store submission process.
+
+To make changes to the ads settings for your app, please contact [Video Support Team](mailto:video.support@oath.com) and they’ll promptly assist you.
+
+## FAQ
+
+### iOS hardware ringer
 
 By default the hardware ringer position (muted/unmuted) is respected - if it is in muted state the video will play without sound.
 To override this behavior you need to add following code before creating a player. 
@@ -439,17 +458,12 @@ do {
 ```
 
 Details about this category can be found [here](https://developer.apple.com/documentation/avfoundation/avaudiosessioncategoryplayback?language=objc).
- 
-## Next Steps 
 
-### Getting O2 Video/Playlist IDs into your apps
+### Extracting SDK version in runtime
 
-The OMSDK operates on O2 video and playlist IDs. That said, it is the application’s responsibility to dynamically acquire video IDs and/or playlist IDs either via your own CMS (content management system) or perhaps via a direct O2 Search API call. Since apps are generally dynamic in their content (video or otherwise), you need to figure out how to deliver these content IDs into your app, so they can be passed to the SDK to play against. Although unadvised, the easiest possible approach is to hardcode one or more playlist ID[s] into an app, and let those playlists dynamically change their content via the O2 Portal. The upside to this is you don’t need a CMS or further server communications on your end to get video information into your app, and thus to the SDK. The downside, is that if any of those IDs are ever deleted, the app will virtually be useless in terms of O2 video playback.
+If you are looking for SDK version in runtime - here is the code snippet that will extract it:
 
-For more information about the O2 Search API, the O2 Portal, or creation and manipulation of playlists, please email the [Video Support Team](mailto:video.support@oath.com).
-
-### Controlling Ads via your O2 Portal Account
-
-You have some options with respect to ads and the OMSDK. During early development, your developers are going to want ads disabled because they’re intrusive to the development process, and unnecessary. Before you launch, you will likely want to see test or Public Service Announcement (PSA) ads enabled all the time, so you can get a feel for how ads will impact your users in various parts of your app. And, as you launch, you’ll want to enable live production ads for your app, so you’re ready to go as soon as your app passes through the App Store submission process.
-
-To make changes to the ads settings for your app, please contact [Video Support Team](mailto:video.support@oath.com) and they’ll promptly assist you.
+```
+let sdkInfo = Bundle(identifier: "com.aol.one.publishers.OneMobileSDK")?.infoDictionary
+print(sdkInfo?["CFBundleShortVersionString"] as? String)
+```
