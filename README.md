@@ -52,6 +52,7 @@ If you want to see the code - go to this [section](#tldr)!
 17. [Next Steps](#next-steps)
 	1. [Getting O2 Video/Playlist IDs into your apps](#getting-o2-videoplaylist-ids-into-your-apps)
 	2. [Controlling Ads via your O2 Portal Account](#controlling-ads-via-your-o2-portal-account)
+	3. [Enabling VPAID Ads for your App](#enabling-vpaid-ads-for-your-app)
 18. [FAQ](#faq)
     1. [iOS hardware ringer](#ios-hardware-ringer)
     2. [Extracting SDK version in runtime](#extracting-sdk-version-in-runtime) 
@@ -425,7 +426,7 @@ To see how it works, simply launch our Tutorials app on an iPhone X and play any
 ##### _Tutorial Sample:_
 
 > [Adding Method Override to Support iPhone X](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials/Tutorial)
-
+ 
 ## Next Steps 
 
 ### Getting O2 Video/Playlist IDs into your apps
@@ -439,6 +440,14 @@ For more information about the O2 Search API, the O2 Portal, or creation and man
 You have some options with respect to ads and the OMSDK. During early development, your developers are going to want ads disabled because they’re intrusive to the development process, and unnecessary. Before you launch, you will likely want to see test or Public Service Announcement (PSA) ads enabled all the time, so you can get a feel for how ads will impact your users in various parts of your app. And, as you launch, you’ll want to enable live production ads for your app, so you’re ready to go as soon as your app passes through the App Store submission process.
 
 To make changes to the ads settings for your app, please contact [Video Support Team](mailto:video.support@oath.com) and they’ll promptly assist you.
+
+### Enabling VPAID Ads for your App
+
+Beginning with OMSDK release v:2.28 for iOS, we have added support for Digital Video Player-Ad Interface Definition (VPAID) ads along with our existing normal native VAST (Video Ad Serving Template) MP4 ads. Rather than the advertisement being a linear video file (e.g., .mp4) rendered at whatever resolution into the target on-screen view, VPAID is another standard that uses HTML5 and Javascript to deliver the ads. VPAID ads can be richer in content make up and appear more like multimedia presentations in and of themselves, with more animations and different tappable overlays and new levels of user interactivity.  VPAID support requires iOS 10+, meaning that any of your customer apps running a version of iOS 9 will not be served VPAID ads – but it will continue to get VAST linear video ads.
+
+The addition of VPAID ads support adds new code complexities and performance demands, and are not without tradeoffs. Unlike linear video which plays completely deterministically, VPAID ads play with all the power of HTML + Javascript. When a VPAID ad is delivered to the OMSDK, it will spin up a webview to download and render the ad. We have attempted to build a VPAID ads experience that matches our VAST ads UX as much as possible. A well-designed VPAID ad can add interesting and possibly functional interactivity that enriches the user engagement with the advertisement, and renders and performs basically as well as a linear video. However, a poorly designed VPAID ad can choke the mobile device network and/or render poorly because of bad design for the mobile screen form factor, and definitely lead to a negative user experience. VPAID ads perform and monetize very well in certain geographical regions for certain classifications of apps, and have the opposite effect in other areas. Given these tradeoffs, VPAID ads are disabled by default for SDK customers.
+
+Therefore, in order to enable (opt-into) VPAID ads for your app, you need to contact our [Video Support Team](mailto:video.support@oath.com) and ask that your app be white-listed for VPAID ads. You have the option of targeting one or both platforms (if your a both iOS and Android), as well specific versions of your app.
 
 ## FAQ
 
@@ -456,8 +465,6 @@ do {
     assertionFailure("Audio session `setCategory` failed!")
 }
 ```
-
-Details about this category can be found [here](https://developer.apple.com/documentation/avfoundation/avaudiosessioncategoryplayback?language=objc).
 
 ### Extracting SDK version in runtime
 
