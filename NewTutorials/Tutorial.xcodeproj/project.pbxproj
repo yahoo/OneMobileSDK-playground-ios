@@ -201,7 +201,7 @@
 				DA63A2391FF3FD8F0044B40F /* Sources */,
 				DA63A23A1FF3FD8F0044B40F /* Frameworks */,
 				DA63A23B1FF3FD8F0044B40F /* Resources */,
-				219299DCB08013F865A7F8F0 /* [CP] Embed Pods Frameworks */,
+				B255D7A18B76F06DC5648411 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,7 +220,7 @@
 				DA8175E51FE7D3B300A3A381 /* Sources */,
 				DA8175E61FE7D3B300A3A381 /* Frameworks */,
 				DA8175E71FE7D3B300A3A381 /* Resources */,
-				18391BF94DD82ED70CB20F59 /* [CP] Embed Pods Frameworks */,
+				E75ADA242E6CDFC508B27059 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,66 +293,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		18391BF94DD82ED70CB20F59 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Tutorial/Pods-Tutorial-frameworks.sh",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/OneMobileSDK.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/OneMobileSDK.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/PlayerControls.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/PlayerControls.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/PlayerCore.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/PlayerCore.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/VideoRenderer.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/VideoRenderer.framework.dSYM",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneMobileSDK.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/OneMobileSDK.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PlayerControls.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/PlayerControls.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PlayerCore.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/PlayerCore.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VideoRenderer.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/VideoRenderer.framework.dSYM",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tutorial/Pods-Tutorial-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		219299DCB08013F865A7F8F0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Tutorial_tvOS/Pods-Tutorial_tvOS-frameworks.sh",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/tvOS/OneMobileSDK.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/tvOS/OneMobileSDK.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/tvOS/PlayerCore.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/tvOS/PlayerCore.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/tvOS/VideoRenderer.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/tvOS/VideoRenderer.framework.dSYM",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneMobileSDK.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/OneMobileSDK.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PlayerCore.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/PlayerCore.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VideoRenderer.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/VideoRenderer.framework.dSYM",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tutorial_tvOS/Pods-Tutorial_tvOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2599062A3578C6A971EF10E3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,6 +327,58 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B255D7A18B76F06DC5648411 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tutorial_tvOS/Pods-Tutorial_tvOS-resources.sh",
+				"${PODS_ROOT}/OathVideoPartnerSDK/support/OathVideoPartnerSDK-Version.plist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OathVideoPartnerSDK-Version.plist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tutorial_tvOS/Pods-Tutorial_tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E75ADA242E6CDFC508B27059 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tutorial/Pods-Tutorial-resources.sh",
+				"${PODS_ROOT}/OathVideoPartnerSDK/support/OathVideoPartnerSDK-Version.plist",
+				"${PODS_ROOT}/PlayerControls/PlayerControls/resources/AdVideoControls.xib",
+				"${PODS_ROOT}/PlayerControls/PlayerControls/resources/AirPlayActiveView.xib",
+				"${PODS_ROOT}/PlayerControls/PlayerControls/resources/DefaultControlsViewController.xib",
+				"${PODS_ROOT}/PlayerControls/PlayerControls/resources/SeekerControlPlayground.xib",
+				"${PODS_ROOT}/PlayerControls/PlayerControls/resources/SettingCell.xib",
+				"${PODS_ROOT}/PlayerControls/PlayerControls/resources/SettingHeaderView.xib",
+				"${PODS_ROOT}/PlayerControls/PlayerControls/resources/SettingsViewController.xib",
+				"${PODS_ROOT}/PlayerControls/PlayerControls/resources/PlayerUIControls.xcassets",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OathVideoPartnerSDK-Version.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdVideoControls.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AirPlayActiveView.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DefaultControlsViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SeekerControlPlayground.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SettingCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SettingHeaderView.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SettingsViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Assets.car",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tutorial/Pods-Tutorial-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -456,7 +448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CY9THR77Q9;
+				DEVELOPMENT_TEAM = 7V23547MMU;
 				INFOPLIST_FILE = Tutorial_tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
@@ -475,7 +467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CY9THR77Q9;
+				DEVELOPMENT_TEAM = 7V23547MMU;
 				INFOPLIST_FILE = Tutorial_tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;

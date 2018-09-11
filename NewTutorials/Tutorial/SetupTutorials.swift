@@ -1,7 +1,7 @@
 //  Copyright © 2017 Oath. All rights reserved.
 
 import UIKit
-import OneMobileSDK
+import OathVideoPartnerSDK
 import PlayerControls
 
 

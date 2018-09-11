@@ -2,7 +2,7 @@
 
 import UIKit
 import CoreImage
-import OneMobileSDK
+import OathVideoPartnerSDK
 
 func setup(tutorialCasesViewController: TutorialCasesViewController) {
     func select(player: Future<Result<Player>>, filter: CIFilter? = nil) -> (UIViewController) -> () {

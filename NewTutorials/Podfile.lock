@@ -1,16 +1,28 @@
 PODS:
-  - OneMobileSDK-Xcode9.3 (2.28.2631)
+  - OathVideoPartnerSDK (1.0):
+    - PlayerControls (= 1.26)
+    - PlayerCore (= 1.0.1)
+    - VideoRenderer (= 1.24)
+  - PlayerControls (1.26)
+  - PlayerCore (1.0.1)
+  - VideoRenderer (1.24)
 
 DEPENDENCIES:
-  - OneMobileSDK-Xcode9.3
+  - OathVideoPartnerSDK
 
 SPEC REPOS:
   https://github.com/vidible/OneMobileSDK-releases.git:
-    - OneMobileSDK-Xcode9.3
+    - OathVideoPartnerSDK
+    - PlayerControls
+    - PlayerCore
+    - VideoRenderer
 
 SPEC CHECKSUMS:
-  OneMobileSDK-Xcode9.3: 3507ad42d6927226e9d9ebf245d9ab3f2c6652ac
+  OathVideoPartnerSDK: ebf23f8d27f446438bcc403677d49fed91790bfd
+  PlayerControls: fc31fd5b9c6390e1811342a5cfb1d714d438847c
+  PlayerCore: 191a3eb26414872fbc658420953c751d9ab960e4
+  VideoRenderer: a537af56ec8b1666cc0cd7d6d61ca43b88ecb1d0
 
-PODFILE CHECKSUM: 47046a146d8a0758a7f712e3e3c9dc7ab98c8b72
+PODFILE CHECKSUM: 378a74bd88392e1a737e19096657353d8b3a14a0
 
 COCOAPODS: 1.5.3

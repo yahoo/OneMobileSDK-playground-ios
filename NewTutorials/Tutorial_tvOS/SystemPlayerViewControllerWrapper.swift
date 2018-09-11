@@ -2,7 +2,7 @@
 
 import UIKit
 import CoreImage
-import OneMobileSDK
+import OathVideoPartnerSDK
 
 
 class SystemPlayerViewControllerWrapper: UIViewController {
