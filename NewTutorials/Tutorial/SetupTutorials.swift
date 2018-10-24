@@ -126,6 +126,6 @@ extension SideBarView.ButtonProps.Accessibility {
     init(label: String, hint: String) {
         self.label = label
         self.hint = hint
-        self.traits = UIAccessibilityTraitButton
+        self.traits = UIAccessibilityTraits.button
     }
 }

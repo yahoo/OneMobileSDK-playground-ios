@@ -238,15 +238,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = AOL;
 				TargetAttributes = {
 					DA63A23C1FF3FD8F0044B40F = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					DA8175E81FE7D3B300A3A381 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -300,14 +302,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tutorial/Pods-Tutorial-frameworks.sh",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/OneMobileSDK.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/OneMobileSDK.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/PlayerControls.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/PlayerControls.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/PlayerCore.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/PlayerCore.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/VideoRenderer.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/iOS/VideoRenderer.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/iOS/OneMobileSDK.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/iOS/OneMobileSDK.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/iOS/PlayerControls.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/iOS/PlayerControls.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/iOS/PlayerCore.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/iOS/PlayerCore.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/iOS/VideoRenderer.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/iOS/VideoRenderer.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -332,12 +334,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tutorial_tvOS/Pods-Tutorial_tvOS-frameworks.sh",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/tvOS/OneMobileSDK.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/tvOS/OneMobileSDK.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/tvOS/PlayerCore.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/tvOS/PlayerCore.framework.dSYM",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/tvOS/VideoRenderer.framework",
-				"${PODS_ROOT}/OneMobileSDK-Xcode9.3/Carthage/Build/tvOS/VideoRenderer.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/tvOS/OneMobileSDK.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/tvOS/OneMobileSDK.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/tvOS/PlayerCore.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/tvOS/PlayerCore.framework.dSYM",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/tvOS/VideoRenderer.framework",
+				"${PODS_ROOT}/OneMobileSDK-Xcode10/Carthage/Build/tvOS/VideoRenderer.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -462,7 +464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 11.2;
 			};
@@ -481,7 +483,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 11.2;
 			};
@@ -499,7 +501,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -516,7 +518,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aol.mobile.one.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -535,6 +537,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -542,6 +545,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -592,6 +596,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -599,6 +604,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

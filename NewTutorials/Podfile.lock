@@ -1,16 +1,20 @@
 PODS:
-  - OneMobileSDK-Xcode9.3 (2.28.2631)
+  - OMSDK-Oath2 (1.0.0)
+  - OneMobileSDK-Xcode10 (2.30.2728):
+    - OMSDK-Oath2 (= 1.0.0)
 
 DEPENDENCIES:
-  - OneMobileSDK-Xcode9.3
+  - OneMobileSDK-Xcode10
 
 SPEC REPOS:
   https://github.com/vidible/OneMobileSDK-releases.git:
-    - OneMobileSDK-Xcode9.3
+    - OMSDK-Oath2
+    - OneMobileSDK-Xcode10
 
 SPEC CHECKSUMS:
-  OneMobileSDK-Xcode9.3: 3507ad42d6927226e9d9ebf245d9ab3f2c6652ac
+  OMSDK-Oath2: 641f95e29744bba047d4dc03081c3f2340ab338c
+  OneMobileSDK-Xcode10: 73a18a8f7bebc5e4b635a1ae97ccf7735fc66d97
 
-PODFILE CHECKSUM: 47046a146d8a0758a7f712e3e3c9dc7ab98c8b72
+PODFILE CHECKSUM: e52c573794d77b709a8cb8da93208ff63a9c81d5
 
 COCOAPODS: 1.5.3
