@@ -8,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         /*
          This code ignores iOS hardware ringer silent mode - so
@@ -17,12 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         */
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+            if #available(iOS 10.0, *) {
+                try audioSession.setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default)
+            }
         } catch {
-            assertionFailure("Audio session `setCategory` failed!")
+            assertionFailure("Audio session setCategory failed")
         }
 
         return true
     }
 }
-

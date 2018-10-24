@@ -70,7 +70,7 @@ class PlayerViewControllerWrapper: UIViewController {
     @IBOutlet weak private var videoTypeLabel: UILabel!
     @IBOutlet weak private var activityIndicatorView: UIActivityIndicatorView!
     private var playerViewController: PlayerViewController? {
-        return childViewControllers.first as? PlayerViewController
+        return children.first as? PlayerViewController
     }
     
     override func viewDidLoad() {
@@ -87,7 +87,7 @@ class PlayerViewControllerWrapper: UIViewController {
     // You should override this method and return contentControlsViewController to turn on
     // home indicator auto-hidden behaviour if player controls are hidden.
     @available(iOS 11, *)
-    override func childViewControllerForHomeIndicatorAutoHidden() -> UIViewController? {
+    override var childForHomeIndicatorAutoHidden: UIViewController? {
         return playerViewController?.contentControlsViewController
     }
     

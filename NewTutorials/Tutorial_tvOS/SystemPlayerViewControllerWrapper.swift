@@ -46,6 +46,6 @@ class SystemPlayerViewControllerWrapper: UIViewController {
         }
     }
     private var systemPlayerViewController: SystemPlayerViewController? {
-        return childViewControllers.first as? SystemPlayerViewController
+        return children.first as? SystemPlayerViewController
     }
 }
