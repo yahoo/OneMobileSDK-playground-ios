@@ -189,7 +189,7 @@ We also think that there should be more gestures that will help users interact w
 The complete implementation of the default player controls UX is open-source and provided to serve as an implementation sample of its own. Feel free to inspect it, copy it, modify it at will.
 
 The default iOS Controls UI implementation repo can be found here: 
-[O2 Mobile SDK Controls for iOS](https://github.com/aol-public/OneMobileSDK-controls-ios)
+[O2 Mobile SDK Controls for iOS](/OneMobileSDK-controls-ios)
 
 <a name="tldr"></a>
 ## TLDR: Quick Start
@@ -205,7 +205,7 @@ This tutorial sample shows you how to quickly init the OMSDK and play videos usi
 
 ##### _Tutorial Sample:_
 
-> [Playing Videos](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Playing Videos](/NewTutorials)
 
 #### Setting default player controls’ tint color
 
@@ -213,7 +213,7 @@ The built-in tint color of the default video player controls UX is pink/magenta.
 
 ##### _Tutorial Sample:_
 
-> [Setting Controls’ Tint Color](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Setting Controls’ Tint Color](/NewTutorials)
 
 #### Playing with AutoPlay on/off
 
@@ -223,7 +223,7 @@ If AutoPlay mode is off, the user will have to tap the play button to start the 
 
 ##### _Tutorial Sample:_
 
-> [Turning Off AutoPlay](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Turning Off AutoPlay](/NewTutorials)
 
 #### Playing Muted
 
@@ -231,7 +231,7 @@ You can easily control the mute state of the `Player` object. In this sample, yo
 
 ##### _Tutorial Sample:_
 
-> [Controlling Mute State](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Controlling Mute State](/NewTutorials)
 
 #### Disabling HLS (or forcing MP4 playback)
 
@@ -244,7 +244,7 @@ This tutorial sample shows you how to further modify the default controls UX.
 
 ##### _Tutorial Sample:_
 
-> [Custom UX Color](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Custom UX Color](/NewTutorials)
 
 #### Hiding Various Controls buttons
 
@@ -263,7 +263,7 @@ If you hide the title, and bottom element buttons such as CC/SAP, PiP, and AirPl
 
 ##### _Tutorial Sample:_
 
-> [Hiding Default Controls Buttons](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Hiding Default Controls Buttons](/NewTutorials)
 
 #### Closed Captioning / SAP Settings button
 
@@ -271,7 +271,7 @@ This new feature of the OMSDK is generally dependent on having this information 
 
 ##### _Tutorial Sample:_
 
-> [Filtered Subtitles](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Filtered Subtitles](/NewTutorials)
 
 #### Using the 4 Custom Sidebar buttons
 
@@ -279,7 +279,7 @@ Use this sample to see how to add custom code and behaviors to one of the 4 side
 
 ##### _Tutorial Sample:_
 
-> [Custom Sidebar Buttons](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Custom Sidebar Buttons](/NewTutorials)
 
 #### Setting the LIVE indicator’s tint color
 
@@ -287,7 +287,7 @@ The LIVE indicator only appears during a LIVE streaming video playback. This wil
 
 ##### _Tutorial Sample:_
 
-> [LIVE Indicator Color](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [LIVE Indicator Color](/NewTutorials)
 
 #### Animations Customization and Disabling
 
@@ -295,7 +295,7 @@ We've added some new animations to our default player controls UX. If you want t
 
 ##### _Tutorial Sample:_
 
-> [Animations Customization and Disabling](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Animations Customization and Disabling](/NewTutorials)
 
 #### Custom Colors for Seeker Elements
 
@@ -303,7 +303,7 @@ The 2.28 version of SDK now includes a new feature to set custom colors for each
 
 ##### _Tutorial Sample:_
 
-> [Custom colors for seeker elements](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Custom colors for seeker elements](/NewTutorials)
 
 <a name="tutorial-3"></a>
 ## Tutorial 3: Observing the Player
@@ -316,7 +316,7 @@ Determining the current state of the `Player` is a key need for apps … most ap
 
 ##### _Tutorial Sample:_
 
-> [Video States](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Video States](/NewTutorials)
 
 #### Looping Playback
 
@@ -324,7 +324,7 @@ If your app has some need to loop a `Player` (one video or many), such as runnin
 
 ##### _Tutorial Sample:_
 
-> [Looping Videos](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Looping Videos](/NewTutorials)
 
 <a name="live-vod-360"></a>
 #### LIVE, VOD, or 360°?
@@ -337,7 +337,7 @@ There are many legitimate app UX circumstance, that can dictate the dynamicness 
 
 ##### _Tutorial Sample:_
 
-> [Hooking Up Next Video](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Hooking Up Next Video](/NewTutorials)
 
 <a name="tutorial-4"></a>
 ## Tutorial 4: Error Handling in the SDK
@@ -364,7 +364,7 @@ Videos can be restricted for playback in two very distinct ways. The first is ge
 
 ##### _Tutorial Sample:_
 
-> [Restricted Video](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Restricted Video](/NewTutorials)
 
 #### Deleted Videos
 
@@ -372,7 +372,7 @@ Videos can be deleted by the content owners, for a multitude of reasons includin
 
 ##### _Tutorial Sample:_
 
-> [Deleted Video](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Deleted Video](/NewTutorials)
 
 #### Invalid or Unknown Videos
 
@@ -380,7 +380,7 @@ Only valid, playable video IDs are accepted, and have their metadata pulled into
 
 ##### _Tutorial Sample:_
 
-> [Unknown Video](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials)
+> [Unknown Video](/NewTutorials)
 
 ## Specific Notes for tvOS Apps
 
@@ -395,7 +395,7 @@ This tutorial sample shows you how to do many of the same things as iOS as descr
 
 ##### _Tutorial Sample:_
 
-> [Playing Videos on tvOS](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials/Tutorial_tvOS)
+> [Playing Videos on tvOS](/NewTutorials/Tutorial_tvOS)
 
 
 ## Specific Notes for iPhone X
@@ -425,7 +425,7 @@ To see how it works, simply launch our Tutorials app on an iPhone X and play any
 
 ##### _Tutorial Sample:_
 
-> [Adding Method Override to Support iPhone X](https://github.com/aol-public/OneMobileSDK-playground-ios/tree/master/NewTutorials/Tutorial)
+> [Adding Method Override to Support iPhone X](/NewTutorials/Tutorial)
  
 ## Next Steps 
 
