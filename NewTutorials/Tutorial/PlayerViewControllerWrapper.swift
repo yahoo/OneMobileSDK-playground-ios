@@ -17,6 +17,7 @@ class PlayerViewControllerWrapper: UIViewController {
             var isFilteredSubtitles = false
             var isAnimationsDisabled = false
             var isCustomColorsMode = false
+            var areContentControlsDisabled = false
         }
         
         var showStats = false
@@ -165,6 +166,10 @@ class PlayerViewControllerWrapper: UIViewController {
                 guard strongSelf.props.controls.isAnimationsDisabled else { return }
                 controls.animationsEnabled = false
             }
+            func disabledControls() {
+                guard strongSelf.props.controls.areContentControlsDisabled else { return }
+                strongSelf.playerViewController?.contentControlsViewController = nil
+            }
             func customSeekbarColors() {
                 guard strongSelf.props.controls.isCustomColorsMode else { return }
                 //Constructor have default values, so you can setup only those elements that you want
@@ -215,6 +220,7 @@ class PlayerViewControllerWrapper: UIViewController {
             hideSomeControls()
             filteredSubtitles()
             disabledAnimations()
+            disabledControls()
             customSeekbarColors()
             
             contentPlayer.playlist?.next = customNextCommand

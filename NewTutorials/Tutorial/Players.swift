@@ -7,6 +7,10 @@ func singleVideo() -> Future<Result<Player>> {
     return OneSDK.Provider.default.getSDK()
         .then { $0.getPlayer(videoID: "577cc23d50954952cc56bc47") }
 }
+func shortVideo() -> Future<Result<Player>> {
+    return OneSDK.Provider.default.getSDK()
+        .then { $0.getPlayer(videoID: "5ade13e620565f4be5e35c72") }
+}
 
 #if os(iOS)
 func arrayOfVideos() -> Future<Result<Player>> {
