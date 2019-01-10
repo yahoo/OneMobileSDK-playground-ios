@@ -24,7 +24,7 @@ The following few changes need to be made in your OneMobileSDK projects:
    - **VerizonVideoPartnerSDK:**
         ```ruby
         # New link to podspec sources
-        source 'https://github.com/VerizonAdPlatforms/OneMobileSDK-releases-iOS.git'
+        source 'https://github.com/VerizonAdPlatforms/VerizonVideoPartnerSDK-releases-iOS'
 
         # Renamed SDK pod name
         pod 'VerizonVideoPartnerSDK'
@@ -52,3 +52,7 @@ The following few changes need to be made in your OneMobileSDK projects:
 If you are using `PlayerViewController` in XIB file - you have to rename the module from `OneMobileSDK` to `VerizonVideoPartner` - otherwise the class will not be loaded.
     
 **That's it!**
+
+## Contact Us
+
+As always, we highly appreciate, welcome, and value all feedback on this documentation or the VVPSDK in any way, shape, or form. If you have any suggestions for corrections, additions, or any further clarity, please don’t hesitate to email the [Video Support Team](mailto:video.support@oath.com).
