@@ -1,6 +1,6 @@
 platform :ios, 8.0
 
-source "https://github.com/vidible/OneMobileSDK-releases.git"
+source "https://github.com/yahoo/OneMobileSDK-releases.git"
 
 target "Beta Integration" do
   pod 'OneMobileSDK-Beta-Xcode9.1'

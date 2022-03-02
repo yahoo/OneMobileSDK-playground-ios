@@ -1,6 +1,6 @@
 platform :ios, '8.0'
 
-source "https://github.com/vidible/OneMobileSDK-releases.git"
+source "https://github.com/yahoo/OneMobileSDK-releases.git"
 
 target 'iOS Fullscreen' do
   pod 'OneMobileSDK-Beta-Swift3'

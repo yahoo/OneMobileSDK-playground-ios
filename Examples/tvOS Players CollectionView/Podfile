@@ -1,6 +1,6 @@
 platform :tvos, '9.0'
 
-source "https://github.com/vidible/OneMobileSDK-releases.git"
+source "https://github.com/yahoo/OneMobileSDK-releases.git"
 
 target 'tvOS Players CollectionView' do
   pod 'OneMobileSDK-Beta-Swift3'

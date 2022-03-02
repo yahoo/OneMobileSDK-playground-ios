@@ -1,5 +1,5 @@
 # OneMobileSDK podspec repo
-source "https://github.com/vidible/OneMobileSDK-releases.git"
+source "https://github.com/yahoo/OneMobileSDK-releases.git"
 
 # Release Xcode 8 compatible
 pod 'OneMobileSDK-Swift3'

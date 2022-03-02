@@ -1,4 +1,4 @@
-source 'https://github.com/vidible/OneMobileSDK-releases.git'
+source 'https://github.com/yahoo/OneMobileSDK-releases.git'
 
 target 'Tutorial' do
 	platform :ios, 9.0

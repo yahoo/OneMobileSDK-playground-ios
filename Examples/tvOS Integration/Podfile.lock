@@ -5,7 +5,7 @@ DEPENDENCIES:
   - OneMobileSDK-Xcode9.3
 
 SPEC REPOS:
-  https://github.com/vidible/OneMobileSDK-releases.git:
+  https://github.com/yahoo/OneMobileSDK-releases.git:
     - OneMobileSDK-Xcode9.3
 
 SPEC CHECKSUMS:
