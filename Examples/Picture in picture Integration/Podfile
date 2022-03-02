@@ -1,5 +1,5 @@
 platform :ios, '9.0'
-source "https://github.com/vidible/OneMobileSDK-releases.git"
+source "https://github.com/yahoo/OneMobileSDK-releases.git"
 
 
 target 'Picture in picture Integration' do

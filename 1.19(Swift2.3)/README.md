@@ -4,7 +4,7 @@ This document will help you integrate **1.19.x** OneMobileSDK. It also describes
 
 Main feature of **1.19.x** version is use of  MicroService API to simplify integration and improve API stability of SDK.
 
-Details about **1.18.x** could be found [here](http://vidible.github.io/mobile-sdk-ios/).
+Details about **1.18.x** could be found [here](http://yahoo.github.io/mobile-sdk-ios/).
 
 # Installing version 1.19
 
@@ -12,7 +12,7 @@ In your **Podfile**:
 
 ```
 # OneMobileSDK podspec repo
-source "https://github.com/vidible/OneMobileSDK-releases.git"
+source "https://github.com/yahoo/OneMobileSDK-releases.git"
 ```
 
 Next, choose one from the Pods below that suits your project:

@@ -7,7 +7,7 @@ DEPENDENCIES:
   - OneMobileSDK-Xcode10
 
 SPEC REPOS:
-  https://github.com/vidible/OneMobileSDK-releases.git:
+  https://github.com/yahoo/OneMobileSDK-releases.git:
     - OMSDK-Oath2
     - OneMobileSDK-Xcode10
 

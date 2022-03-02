@@ -12,7 +12,7 @@ You can integrate SDK in your project in several ways.
 
 1. Cocoapods - look on Podfile example in this repository.
 2. Carthage - look on Cartfile example in this repository.
-3. Binary - grab packed framework directly from https://github.com/vidible/OneMobileSDK-releases/releases
+3. Binary - grab packed framework directly from https://github.com/yahoo/OneMobileSDK-releases/releases
 
 ## Creating an `OneSDK` object
 

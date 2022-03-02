@@ -1,7 +1,7 @@
 platform :ios, 9.0
 use_frameworks!
 
-source "https://github.com/vidible/OneMobileSDK-releases.git"
+source "https://github.com/yahoo/OneMobileSDK-releases.git"
 
 target "EnvrmntSDK Integration" do
   pod 'OneMobileSDK-Swift3'
